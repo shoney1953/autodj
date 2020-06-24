@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Automated DJ</title>
+  </head>
+  <body>
+    <h1>Automated DJ Application</h1>
+    <h2>
+      <i class="fas fa-compact-disc"></i>
+      Pick a Category of Dance Music to play.
+    </h2>
+
+    <div class="button-container" id="button-container">
+      <h4>Ballroom</h4>
+      <button id="randomBtn" class="musicType-Btn">
+       <strong>Random Playlist </strong></button>
+      </button>
+      <button id="amTangoBtn" class="musicType-Btn">
+        Ballroom Tango
+      </button>
+      <button id="foxtrotBtn" class="musicType-Btn">
+        Foxtrot
+      </button>
+      <button id="polkaBtn" class="musicType-Btn">
+        Polka
+      </button>
+      <button id="quickstepBtn" class="musicType-Btn">
+        Quick Step
+      </button>
+      <button id="waltzBtn" class="musicType-Btn">
+        Waltz
+      </button>
+      <button id="vWaltzBtn" class="musicType-Btn">
+        Viennese Waltz
+      </button>
+  
+    </div>
+    <div class="button-container" id="button-container">
+      <h4>Latin</h4>
+      <button id="aTangoBtn" class="musicType-Btn">
+        Argentine Tango
+      </button>
+      <button id="bachataBtn" class="musicType-Btn">
+        Bachata
+      </button>
+      <button id="boleroBtn" class="musicType-Btn">
+        Bolero
+      </button>
+      <button id="chachaBtn" class="musicType-Btn">
+        Cha Cha
+      </button>
+      <button id="mamboBtn" class="musicType-Btn">
+        Mambo
+      </button>
+
+      <button id="merenqueBtn" class="musicType-Btn">
+        Merengue
+      </button>
+
+      <button id="rumbaBtn" class="musicType-Btn">
+        Rumba
+      </button>
+      <button id="salsaBtn" class="musicType-Btn">
+        Salsa
+      </button>
+      <button id="sambaBtn" class="musicType-Btn">
+        Samba
+      </button>
+ 
+    </div>
+
+    <div class="button-container" id="button-container">
+      <h4>Swing ETC</h4>
+ 
+      <button id="ecsBtn" class="musicType-Btn">
+        East Coast Swing
+      </button>
+      <button id="wcsBtn" class="musicType-Btn">
+        West Coast Swing
+      </button>
+      <button id="nc2Btn" class="musicType-Btn">
+        Night Club Two Step
+      </button>
+      <button id="hustleBtn" class="musicType-Btn">
+        Hustle
+      </button>
+      <button id="TwoStepBtn" class="musicType-Btn">
+        Texas Two Step
+      </button>
+      <button id="cChachaBtn" class="musicType-Btn">
+        Cowboy Cha Cha
+      </button>
+      <button id="wWaltzBtn" class="musicType-Btn">
+        Western Waltz
+      </button>
+      <button id="specialBtn" class="musicType-Btn">
+        Special Line Dances
+      </button>
+    </div>
+
+    <div class="music-container" id="music-container">
+      <div class="music-info">
+        <h3 id="musictype">Music Type</h3>
+        <h4 id="title"></h4>
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+      <audio id="audio"></audio>
+      <div class="img-container" id="image-container">
+        <img alt="music cover" id="cover" />
+      </div>
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn action-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+    </div>
+    <div>  
+ <small> Copyright &copy; 2020 All rights reserved - Sheila Honey </small> 
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
