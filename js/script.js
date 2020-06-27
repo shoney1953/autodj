@@ -10,7 +10,10 @@ const progressContainer = document.getElementById("progress-container");
 const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 const musictype = document.getElementById("musictype");
-songList = [
+
+const listBtn = document.getElementById("listBtn");
+
+const songList = [
   // waltz 0
   [
     "Appalachian Lullabye",
@@ -59,7 +62,7 @@ songList = [
     "Satisfaction (I Cant Get No)",
     "Sick and Tired",
     "Start Me Up",
-    "The Ballad Of John Ane Yoko",
+    "The Ballad Of John And Yoko",
     "Ticket To Ride",
     "Werewolves Of London",
   ],
@@ -246,6 +249,7 @@ songList = [
     "You Look So Good In Love",
   ],
 ];
+
 // ****************************************************************************
 let songIndex = 0;
 let danceIndex = 0;
@@ -258,6 +262,14 @@ let categories = [[]];
 let playList = [];
 
 initSongCounts();
+if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+else {
+  localStorage.myArray = JSON.stringify(songList);
+}
+if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+else {
+  localStorage.myCategories = JSON.stringify(header);
+}
 
 // puts the counts of how many songs with each type in the button
 function initSongCounts() {
@@ -610,24 +622,22 @@ function getRandomDance() {
 }
 
 function createRandomplayList() {
+  let totalSongs = 0;
   for (i = 0; i < categories.length; i++) {
-    let totCount = 0;
     let maxCount = categories[i][1];
     let danceIndex = i;
-
     for (j = 0; j <= maxCount; j++) {
       let songIndex = getRandomSong(danceIndex);
-      playList[i] = [danceIndex, songIndex];
+      playList[totalSongs] = [danceIndex, songIndex];
       totalSongs++;
     }
   }
 
   //
   shuffle(playList);
-
-  for (j = 0; j < playList.length; j++) {
-    let danceIndex = playList[j][0];
-    let songIndex = playList[j][1];
+  if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+  else {
+    localStorage.myPlaylist = JSON.stringify(playList);
   }
 }
 function shuffle(array) {
@@ -669,7 +679,7 @@ function playSong() {
 //     song functions
 function loadSong(category, song) {
   title.innerText = `Song Title: ${song}`;
-  musictype.innerText = `Dance Type playing:  ${hdrType} `;
+  musictype.innerText = `Dance Type:  ${hdrType} `;
   audio.src = `music/${category}/${song}.mp3`;
 }
 function pauseSong() {
