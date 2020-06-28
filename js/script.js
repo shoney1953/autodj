@@ -678,8 +678,7 @@ function playSong() {
 
 //     song functions
 function loadSong(category, song) {
-  title.innerText = `Song Title: ${song}`;
-  musictype.innerText = `Dance Type:  ${hdrType} `;
+  musictype.innerText = `  ${hdrType} :  ${song} `;
   audio.src = `music/${category}/${song}.mp3`;
 }
 function pauseSong() {
@@ -693,6 +692,10 @@ function playSong() {
   playBtn.querySelector("i.fas").classList.remove("fa-play");
   playBtn.querySelector("i.fas").classList.add("fa-pause");
   audio.play();
+}
+function updateDuration() {
+  const duration = audio.duration;
+  musictype.innerText += `  --   ${convertTime(duration)}`;
 }
 function prevSongInGenera() {
   songIndex--;
@@ -823,4 +826,5 @@ randomBtn.addEventListener("click", setRandomplayList);
 //
 
 audio.addEventListener("timeupdate", updateProgress);
+audio.addEventListener("durationchange", updateDuration);
 progressContainer.addEventListener("click", setProgress);

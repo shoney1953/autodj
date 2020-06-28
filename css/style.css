@@ -46,6 +46,7 @@ h2 {
   display: flex;
   position: relative;
   width: 50%;
+  text-justify: right;
   padding: 10px 10px;
   margin: 100px 0;
   z-index: 10;
