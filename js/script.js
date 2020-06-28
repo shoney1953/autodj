@@ -59,7 +59,7 @@ const songList = [
     "Oh Pretty Woman",
     "Respect",
     "Rockin Pneumonia",
-    "Satisfaction (I Cant Get No)",
+    "Satisfaction",
     "Sick and Tired",
     "Start Me Up",
     "The Ballad Of John And Yoko",
@@ -216,7 +216,7 @@ const songList = [
     "Diamonds Are A Girls Best Friend",
     "In The Good Old Summertime",
     "One Jump Ahead",
-    "Puttin On The Ritz",
+    "Puttin  On The Ritz",
     "Somethings Gotta Give",
     "Star Wars Cantina Band",
     "Trying To Cut Back",
@@ -232,7 +232,7 @@ const songList = [
     "La Vida Es Un Carnaval",
     "Mil Pasos",
     "Samba del Rio",
-    "Youll Never Find Another Love (Samba)",
+    "Youll Never Find Another Love",
   ],
   // salsa 20
   ["I Got A Girl", "Limbo Rock", "Tequila"],
@@ -746,6 +746,18 @@ function setProgress(e) {
   const duration = audio.duration;
   audio.currentTime = (clickX / width) * duration;
 }
+var convertTime = function (time) {
+  var mins = Math.floor(time / 60);
+  if (mins < 10) {
+    mins = "0" + String(mins);
+  }
+  var secs = Math.floor(time % 60);
+  if (secs < 10) {
+    secs = "0" + String(secs);
+  }
+
+  return mins + ":" + secs;
+};
 //* Event Listeners
 playBtn.addEventListener("click", () => {
   const isPlaying = musicContainer.classList.contains("play");

@@ -16,7 +16,7 @@ function createBox(item, index) {
     `;
   box.addEventListener("click", () => {
     box.classList.add("active");
-    setTimeout(() => box.classList.remove("active"), 4000);
+    setTimeout(() => box.classList.remove("active"), 5000);
   });
   let arr2 = item;
   arr2.forEach((song, songi) => {
@@ -30,7 +30,7 @@ function createRBox(sl, playList) {
   const box2 = document.createElement("div");
   box2.classList.add("box");
   box2.innerHTML = `
-    <h4>Random Playlist</h4>
+    <h4>RANDOM PLAYLIST</h4>
     `;
   box2.addEventListener("click", () => {
     box2.classList.add("active");
