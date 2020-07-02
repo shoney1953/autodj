@@ -27,10 +27,11 @@ function createBox(item, index) {
 }
 
 function createRBox(sl, playList) {
+  let numSongs = playList.length;
   const box2 = document.createElement("div");
   box2.classList.add("box");
   box2.innerHTML = `
-    <h4>RANDOM PLAYLIST</h4>
+    <h4>RANDOM PLAYLIST (${numSongs}) </h4>
     `;
   box2.addEventListener("click", () => {
     box2.classList.add("active");
@@ -40,7 +41,8 @@ function createRBox(sl, playList) {
     let danceIndex = playEntry[0];
     let songIndex = playEntry[1];
     let songName = sl[danceIndex][songIndex];
-    box2.innerHTML += `<li class=songItem>${songName} </li>`;
+    let songType = categories[danceIndex];
+    box2.innerHTML += `<li class=songItem><u>${songType}:</u>  ${songName} </li>`;
   });
   main.appendChild(box2);
 }

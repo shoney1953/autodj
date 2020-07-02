@@ -277,29 +277,29 @@ function initSongCounts() {
   c = songList[0].length;
   waltzBtn.innerText += ` (${c})  `;
   header[0] = "Waltz";
-  categories[0] = ["waltz", 5];
+  categories[0] = ["waltz", 4];
 
   //
   c = songList[1].length;
   nc2Btn.innerText += ` (${c})  `;
   header[1] = "Nightclub Two Step";
-  categories[1] = ["nc2", 5];
+  categories[1] = ["nc2", 4];
   //
   c = songList[2].length;
   ecsBtn.innerText += ` (${c})  `;
   header[2] = "East Coast Swing";
-  categories[2] = ["ecs", 5];
+  categories[2] = ["ecs", 4];
 
   //
   c = songList[3].length;
   aTangoBtn.innerText += ` (${c})  `;
   header[3] = "Argentine Tango";
-  categories[3] = ["atango", 2];
+  categories[3] = ["atango", 3];
   //
   c = songList[4].length;
   bachataBtn.innerText += ` (${c})  `;
   header[4] = "Bachata";
-  categories[4] = ["bachata", 2];
+  categories[4] = ["bachata", 3];
 
   //
   c = songList[5].length;
@@ -316,7 +316,7 @@ function initSongCounts() {
   c = songList[7].length;
   chachaBtn.innerText += ` (${c})  `;
   header[7] = "Cha Cha";
-  categories[7] = ["chacha", 4];
+  categories[7] = ["chacha", 3];
 
   //
   c = songList[8].length;
@@ -604,6 +604,7 @@ function setRandomplayList() {
   addplayListListeners();
 
   createRandomplayList();
+
   danceIndex = playList[0][0];
   songIndex = playList[0][1];
 
@@ -626,20 +627,31 @@ function createRandomplayList() {
   for (i = 0; i < categories.length; i++) {
     let maxCount = categories[i][1];
     let danceIndex = i;
-    for (j = 0; j <= maxCount; j++) {
+    for (j = 0; j < maxCount; j++) {
       let songIndex = getRandomSong(danceIndex);
-      playList[totalSongs] = [danceIndex, songIndex];
-      totalSongs++;
+      let songInPlaylist = 0;
+      for (k = 0; k < playList.length; k++) {
+        if (playList[k][1] === songIndex && playList[k][0] === danceIndex) {
+          songInPlaylist = 1;
+        }
+      }
+      if (songInPlaylist === 0) {
+        playList[totalSongs] = [danceIndex, songIndex];
+        totalSongs++;
+      }
     }
   }
 
   //
   shuffle(playList);
+  shuffle(playList);
+
   if (!window.localStorage) alert("Sorry, you're using an ancient browser");
   else {
     localStorage.myPlaylist = JSON.stringify(playList);
   }
 }
+
 function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
