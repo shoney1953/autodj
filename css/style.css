@@ -4,9 +4,9 @@
 }
 body {
  /* background-color: rgb(214, 214, 221); */
-  background: url(../img/logo.png) rgb(214, 214, 221);
+  background: url(../img/skyback.jpg) rgb(214, 214, 221);
   background-repeat: no-repeat;
-  background-size: 400px;
+  background-size: cover; 
   width: 100%;
   height: 100vh;
   display: flex;
@@ -26,7 +26,7 @@ h2 {
 }
 
 .button-container {
-  background-color: rgb(184, 185, 189);
+  background-color: rgba(130, 139, 219, 0.4);
   border-radius: 15px;
   display: flex;
   position: relative;
@@ -35,14 +35,13 @@ h2 {
   z-index: 10;
 }
 .button-container h4 {
-  color: rgb(15, 2, 68);
+  color: rgb(42, 22, 122);
   padding: 5px 5px;
   font-style: italic;
   font-weight: bolder;
 }
 .music-container {
   background-color: #fff;
- 
   border-radius: 15px;
   box-shadow: 0 10px 10px 0 rgba(109, 107, 112, 0.6);
   display: flex;
@@ -143,7 +142,7 @@ h2 {
 }
 .musicType-Btn {
   display: inline;
-  background-color: rgb(191, 185, 204);
+  background-color: rgba(239, 157, 247, 0.5);
   border: 1px solid black;
   border-radius: 15px;
   font-size: 15px;
@@ -189,6 +188,7 @@ h2 {
 }
 
 main {
+   background-color: rgba(195, 222, 248, 0.7); 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 3px;

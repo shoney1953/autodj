@@ -28,6 +28,8 @@ const songList = [
     "The Last Waltz",
     "What The World Needs Now Is Love",
     "Where Is Your Heart",
+    "When I Said I Do",
+    "Take It To The Limit",
   ],
   // nc2 1
   [
@@ -40,6 +42,11 @@ const songList = [
     "Old Flame",
     "Remember When",
     "Sleepwalk",
+    "The Dance",
+    "Lithium",
+    "While My Guitar Gently Weeps",
+    "Persuasion",
+    "I Still Believe In You",
   ],
   //ecs 2
   [
@@ -65,6 +72,10 @@ const songList = [
     "The Ballad Of John And Yoko",
     "Ticket To Ride",
     "Werewolves Of London",
+    "Thing Called Love",
+    "Thatll Be The Day",
+    "Rock Around The Clock",
+    "Baby Likes To Rock It",
   ],
   // argentine tango 3
   [
@@ -111,6 +122,7 @@ const songList = [
     "Theme From New York, New York",
     "What If I Loved You",
     "What Is This Thing Called Love",
+    "Lazy River",
   ],
   // west coast swing 6
   [
@@ -126,6 +138,9 @@ const songList = [
     "Mustang Sally",
     "Wade In The Water",
     "Sixteen Tons",
+    "What Kind Of Woman Is This",
+    "You Can Leave Your Hat On",
+    "Shes No Lady",
   ],
   // cha cha 7
   [
@@ -148,6 +163,10 @@ const songList = [
     "In These Shoes",
     "Mi Mi Mi",
     "On Broadway",
+    "South Of Santa Fe",
+    "I See You",
+    "Todo Todo Todo",
+    "Tu Boca",
   ],
   //rumba 8
   [
@@ -178,6 +197,7 @@ const songList = [
     "Strangers In The Night",
     "What Does It Take",
     "Youll Never Find Another Love Like Mine",
+    "More Than A Woman",
   ],
   // merenque 10
   ["Suavemente", "Mi PC", "Dia de Fiesta", "Dance Merengue"],
@@ -202,11 +222,23 @@ const songList = [
     "Hot Rod Mercury",
     "I Feel Lucky",
     "Seven Year Ache",
+    "A Good Run Of Bad Luck",
   ],
   // cowboy cha cha 14
   ["Neon Moon", "Playa Silencio", "Third Rate Romance"],
   // special 15
-  ["Cupid Shuffle", "Chaka Chaka", "Electric Boogie", "Ooh La La", "Macarena"],
+  [
+    "Cupid Shuffle",
+    "Chaka Chaka",
+    "Electric Boogie",
+    "Ooh La La",
+    "Macarena",
+    "Cha Tango",
+    "See You Later Alligator",
+    "Havana",
+    "Boot Scootin Boogie",
+    "Shake A Tail Feather",
+  ],
   // polka 16
   ["Clarinet Polka", "John Ryans Polka", "Polka Medley"],
   // quickstep 17
@@ -607,9 +639,30 @@ function setRandomplayList() {
 
   danceIndex = playList[0][0];
   songIndex = playList[0][1];
-
+  localStorage.setItem("playListIndex", 0);
   setSongName();
   playSong();
+}
+function setOldRandomplayList() {
+  playList = JSON.parse(localStorage.myPlaylist);
+  try {
+    playListIndex = JSON.parse(localStorage.playListIndex);
+  } catch (exception) {
+    playListIndex = 0;
+  }
+
+  if (playList) {
+    removeGeneraListeners();
+    addplayListListeners();
+
+    danceIndex = playList[playListIndex][0];
+    songIndex = playList[playListIndex][1];
+
+    setSongName();
+    playSong();
+  } else {
+    setRandomplayList();
+  }
 }
 
 function getRandomSong(danceIndex) {
@@ -665,6 +718,7 @@ function shuffle(array) {
 
     // And swap it with the current element.
     temporaryValue = array[currentIndex];
+
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
@@ -729,7 +783,7 @@ function nextSongInGenera() {
 }
 function prevSongInplayList() {
   playListIndex--;
-
+  localStorage.setItem("playListIndex", playListIndex);
   if (playListIndex < 0) {
     playListIndex = playList.length - 1;
   }
@@ -741,6 +795,7 @@ function prevSongInplayList() {
 }
 function nextSongInplayList() {
   playListIndex++;
+  localStorage.setItem("playListIndex", playListIndex);
   if (playListIndex >= playList.length) {
     playListIndex = 0;
   }
@@ -834,6 +889,7 @@ salsaBtn.addEventListener("click", setSalsa);
 amTangoBtn.addEventListener("click", setamTango);
 wWaltzBtn.addEventListener("click", setwWaltz);
 randomBtn.addEventListener("click", setRandomplayList);
+oldrandomBtn.addEventListener("click", setOldRandomplayList);
 
 //
 
