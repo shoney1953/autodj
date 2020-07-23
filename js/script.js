@@ -14,41 +14,62 @@ const musictype = document.getElementById("musictype");
 const listBtn = document.getElementById("listBtn");
 
 const songList = [
-  // waltz 0
+  // american  tango 0
+  ["Amapola", "Blue Tango", "La Paloma", "Tango Da Saudade"],
+  // argentine tango 1
   [
-    "Appalachian Lullabye",
-    "Les Bicyclettes De Belsize",
-    "Midnight Waltz",
-    "Nocturne",
-    "If There Was A Man",
-    "Mozart Concerto",
-    "Smokey Mountain Lullaby",
-    "Spring",
-    "Take It To Heart",
-    "The Last Waltz",
-    "What The World Needs Now Is Love",
-    "Where Is Your Heart",
-    "When I Said I Do",
-    "Take It To The Limit",
+    "Poema",
+    "Gina",
+    "Tango to Evora",
+    "Contigo Aprendi",
+    "Santa Maria",
+    "Gran Hotel Victoria",
+    "La Cumparsita",
+    "Vi Luz y Subi",
+    "Scent of a Woman",
+    "El Aire en Mis Manos",
   ],
-  // nc2 1
+  // bachata 2
   [
-    "Home",
-    "Lady in Red",
-    "The Long Goodbye",
-    "Valentine",
-    "I Hope You Dance",
-    "Let Me Hold You",
-    "Old Flame",
-    "Remember When",
-    "Sleepwalk",
-    "The Dance",
-    "Lithium",
-    "While My Guitar Gently Weeps",
-    "Persuasion",
-    "I Still Believe In You",
+    "Ayer",
+    "The Lonely Bull",
+    "Ve Y Dile",
+    "Bachata en Fukuoka",
+    "Dejame Entrar En Ti",
+    "Romance en Bachata",
+    "Tengo Una Espina",
   ],
-  //ecs 2
+  // bolero 3
+  ["Beautiful Maria Of My Soul", "Corrine", "Todo O Nana"],
+  // cha cha 4
+  [
+    "All About That Bass",
+    "Cha Cha Latino",
+    "Dance the Night Away",
+    "Smooth",
+    "Oye Como Va",
+    "Perhaps, Perhaps, Perhaps",
+    "Suave",
+    "Tea For Two",
+    "As if",
+    "Banana Boat",
+    "Black Magic Woman",
+    "Boogie Shoes",
+    "Cerezo Rosa",
+    "Harlem Nocturne (Cha)",
+    "Hula Hoop",
+    "I Will Survive",
+    "In These Shoes",
+    "Mi Mi Mi",
+    "On Broadway",
+    "South Of Santa Fe",
+    "I See You",
+    "Todo Todo Todo",
+    "Tu Boca",
+  ],
+  // cowboy cha cha 5
+  ["Neon Moon", "Playa Silencio", "Third Rate Romance"],
+  //ecs 6
   [
     "Drive My Car",
     "No Particular Place to Go",
@@ -77,30 +98,7 @@ const songList = [
     "Rock Around The Clock",
     "Baby Likes To Rock It",
   ],
-  // argentine tango 3
-  [
-    "Poema",
-    "Gina",
-    "Tango to Evora",
-    "Contigo Aprendi",
-    "Santa Maria",
-    "Gran Hotel Victoria",
-    "La Cumparsita",
-    "Vi Luz y Subi",
-    "Scent of a Woman",
-    "El Aire en Mis Manos",
-  ],
-  // bachata 4
-  [
-    "Ayer",
-    "The Lonely Bull",
-    "Ve Y Dile",
-    "Bachata en Fukuoka",
-    "Dejame Entrar En Ti",
-    "Romance en Bachata",
-    "Tengo Una Espina",
-  ],
-  // foxtrot 5
+  // foxtrot 7
   [
     "Aint That A Kick In The Head",
     "Ive Got You Under My Skin",
@@ -124,7 +122,141 @@ const songList = [
     "What Is This Thing Called Love",
     "Lazy River",
   ],
-  // west coast swing 6
+  // hustle 8
+  [
+    "Ring my Bell",
+    "Disco Inferno",
+    "Celebration",
+    "Ladies Night",
+    "Fresh",
+    "If I Cant Have You",
+    "Keep It Comin Love",
+    "Never Gonna Give You Up",
+    "Strangers In The Night",
+    "What Does It Take",
+    "Youll Never Find Another Love Like Mine",
+    "More Than A Woman",
+  ],
+  // Line Dance 9
+
+  [
+    "Cupid Shuffle",
+    "Chaka Chaka",
+    "Electric Boogie",
+    "Ooh La La",
+    "Macarena",
+    "Cha Tango",
+    "See You Later Alligator",
+    "Havana",
+    "Boot Scootin Boogie",
+    "Shake A Tail Feather",
+  ],
+  // mambo 10
+  ["Mambo No. 5", "Mambo Italiano", "Mexico", "Papa Loves Mambo"],
+
+  // merenque 11
+  ["Suavemente", "Mi PC", "Dia de Fiesta", "Dance Merengue"],
+  // nc2 12
+  [
+    "Home",
+    "Lady in Red",
+    "The Long Goodbye",
+    "Valentine",
+    "I Hope You Dance",
+    "Let Me Hold You",
+    "Old Flame",
+    "Remember When",
+    "Sleepwalk",
+    "The Dance",
+    "Lithium",
+    "While My Guitar Gently Weeps",
+    "Persuasion",
+    "I Still Believe In You",
+  ],
+  // polka 13
+  ["Clarinet Polka", "John Ryans Polka", "Polka Medley"],
+  // quickstep 14
+  [
+    "Ballroom Jive",
+    "Dancin Fool",
+    "Diamonds Are A Girls Best Friend",
+    "In The Good Old Summertime",
+    "One Jump Ahead",
+    "Puttin  On The Ritz",
+    "Somethings Gotta Give",
+    "Star Wars Cantina Band",
+    "Trying To Cut Back",
+    "Youre The Cream In My Coffee",
+  ],
+  //rumba 15
+  [
+    "Acerate Mas",
+    "Beautiful Love",
+    "My Heart Will Go On",
+    "Besame Mucho",
+    "Blue Bayou",
+    "Cuando Me Guerias",
+    "Dont Know Why",
+    "En Mi Soledad",
+    "Harlem Nocturne (Rumba)",
+    "Islands In The Mist",
+    "Quiereme Mucho",
+    "Spanish Eyes",
+    "Venus",
+    "Unbreak My Heart",
+  ],
+  // salsa 16
+  ["I Got A Girl", "Limbo Rock", "Tequila"],
+  // samba 17"
+  [
+    "A Night In New York",
+    "Amor",
+    "La Isla Bonita",
+    "La Vida Es Un Carnaval",
+    "Mil Pasos",
+    "Samba del Rio",
+    "Youll Never Find Another Love",
+  ],
+  // texas 2 step 18
+  [
+    "A Better Man",
+    "Wagon Wheel",
+    "All My Exs Live in Texas",
+    "Why Not Me",
+    "Hot Rod Mercury",
+    "I Feel Lucky",
+    "Seven Year Ache",
+    "A Good Run Of Bad Luck",
+  ],
+  // viennese waltz 19
+  [
+    "Kiss From A Rose",
+    "Time In a Bottle",
+    "Tales From The Vienna Woods",
+    "The Blue Danube",
+    "Magical Music Box",
+    "On The Sidewalks Of New York",
+    "Once Upon A Dream",
+  ],
+  // waltz 20
+  [
+    "Appalachian Lullabye",
+    "Les Bicyclettes De Belsize",
+    "Midnight Waltz",
+    "Nocturne",
+    "If There Was A Man",
+    "Mozart Concerto",
+    "Smokey Mountain Lullaby",
+    "Spring",
+    "Take It To Heart",
+    "The Last Waltz",
+    "What The World Needs Now Is Love",
+    "Where Is Your Heart",
+    "When I Said I Do",
+    "Take It To The Limit",
+  ],
+
+  // west coast swing 21
   [
     "The Thrill Is Gone",
     "Billie Jean",
@@ -142,135 +274,7 @@ const songList = [
     "You Can Leave Your Hat On",
     "Shes No Lady",
   ],
-  // cha cha 7
-  [
-    "All About That Bass",
-    "Cha Cha Latino",
-    "Dance the Night Away",
-    "Smooth",
-    "Oye Como Va",
-    "Perhaps, Perhaps, Perhaps",
-    "Suave",
-    "Tea For Two",
-    "As if",
-    "Banana Boat",
-    "Black Magic Woman",
-    "Boogie Shoes",
-    "Cerezo Rosa",
-    "Harlem Nocturne (Cha)",
-    "Hula Hoop",
-    "I Will Survive",
-    "In These Shoes",
-    "Mi Mi Mi",
-    "On Broadway",
-    "South Of Santa Fe",
-    "I See You",
-    "Todo Todo Todo",
-    "Tu Boca",
-  ],
-  //rumba 8
-  [
-    "Acerate Mas",
-    "Beautiful Love",
-    "My Heart Will Go On",
-    "Besame Mucho",
-    "Blue Bayou",
-    "Cuando Me Guerias",
-    "Dont Know Why",
-    "En Mi Soledad",
-    "Harlem Nocturne (Rumba)",
-    "Islands In The Mist",
-    "Quiereme Mucho",
-    "Spanish Eyes",
-    "Venus",
-    "Unbreak My Heart",
-  ],
-  // hustle 9
-  [
-    "Ring my Bell",
-    "Disco Inferno",
-    "Celebration",
-    "Ladies Night",
-    "Fresh",
-    "If I Cant Have You",
-    "Keep It Comin Love",
-    "Never Gonna Give You Up",
-    "Strangers In The Night",
-    "What Does It Take",
-    "Youll Never Find Another Love Like Mine",
-    "More Than A Woman",
-  ],
-  // merenque 10
-  ["Suavemente", "Mi PC", "Dia de Fiesta", "Dance Merengue"],
-  // bolero 11
-  ["Beautiful Maria Of My Soul", "Corrine", "Todo O Nana"],
-  // viennese waltz 12
-  [
-    "Kiss From A Rose",
-    "Time In a Bottle",
-    "Tales From The Vienna Woods",
-    "The Blue Danube",
-    "Magical Music Box",
-    "On The Sidewalks Of New York",
-    "Once Upon A Dream",
-  ],
-  // texas 2 step 13
-  [
-    "A Better Man",
-    "Wagon Wheel",
-    "All My Exs Live in Texas",
-    "Why Not Me",
-    "Hot Rod Mercury",
-    "I Feel Lucky",
-    "Seven Year Ache",
-    "A Good Run Of Bad Luck",
-  ],
-  // cowboy cha cha 14
-  ["Neon Moon", "Playa Silencio", "Third Rate Romance"],
-  // special 15
-  [
-    "Cupid Shuffle",
-    "Chaka Chaka",
-    "Electric Boogie",
-    "Ooh La La",
-    "Macarena",
-    "Cha Tango",
-    "See You Later Alligator",
-    "Havana",
-    "Boot Scootin Boogie",
-    "Shake A Tail Feather",
-  ],
-  // polka 16
-  ["Clarinet Polka", "John Ryans Polka", "Polka Medley"],
-  // quickstep 17
-  [
-    "Ballroom Jive",
-    "Dancin Fool",
-    "Diamonds Are A Girls Best Friend",
-    "In The Good Old Summertime",
-    "One Jump Ahead",
-    "Puttin  On The Ritz",
-    "Somethings Gotta Give",
-    "Star Wars Cantina Band",
-    "Trying To Cut Back",
-    "Youre The Cream In My Coffee",
-  ],
-  // mambo 18
-  ["Mambo No. 5", "Mambo Italiano", "Mexico", "Papa Loves Mambo"],
-  // samba 19"
-  [
-    "A Night In New York",
-    "Amor",
-    "La Isla Bonita",
-    "La Vida Es Un Carnaval",
-    "Mil Pasos",
-    "Samba del Rio",
-    "Youll Never Find Another Love",
-  ],
-  // salsa 20
-  ["I Got A Girl", "Limbo Rock", "Tequila"],
-  // ballroom tango 21
-  ["Amapola", "Blue Tango", "La Paloma", "Tango Da Saudade"],
+
   // western waltz 22
   [
     "Take It To The Limit",
@@ -298,7 +302,7 @@ let playList = [];
 initSongCounts();
 if (!window.localStorage) alert("Sorry, you're using an ancient browser");
 else {
-  localStorage.myArray = JSON.stringify(songList);
+  localStorage.mySongList = JSON.stringify(songList);
 }
 if (!window.localStorage) alert("Sorry, you're using an ancient browser");
 else {
@@ -309,142 +313,126 @@ else {
 function initSongCounts() {
   let c = 0;
   c = songList[0].length;
-  waltzBtn.innerText += ` (${c})  `;
-  header[0] = "Waltz";
-  categories[0] = ["waltz", 4];
-
+  amTangoBtn.innerText += ` (${c})  `;
+  header[0] = "American Tango";
+  categories[0] = ["amtango", 1];
   //
   c = songList[1].length;
-  nc2Btn.innerText += ` (${c})  `;
-  header[1] = "Nightclub Two Step";
-  categories[1] = ["nc2", 4];
+  aTangoBtn.innerText += ` (${c})  `;
+  header[1] = "Argentine Tango";
+  categories[1] = ["atango", 3];
   //
   c = songList[2].length;
-  ecsBtn.innerText += ` (${c})  `;
-  header[2] = "East Coast Swing";
-  categories[2] = ["ecs", 4];
-
+  bachataBtn.innerText += ` (${c})  `;
+  header[2] = "Bachata";
+  categories[2] = ["bachata", 3];
   //
   c = songList[3].length;
-  aTangoBtn.innerText += ` (${c})  `;
-  header[3] = "Argentine Tango";
-  categories[3] = ["atango", 3];
+  boleroBtn.innerText += ` (${c})  `;
+  header[3] = "Bolero";
+  categories[3] = ["bolero", 1];
   //
   c = songList[4].length;
-  bachataBtn.innerText += ` (${c})  `;
-  header[4] = "Bachata";
-  categories[4] = ["bachata", 3];
-
+  chachaBtn.innerText += ` (${c})  `;
+  header[4] = "Cha Cha";
+  categories[4] = ["chacha", 3];
   //
   c = songList[5].length;
-  foxtrotBtn.innerText += ` (${c})  `;
-  header[5] = "Foxtrot";
-  categories[5] = ["foxtrot", 4];
+  cChachaBtn.innerText += ` (${c})  `;
+  header[5] = "Cowboy Cha Cha";
+  categories[5] = ["cbychacha", 1];
   //
   c = songList[6].length;
-  wcsBtn.innerText += ` (${c})  `;
-  header[6] = "West Coast Swing";
-  categories[6] = ["wcs", 3];
-
+  ecsBtn.innerText += ` (${c})  `;
+  header[6] = "East Coast Swing";
+  categories[6] = ["ecs", 4];
   //
   c = songList[7].length;
-  chachaBtn.innerText += ` (${c})  `;
-  header[7] = "Cha Cha";
-  categories[7] = ["chacha", 3];
-
+  foxtrotBtn.innerText += ` (${c})  `;
+  header[7] = "Foxtrot";
+  categories[7] = ["foxtrot", 4];
   //
+
   c = songList[8].length;
-  rumbaBtn.innerText += ` (${c})  `;
-  header[8] = "Rumba";
-  categories[8] = ["rumba", 4];
+  hustleBtn.innerText += ` (${c})  `;
+  header[8] = "Hustle";
+  categories[8] = ["hustle", 2];
   //
   c = songList[9].length;
-  hustleBtn.innerText += ` (${c})  `;
-  header[9] = "Hustle";
-  categories[9] = ["hustle", 2];
-
+  specialBtn.innerText += ` (${c})  `;
+  header[9] = "Line Dance";
+  categories[9] = ["special", 2];
   //
   c = songList[10].length;
-  merenqueBtn.innerText += ` (${c})  `;
-  header[10] = "Merengue";
-  categories[10] = ["merenque", 1];
-
+  mamboBtn.innerText += ` (${c})  `;
+  header[10] = "Mambo";
+  categories[10] = ["mambo", 1];
   //
   c = songList[11].length;
-  boleroBtn.innerText += ` (${c})  `;
-  header[11] = "Bolero";
-  categories[11] = ["bolero", 1];
+  merenqueBtn.innerText += ` (${c})  `;
+  header[11] = "Merengue";
+  categories[11] = ["merenque", 1];
 
   //
   c = songList[12].length;
-  vWaltzBtn.innerText += ` (${c})  `;
-  header[12] = "Viennese Waltz";
-  categories[12] = ["vwaltz", 1];
-
+  nc2Btn.innerText += ` (${c})  `;
+  header[12] = "Nightclub Two Step";
+  categories[12] = ["nc2", 4];
+  //
   //
   c = songList[13].length;
-  TwoStepBtn.innerText += ` (${c})  `;
-  header[13] = "Texas Two Step";
-  categories[13] = ["2step", 1];
-
+  polkaBtn.innerText += ` (${c})  `;
+  header[13] = "Polka";
+  categories[13] = ["polka", 1];
   //
   c = songList[14].length;
-  cChachaBtn.innerText += ` (${c})  `;
-  header[14] = "Cowboy Cha Cha";
-  categories[14] = ["cbychacha", 1];
-
+  quickstepBtn.innerText += ` (${c})  `;
+  header[14] = "Quickstep";
+  categories[14] = ["quickstep", 1];
   //
   c = songList[15].length;
-  specialBtn.innerText += ` (${c})  `;
-  header[15] = "Special Line Dance";
-  categories[15] = ["special", 2];
+  rumbaBtn.innerText += ` (${c})  `;
+  header[15] = "Rumba";
+  categories[15] = ["rumba", 4];
 
   //
   c = songList[16].length;
-  polkaBtn.innerText += ` (${c})  `;
-  header[16] = "Polka";
-  categories[16] = ["polka", 1];
+  salsaBtn.innerText += ` (${c})  `;
+  header[16] = "Salsa";
+  categories[16] = ["salsa", 1];
 
   //
   c = songList[17].length;
-  quickstepBtn.innerText += ` (${c})  `;
-  header[17] = "Quickstep";
-  categories[17] = ["quickstep", 1];
+  sambaBtn.innerText += ` (${c})  `;
+  header[17] = "Samba";
+  categories[17] = ["samba", 1];
 
+  //
   //
   c = songList[18].length;
-  mamboBtn.innerText += ` (${c})  `;
-  header[18] = "Mambo";
-  categories[18] = ["mambo", 1];
+  TwoStepBtn.innerText += ` (${c})  `;
+  header[18] = "Texas Two Step";
+  categories[18] = ["2step", 1];
 
-  //
   c = songList[19].length;
-  sambaBtn.innerText += ` (${c})  `;
-  header[19] = "Samba";
-  categories[19] = ["samba", 1];
+  vWaltzBtn.innerText += ` (${c})  `;
+  header[19] = "Viennese Waltz";
+  categories[19] = ["vwaltz", 1];
 
-  //
   c = songList[20].length;
-  salsaBtn.innerText += ` (${c})  `;
-  header[20] = "Salsa";
-  categories[20] = ["salsa", 1];
-
-  //
+  waltzBtn.innerText += ` (${c})  `;
+  header[20] = "Waltz";
+  categories[20] = ["waltz", 4];
   //
   c = songList[21].length;
-  amTangoBtn.innerText += ` (${c})  `;
-  header[21] = "Ballroom Tango";
-  categories[21] = ["amtango", 1];
-
-  //
+  wcsBtn.innerText += ` (${c})  `;
+  header[21] = "West Coast Swing";
+  categories[21] = ["wcs", 3];
   //
   c = songList[22].length;
   wWaltzBtn.innerText += ` (${c})  `;
   header[22] = "Western Waltz";
   categories[22] = ["wwaltz", 1];
-
-  //
-  //
 }
 const message = new SpeechSynthesisUtterance();
 var myVolume = message.volume;
@@ -452,7 +440,7 @@ var myVolume = message.volume;
 function setAtango() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 3;
+  danceIndex = 1;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -460,7 +448,7 @@ function setAtango() {
 function setBachata() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 4;
+  danceIndex = 2;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -468,7 +456,7 @@ function setBachata() {
 function setChacha() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 7;
+  danceIndex = 4;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -476,7 +464,7 @@ function setChacha() {
 function setEcs() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 2;
+  danceIndex = 6;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -484,7 +472,7 @@ function setEcs() {
 function setFoxtrot() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 5;
+  danceIndex = 7;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -492,7 +480,7 @@ function setFoxtrot() {
 function setNc2() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 1;
+  danceIndex = 12;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -500,7 +488,7 @@ function setNc2() {
 function setWaltz() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 0;
+  danceIndex = 20;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -508,7 +496,7 @@ function setWaltz() {
 function setWcs() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 6;
+  danceIndex = 21;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -516,7 +504,7 @@ function setWcs() {
 function setRumba() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 8;
+  danceIndex = 15;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -524,7 +512,7 @@ function setRumba() {
 function setHustle() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 9;
+  danceIndex = 8;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -532,7 +520,7 @@ function setHustle() {
 function setMerenque() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 10;
+  danceIndex = 11;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -540,7 +528,7 @@ function setMerenque() {
 function setBolero() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 11;
+  danceIndex = 3;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -548,7 +536,7 @@ function setBolero() {
 function setVwaltz() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 12;
+  danceIndex = 19;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -556,7 +544,7 @@ function setVwaltz() {
 function setTwoStep() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 13;
+  danceIndex = 18;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -564,7 +552,7 @@ function setTwoStep() {
 function setcChacha() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 14;
+  danceIndex = 5;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -572,7 +560,7 @@ function setcChacha() {
 function setSpecial() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 15;
+  danceIndex = 9;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -580,7 +568,7 @@ function setSpecial() {
 function setPolka() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 16;
+  danceIndex = 13;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -588,14 +576,14 @@ function setPolka() {
 function setQuickstep() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 17;
+  danceIndex = 14;
   setSongName();
   playSong();
 }
 function setMambo() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 18;
+  danceIndex = 10;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -603,7 +591,7 @@ function setMambo() {
 function setSamba() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 19;
+  danceIndex = 17;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -611,7 +599,7 @@ function setSamba() {
 function setSalsa() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 20;
+  danceIndex = 16;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -619,7 +607,7 @@ function setSalsa() {
 function setamTango() {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 21;
+  danceIndex = 0;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();

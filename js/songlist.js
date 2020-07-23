@@ -1,12 +1,11 @@
 const main = document.getElementById("main");
 
 //
-sl = JSON.parse(localStorage.myArray);
+songList = JSON.parse(localStorage.mySongList);
 categories = JSON.parse(localStorage.myCategories);
 playList = JSON.parse(localStorage.myPlaylist);
-
-sl.forEach(createBox);
-createRBox(sl, playList);
+createRBox(songList, playList);
+songList.forEach(createBox);
 
 function createBox(item, index) {
   const box = document.createElement("div");
@@ -26,7 +25,7 @@ function createBox(item, index) {
   main.appendChild(box);
 }
 
-function createRBox(sl, playList) {
+function createRBox(songList, playList) {
   let numSongs = playList.length;
   const box2 = document.createElement("div");
   box2.classList.add("box");
@@ -40,7 +39,7 @@ function createRBox(sl, playList) {
   playList.forEach((playEntry, playIndex) => {
     let danceIndex = playEntry[0];
     let songIndex = playEntry[1];
-    let songName = sl[danceIndex][songIndex];
+    let songName = songList[danceIndex][songIndex];
     let songType = categories[danceIndex];
     box2.innerHTML += `<li class=songItem><u>${songType}:</u>  ${songName} </li>`;
   });
