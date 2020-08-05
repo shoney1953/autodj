@@ -1,13 +1,12 @@
 const main = document.getElementById("main");
 
-//
 songList = JSON.parse(localStorage.mySongList);
 categories = JSON.parse(localStorage.myCategories);
 
 try {
   playList = JSON.parse(localStorage.myPlaylist);
 } catch (e) {
-  let playlist = ["none made yet"];
+  console.log("no playlist created yet");
 }
 if (typeof playlist === "undefined") {
   const playlist = ["none made yet"];
