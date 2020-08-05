@@ -2,15 +2,15 @@ const main = document.getElementById("main");
 
 songList = JSON.parse(localStorage.mySongList);
 categories = JSON.parse(localStorage.myCategories);
+let playlistExist = 0;
 
 try {
   playList = JSON.parse(localStorage.myPlaylist);
+  playlistExist = 1;
 } catch (e) {
   console.log("no playlist created yet");
 }
-if (typeof playlist === "undefined") {
-  const playlist = ["none made yet"];
-} else {
+if (playlistExist === 1) {
   createRBox(songList, playList);
 }
 
