@@ -27,12 +27,12 @@ h2 {
   font-weight: 300; }
 
 .button-container {
-  background-color: rgba(130, 139, 219, 0.4);
+  background-color: transparent;
   display: grid;
   border-radius: 15px;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, max-content);
   grid-gap: 1px;
-  overflow: auto;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   z-index: 10; }
@@ -44,12 +44,12 @@ h2 {
   font-weight: bolder; }
 
 .random-container {
-  background-color: rgba(130, 139, 219, 0.4);
+  background-color: transparent;
   display: grid;
   border-radius: 15px;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, minmax(250px, max-content));
   grid-gap: 20px;
-  overflow: auto;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -62,8 +62,8 @@ h2 {
   font-weight: bolder; }
 
 .music-container {
-  background-color: rgba(211, 192, 196, 0.7);
-  border-radius: 15px;
+  background-image: linear-gradient(to right, rgba(160, 165, 207, 0.5), rgba(47, 60, 173, 0.5));
+  border-radius: 0 0 15px 15px;
   box-shadow: 0 10px 10px 0 rgba(109, 107, 112, 0.4);
   display: flex;
   position: relative;
@@ -75,11 +75,13 @@ h2 {
 
 .img-container {
   position: relative;
-  width: 110px; }
+  width: 110px;
+  background-color: transparent; }
 
 .img-container img {
-  border-radius: 50%;
+  border-radius: 5px;
   object-fit: cover;
+  background-color: transparent;
   height: 110px;
   width: inherit;
   position: absolute;
@@ -98,6 +100,8 @@ h2 {
     transform: rotate(360deg); } }
 
 .navigation {
+  border-radius: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -106,7 +110,7 @@ h2 {
 
 .action-btn {
   /* background-color: #fff; */
-  background-color: rgba(239, 157, 247, 0.9);
+  background-color: rgba(85, 81, 82, 0.9);
   border: 0;
   border-radius: 15px;
   color: #bfdbdf;
@@ -124,14 +128,14 @@ h2 {
   outline: 0; }
 
 .music-info {
-  background-color: rgba(211, 192, 196, 0.4);
+  background-image: linear-gradient(to right, rgba(160, 165, 207, 0.5), rgba(47, 60, 173, 0.5));
   border-radius: 15px 15px 0 0;
   color: #720722;
   position: absolute;
-  width: calc(100% - 40px);
+  width: 100%;
   padding: 20px 10px 10px 150px;
   top: 0;
-  left: 10px;
+  left: 0;
   opacity: 0;
   transform: translateY(0%);
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
@@ -148,20 +152,20 @@ h2 {
 .music-info h3,
 h4 {
   margin: 0;
-  color: #720722;
+  color: #555152;
   font-size: 20px;
   font-weight: bolder; }
 
 .progress-container {
-  background: #fff;
-  border-radius: 5px;
+  background-color: rgba(211, 192, 196, 0.4);
+  border-radius: 50%;
   margin: 10px 0;
-  height: 4px;
+  height: 5px;
   cursor: pointer;
   width: 100%; }
 
 .progress {
-  background-color: #fe8daa;
+  background-color: #555152;
   border-radius: 5px;
   height: 100%;
   width: 0%;
@@ -170,11 +174,11 @@ h4 {
 .musicType-Btn {
   display: inline;
   cursor: pointer;
-  background-color: rgba(239, 157, 247, 0.4);
-  border: 1px solid black;
-  color: #eb1e1e;
+  background-image: linear-gradient(to right, rgba(160, 165, 207, 0.5), rgba(47, 60, 173, 0.5));
+  border: 1px solid #ddd;
+  color: #2a167a;
   border-radius: 15px;
-  font-size: 15px;
+  font-size: 18px;
   padding: 5px 5px;
   margin: 5px 5px;
   justify-items: left; }
@@ -198,7 +202,7 @@ h4 {
 
 .list-Btn {
   display: inline;
-  background-color: #e01ef1;
+  background-color: rgba(85, 81, 82, 0.6);
   border: 1px solid black;
   border-radius: 15px;
   font-size: 20px;
@@ -275,6 +279,12 @@ footer {
   height: 100%; }
 
 @media (max-width: 1100px) {
+  header h1 {
+    font-size: 1rem; }
+  header h2 {
+    font-size: 1rem; }
+  header h3 {
+    font-size: 0.75rem; }
   body {
     background: url(../img/skyback-small.jpg);
     background-repeat: no-repeat;
@@ -301,6 +311,8 @@ footer {
     margin: 3px 3px; } }
 
 @media (max-width: 760px) {
+  .random-container h4 {
+    font-size: 0.7rem; }
   main {
     grid-template-columns: repeat(2, 1fr); }
   .button-container {
@@ -317,7 +329,18 @@ footer {
     margin: 1px 1px; } }
 
 @media (max-width: 500px) {
-  main {
-    grid-template-columns: 1fr; }
-  .button-container {
-    grid-template-columns: repeat(4, 1fr); } }
+  .random-container {
+    grid-gap: 5px;
+    grid-template-columns: repeat(1, minmax(250px, max-content)); }
+  .random-container h4 {
+    font-size: 0.6rem; }
+    .random-container h4 header h1 {
+      font-size: 0.5rem; }
+    .random-container h4 header h2 {
+      font-size: 0.4rem; }
+    .random-container h4 header h3 {
+      font-size: 0.25rem; }
+    .random-container h4 main {
+      grid-template-columns: 1fr; }
+    .random-container h4 .button-container {
+      grid-template-columns: repeat(4, 1fr); } }

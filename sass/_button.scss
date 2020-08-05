@@ -1,10 +1,13 @@
 .button-container {
-  background-color: rgba(130, 139, 219, 0.4);
+  // background-color: rgba(130, 139, 219, 0.4);
+  background-color: transparent;
+
   display: grid;
   border-radius: 15px;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, max-content);
+
   grid-gap: 1px;
-  overflow: auto;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   z-index: 10;

@@ -294,7 +294,7 @@ let danceIndex = 0;
 let playListIndex = 0;
 totalSongs = 0;
 let category = "atango";
-cover.src = "img/vinyl.jpg";
+cover.src = "img/vinyl.png";
 let header = [];
 let categories = [[]];
 let playList = [];
@@ -438,184 +438,100 @@ const message = new SpeechSynthesisUtterance();
 var myVolume = message.volume;
 
 function setAtango() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 1;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setBachata() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 2;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setChacha() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 4;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setEcs() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 6;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setFoxtrot() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 7;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setNc2() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 12;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setWaltz() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 20;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setWcs() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 21;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setRumba() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 15;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setHustle() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 8;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setMerenque() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 11;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setBolero() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 3;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setVwaltz() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 19;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setTwoStep() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 18;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setcChacha() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 5;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setSpecial() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 9;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setPolka() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 13;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setQuickstep() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 14;
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setMambo() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 10;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setSamba() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 17;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setSalsa() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 16;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setamTango() {
-  removeplayListListeners();
-  addGeneraListeners();
   danceIndex = 0;
-  songIndex = getRandomSong(danceIndex);
-  setSongName();
-  playSong();
+  doList(danceIndex);
 }
 function setwWaltz() {
+  danceIndex = 22;
+  doList(danceIndex);
+}
+function doList(danceIndex) {
   removeplayListListeners();
   addGeneraListeners();
-  danceIndex = 22;
   songIndex = getRandomSong(danceIndex);
   setSongName();
   playSong();
@@ -634,14 +550,22 @@ function setRandomplayList() {
   playSong();
 }
 function setOldRandomplayList() {
-  playList = JSON.parse(localStorage.myPlaylist);
+  playListIndex = 0;
+  let playListFound = 0;
+  try {
+    playList = JSON.parse(localStorage.myPlaylist);
+    playListFound = 1;
+  } catch (exception) {
+    console.log("no existing playlist");
+  }
+
   try {
     playListIndex = JSON.parse(localStorage.playListIndex);
   } catch (exception) {
     playListIndex = 0;
   }
 
-  if (playList) {
+  if (playListFound === 1) {
     removeGeneraListeners();
     addplayListListeners();
 
