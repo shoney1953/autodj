@@ -3,8 +3,18 @@ const main = document.getElementById("main");
 //
 songList = JSON.parse(localStorage.mySongList);
 categories = JSON.parse(localStorage.myCategories);
-playList = JSON.parse(localStorage.myPlaylist);
-createRBox(songList, playList);
+
+try {
+  playList = JSON.parse(localStorage.myPlaylist);
+} catch (e) {
+  let playlist = ["none made yet"];
+}
+if (typeof playlist === "undefined") {
+  const playlist = ["none made yet"];
+} else {
+  createRBox(songList, playList);
+}
+
 songList.forEach(createBox);
 
 function createBox(item, index) {
