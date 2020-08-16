@@ -290,301 +290,252 @@ const songList = [
 
 // ****************************************************************************
 let songIndex = 0;
+let danceIndex = 0;
 let playListIndex = 0;
 totalSongs = 0;
-let file = "atango";
+let category = "atango";
 cover.src = "img/vinyl.png";
-
+let header = [];
+let categories = [[]];
 let playList = [];
-const message = new SpeechSynthesisUtterance();
-var myVolume = message.volume;
 
-//--------------------- making Dance an object
-var danceArray = [];
-var dancePlaying;
-
-const Dance = function (
-  name,
-  songTitles,
-  numPerRandomList,
-  category,
-  file,
-  btn
-) {
-  this.danceType = name;
-  this.songTitles = songTitles;
-  this.numPerRandomList = numPerRandomList;
-  this.currentSong = 0;
-  this.category = category;
-  this.file = file;
-  this.numberOfSongs = this.songTitles.length;
-  this.btn = btn;
-};
-Dance.prototype.setBtn = function () {
-  this.btn = document.getElementById(this.btn);
-  this.btn.innerText += ` (${this.numberOfSongs})  `;
-  danceArray.push(this);
-};
-Dance.prototype.selectRandomSong = function () {
-  let maxv = this.numberOfSongs - 1;
-  this.currentSong = Math.floor(Math.random() * maxv);
-  return this.currentSong;
-};
-Dance.prototype.playTheList = function () {
-  removeplayListListeners();
-  addGeneraListeners();
-  this.currentSong = this.selectRandomSong();
-  this.setSongName();
-  playSong();
-};
-Dance.prototype.setSongName = function () {
-  file = this.file;
-  hdrType = this.danceType;
-  song = this.songTitles[this.currentSong];
-  loadSong(file, song);
-  let announce = `The next song is a ${hdrType}.`;
-  setTextMessage(announce);
-  speakText();
-};
-
-//------------------------------------------------
-americanTango = new Dance(
-  "American Tango",
-  songList[0],
-  1,
-  "ballroom",
-  "amtango",
-  "amTangoBtn"
-);
-americanTango.setBtn();
-
-argentineTango = new Dance(
-  "Argentine Tango",
-  songList[1],
-  3,
-  "Latin",
-  "atango",
-  "aTangoBtn"
-);
-argentineTango.setBtn();
-
-bachata = new Dance(
-  "Bachata",
-  songList[2],
-  3,
-  "Latin",
-  "bachata",
-  "bachataBtn"
-);
-bachata.setBtn();
-bolero = new Dance("Bolero", songList[3], 1, "Latin", "bolero", "boleroBtn");
-bolero.setBtn();
-chacha = new Dance("Cha Cha", songList[4], 3, "Latin", "chacha", "chachaBtn");
-chacha.setBtn();
-cbychacha = new Dance(
-  "Cowboy Cha Cha",
-  songList[5],
-  1,
-  "Western",
-  "cbychacha",
-  "cChachaBtn"
-);
-cbychacha.setBtn();
-ecs = new Dance("East Coast Swing", songList[6], 4, "Swing", "ecs", "ecsBtn");
-ecs.setBtn();
-foxtrot = new Dance(
-  "Fox Trot",
-  songList[7],
-  4,
-  "Ballroom",
-  "foxtrot",
-  "foxtrotBtn"
-);
-foxtrot.setBtn();
-hustle = new Dance("Hustle", songList[8], 2, "Swing", "hustle", "hustleBtn");
-hustle.setBtn();
-lineDance = new Dance(
-  "Line Dance",
-  songList[9],
-  2,
-  "Line Dance",
-  "special",
-  "specialBtn"
-);
-lineDance.setBtn();
-mambo = new Dance("Mambo", songList[10], 1, "Latin", "mambo", "mamboBtn");
-mambo.setBtn();
-merengue = new Dance(
-  "Merengue",
-  songList[11],
-  1,
-  "Latin",
-  "merenque",
-  "merenqueBtn"
-);
-merengue.setBtn();
-nc2 = new Dance(
-  "Night Club Two Step",
-  songList[12],
-  4,
-  "Western",
-  "nc2",
-  "nc2Btn"
-);
-nc2.setBtn();
-polka = new Dance("Polka", songList[13], 1, "Ballroom", "polka", "polkaBtn");
-polka.setBtn();
-quickstep = new Dance(
-  "Quickstep",
-  songList[14],
-  1,
-  "Ballroom",
-  "quickstep",
-  "quickstepBtn"
-);
-quickstep.setBtn();
-rumba = new Dance("Rumba", songList[15], 4, "Latin", "rumba", "rumbaBtn");
-rumba.setBtn();
-salsa = new Dance("Salsa", songList[16], 1, "Latin", "salsa", "salsaBtn");
-salsa.setBtn();
-samba = new Dance("Samba", songList[17], 1, "Latin", "samba", "sambaBtn");
-samba.setBtn();
-twostep = new Dance(
-  "Two Step",
-  songList[18],
-  1,
-  "Western",
-  "2step",
-  "TwoStepBtn"
-);
-twostep.setBtn();
-vwaltz = new Dance(
-  "Viennese Waltz",
-  songList[19],
-  1,
-  "Ballroom",
-  "vwaltz",
-  "vWaltzBtn"
-);
-vwaltz.setBtn();
-waltz = new Dance("Waltz", songList[20], 1, "Ballroom", "waltz", "waltzBtn");
-waltz.setBtn();
-wcs = new Dance("West Coast Swing", songList[21], 1, "Swing", "wcs", "wcsBtn");
-wcs.setBtn();
-
-wwaltz = new Dance(
-  "Western Waltz",
-  songList[22],
-  1,
-  "Western",
-  "wwaltz",
-  "wWaltzBtn"
-);
-wwaltz.setBtn();
-
+initSongCounts();
 if (!window.localStorage) alert("Sorry, you're using an ancient browser");
 else {
-  localStorage.myDanceArray = JSON.stringify(danceArray);
+  localStorage.mySongList = JSON.stringify(songList);
+}
+if (!window.localStorage) alert("Sorry, you're using an ancient browser");
+else {
+  localStorage.myCategories = JSON.stringify(header);
 }
 
 // puts the counts of how many songs with each type in the button
+function initSongCounts() {
+  let c = 0;
+  c = songList[0].length;
+  amTangoBtn.innerText += ` (${c})  `;
+  header[0] = "American Tango";
+  categories[0] = ["amtango", 1];
+  //
+  c = songList[1].length;
+  aTangoBtn.innerText += ` (${c})  `;
+  header[1] = "Argentine Tango";
+  categories[1] = ["atango", 3];
+  //
+  c = songList[2].length;
+  bachataBtn.innerText += ` (${c})  `;
+  header[2] = "Bachata";
+  categories[2] = ["bachata", 3];
+  //
+  c = songList[3].length;
+  boleroBtn.innerText += ` (${c})  `;
+  header[3] = "Bolero";
+  categories[3] = ["bolero", 1];
+  //
+  c = songList[4].length;
+  chachaBtn.innerText += ` (${c})  `;
+  header[4] = "Cha Cha";
+  categories[4] = ["chacha", 3];
+  //
+  c = songList[5].length;
+  cChachaBtn.innerText += ` (${c})  `;
+  header[5] = "Cowboy Cha Cha";
+  categories[5] = ["cbychacha", 1];
+  //
+  c = songList[6].length;
+  ecsBtn.innerText += ` (${c})  `;
+  header[6] = "East Coast Swing";
+  categories[6] = ["ecs", 4];
+  //
+  c = songList[7].length;
+  foxtrotBtn.innerText += ` (${c})  `;
+  header[7] = "Foxtrot";
+  categories[7] = ["foxtrot", 4];
+  //
 
-function setamTango() {
-  dancePlaying = americanTango;
-  americanTango.playTheList();
+  c = songList[8].length;
+  hustleBtn.innerText += ` (${c})  `;
+  header[8] = "Hustle";
+  categories[8] = ["hustle", 2];
+  //
+  c = songList[9].length;
+  specialBtn.innerText += ` (${c})  `;
+  header[9] = "Line Dance";
+  categories[9] = ["special", 2];
+  //
+  c = songList[10].length;
+  mamboBtn.innerText += ` (${c})  `;
+  header[10] = "Mambo";
+  categories[10] = ["mambo", 1];
+  //
+  c = songList[11].length;
+  merenqueBtn.innerText += ` (${c})  `;
+  header[11] = "Merengue";
+  categories[11] = ["merenque", 1];
+
+  //
+  c = songList[12].length;
+  nc2Btn.innerText += ` (${c})  `;
+  header[12] = "Nightclub Two Step";
+  categories[12] = ["nc2", 4];
+  //
+  //
+  c = songList[13].length;
+  polkaBtn.innerText += ` (${c})  `;
+  header[13] = "Polka";
+  categories[13] = ["polka", 1];
+  //
+  c = songList[14].length;
+  quickstepBtn.innerText += ` (${c})  `;
+  header[14] = "Quickstep";
+  categories[14] = ["quickstep", 1];
+  //
+  c = songList[15].length;
+  rumbaBtn.innerText += ` (${c})  `;
+  header[15] = "Rumba";
+  categories[15] = ["rumba", 4];
+
+  //
+  c = songList[16].length;
+  salsaBtn.innerText += ` (${c})  `;
+  header[16] = "Salsa";
+  categories[16] = ["salsa", 1];
+
+  //
+  c = songList[17].length;
+  sambaBtn.innerText += ` (${c})  `;
+  header[17] = "Samba";
+  categories[17] = ["samba", 1];
+
+  //
+  //
+  c = songList[18].length;
+  TwoStepBtn.innerText += ` (${c})  `;
+  header[18] = "Texas Two Step";
+  categories[18] = ["2step", 1];
+
+  c = songList[19].length;
+  vWaltzBtn.innerText += ` (${c})  `;
+  header[19] = "Viennese Waltz";
+  categories[19] = ["vwaltz", 1];
+
+  c = songList[20].length;
+  waltzBtn.innerText += ` (${c})  `;
+  header[20] = "Waltz";
+  categories[20] = ["waltz", 4];
+  //
+  c = songList[21].length;
+  wcsBtn.innerText += ` (${c})  `;
+  header[21] = "West Coast Swing";
+  categories[21] = ["wcs", 3];
+  //
+  c = songList[22].length;
+  wWaltzBtn.innerText += ` (${c})  `;
+  header[22] = "Western Waltz";
+  categories[22] = ["wwaltz", 1];
 }
+const message = new SpeechSynthesisUtterance();
+var myVolume = message.volume;
+
 function setAtango() {
-  dancePlaying = argentineTango;
-  argentineTango.playTheList();
+  danceIndex = 1;
+  doList(danceIndex);
 }
 function setBachata() {
-  dancePlaying = bachata;
-  bachata.playTheList();
-}
-function setBolero() {
-  dancePlaying = bolero;
-  bolero.playTheList();
+  danceIndex = 2;
+  doList(danceIndex);
 }
 function setChacha() {
-  dancePlaying = chacha;
-  chacha.playTheList();
-}
-function setcChacha() {
-  dancePlaying = cbychacha;
-  cbychacha.playTheList();
+  danceIndex = 4;
+  doList(danceIndex);
 }
 function setEcs() {
-  dancePlaying = ecs;
-  ecs.playTheList();
+  danceIndex = 6;
+  doList(danceIndex);
 }
 function setFoxtrot() {
-  dancePlaying = foxtrot;
-  foxtrot.playTheList();
-}
-function setHustle() {
-  dancePlaying = hustle;
-  hustle.playTheList();
-}
-function setSpecial() {
-  dancePlaying = lineDance;
-  lineDance.playTheList();
-}
-
-function setMambo() {
-  dancePlaying = mambo;
-  mambo.playTheList();
-}
-function setMerenque() {
-  dancePlaying = merengue;
-  merengue.playTheList();
+  danceIndex = 7;
+  doList(danceIndex);
 }
 function setNc2() {
-  dancePlaying = nc2;
-  nc2.playTheList();
-}
-function setPolka() {
-  dancePlaying = polka;
-  polka.playTheList();
-}
-function setQuickstep() {
-  dancePlaying = quickstep;
-  quickstep.playTheList();
-}
-function setRumba() {
-  dancePlaying = rumba;
-  rumba.playTheList();
-}
-function setSalsa() {
-  dancePlaying = salsa;
-  salsa.playTheList();
-}
-function setSamba() {
-  dancePlaying = samba;
-  samba.playTheList();
-}
-function setTwoStep() {
-  dancePlaying = twostep;
-  twostep.playTheList();
-}
-function setVwaltz() {
-  dancePlaying = vwaltz;
-  vwaltz.playTheList();
+  danceIndex = 12;
+  doList(danceIndex);
 }
 function setWaltz() {
-  dancePlaying = waltz;
-  waltz.playTheList();
+  danceIndex = 20;
+  doList(danceIndex);
 }
 function setWcs() {
-  dancePlaying = wcs;
-  wcs.playTheList();
+  danceIndex = 21;
+  doList(danceIndex);
 }
-
+function setRumba() {
+  danceIndex = 15;
+  doList(danceIndex);
+}
+function setHustle() {
+  danceIndex = 8;
+  doList(danceIndex);
+}
+function setMerenque() {
+  danceIndex = 11;
+  doList(danceIndex);
+}
+function setBolero() {
+  danceIndex = 3;
+  doList(danceIndex);
+}
+function setVwaltz() {
+  danceIndex = 19;
+  doList(danceIndex);
+}
+function setTwoStep() {
+  danceIndex = 18;
+  doList(danceIndex);
+}
+function setcChacha() {
+  danceIndex = 5;
+  doList(danceIndex);
+}
+function setSpecial() {
+  danceIndex = 9;
+  doList(danceIndex);
+}
+function setPolka() {
+  danceIndex = 13;
+  doList(danceIndex);
+}
+function setQuickstep() {
+  danceIndex = 14;
+  doList(danceIndex);
+}
+function setMambo() {
+  danceIndex = 10;
+  doList(danceIndex);
+}
+function setSamba() {
+  danceIndex = 17;
+  doList(danceIndex);
+}
+function setSalsa() {
+  danceIndex = 16;
+  doList(danceIndex);
+}
+function setamTango() {
+  danceIndex = 0;
+  doList(danceIndex);
+}
 function setwWaltz() {
-  dancePlaying = wwaltz;
-  wwaltz.playTheList();
+  danceIndex = 22;
+  doList(danceIndex);
 }
-//***************************************** */
-
+function doList(danceIndex) {
+  removeplayListListeners();
+  addGeneraListeners();
+  songIndex = getRandomSong(danceIndex);
+  setSongName();
+  playSong();
+}
 //
 function setRandomplayList() {
   removeGeneraListeners();
@@ -592,7 +543,8 @@ function setRandomplayList() {
 
   createRandomplayList();
 
-  playListIndex = 0;
+  danceIndex = playList[0][0];
+  songIndex = playList[0][1];
   localStorage.setItem("playListIndex", 0);
   setSongName();
   playSong();
@@ -616,6 +568,10 @@ function setOldRandomplayList() {
   if (playListFound === 1) {
     removeGeneraListeners();
     addplayListListeners();
+
+    danceIndex = playList[playListIndex][0];
+    songIndex = playList[playListIndex][1];
+
     setSongName();
     playSong();
   } else {
@@ -623,23 +579,36 @@ function setOldRandomplayList() {
   }
 }
 
+function getRandomSong(danceIndex) {
+  let maxv = songList[danceIndex].length - 1;
+
+  return Math.floor(Math.random() * maxv);
+}
+function getRandomDance() {
+  let maxv = songList.length - 1;
+  return Math.floor(Math.random() * maxv);
+}
+
 function createRandomplayList() {
   let totalSongs = 0;
-  for (i = 0; i < danceArray.length; i++) {
-    let maxCount = danceArray[i].numPerRandomList;
-
+  for (i = 0; i < categories.length; i++) {
+    let maxCount = categories[i][1];
+    let danceIndex = i;
     for (j = 0; j < maxCount; j++) {
-      let songIndex = danceArray[i].selectRandomSong();
-
-      playList[totalSongs] = [
-        danceArray[i].danceType,
-        danceArray[i].file,
-        danceArray[i].songTitles[songIndex],
-      ];
-
-      totalSongs++;
+      let songIndex = getRandomSong(danceIndex);
+      let songInPlaylist = 0;
+      for (k = 0; k < playList.length; k++) {
+        if (playList[k][1] === songIndex && playList[k][0] === danceIndex) {
+          songInPlaylist = 1;
+        }
+      }
+      if (songInPlaylist === 0) {
+        playList[totalSongs] = [danceIndex, songIndex];
+        totalSongs++;
+      }
     }
   }
+
   //
   shuffle(playList);
   shuffle(playList);
@@ -648,7 +617,6 @@ function createRandomplayList() {
   else {
     localStorage.myPlaylist = JSON.stringify(playList);
   }
-  console.log(playList);
 }
 
 function shuffle(array) {
@@ -673,31 +641,25 @@ function shuffle(array) {
 }
 
 function setSongName() {
-  hdrType = playList[playListIndex][0];
-  file = playList[playListIndex][1];
-  song = playList[playListIndex][2];
-  loadSong(file, song);
+  category = categories[danceIndex][0];
+  hdrType = header[danceIndex];
+  song = songList[danceIndex][songIndex];
+  loadSong(category, song);
   let announce = `The next song is a ${hdrType}.`;
   setTextMessage(announce);
   speakText();
 }
-
 function playSong() {
   musicContainer.classList.add("play");
   playBtn.querySelector("i.fas").classList.remove("fa-play");
   playBtn.querySelector("i.fas").classList.add("fa-pause");
   audio.play();
 }
-function setTextMessage(text) {
-  message.text = text;
-}
-function speakText() {
-  speechSynthesis.speak(message);
-}
+
 //     song functions
-function loadSong(file, song) {
+function loadSong(category, song) {
   musictype.innerText = `  ${hdrType} :  ${song} `;
-  audio.src = `music/${file}/${song}.mp3`;
+  audio.src = `music/${category}/${song}.mp3`;
 }
 function pauseSong() {
   musicContainer.classList.remove("play");
@@ -716,40 +678,44 @@ function updateDuration() {
   musictype.innerText += `  --   ${convertTime(duration)}`;
 }
 function prevSongInGenera() {
-  dancePlaying.currentSong--;
-
-  if (dancePlaying.currentSong < 0) {
-    dancePlaying.currentSong = dancePlaying.numberOfSongs - 1;
+  songIndex--;
+  if (songIndex < 0) {
+    songIndex = songList[danceIndex].length - 1;
   }
-
-  dancePlaying.setSongName();
-  playSong();
+  song = songList[danceIndex][songIndex];
+  loadSong(category, song);
+  playSong(song);
 }
 function nextSongInGenera() {
-  dancePlaying.currentSong++;
-  if (dancePlaying.currentSong >= dancePlaying.numberOfSongs) {
-    dancePlaying.currentSong = 0;
+  songIndex++;
+  if (songIndex >= songList[danceIndex].length) {
+    songIndex = 0;
   }
-  dancePlaying.setSongName();
+  song = songList[danceIndex][songIndex];
+  setSongName();
   playSong();
 }
 function prevSongInplayList() {
   playListIndex--;
-
+  localStorage.setItem("playListIndex", playListIndex);
   if (playListIndex < 0) {
     playListIndex = playList.length - 1;
   }
-  localStorage.setItem("playListIndex", playListIndex);
+  danceIndex = playList[playListIndex][0];
+  songIndex = playList[playListIndex][1];
+  song = songList[danceIndex][songIndex];
   setSongName();
   playSong();
 }
 function nextSongInplayList() {
   playListIndex++;
-
+  localStorage.setItem("playListIndex", playListIndex);
   if (playListIndex >= playList.length) {
     playListIndex = 0;
   }
-  localStorage.setItem("playListIndex", playListIndex);
+  danceIndex = playList[playListIndex][0];
+  songIndex = playList[playListIndex][1];
+  song = songList[danceIndex][songIndex];
   setSongName();
   playSong();
 }
@@ -786,8 +752,6 @@ playBtn.addEventListener("click", () => {
     playSong();
   }
 });
-
-//-------------------------------------------------
 function addGeneraListeners() {
   audio.addEventListener("ended", nextSongInGenera);
   nextBtn.addEventListener("click", nextSongInGenera);
@@ -808,7 +772,12 @@ function removeplayListListeners() {
   nextBtn.removeEventListener("click", nextSongInplayList);
   prevBtn.removeEventListener("click", prevSongInplayList);
 }
-
+function setTextMessage(text) {
+  message.text = text;
+}
+function speakText() {
+  speechSynthesis.speak(message);
+}
 // event listeners
 aTangoBtn.addEventListener("click", setAtango);
 chachaBtn.addEventListener("click", setChacha);
