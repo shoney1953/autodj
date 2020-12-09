@@ -1,3 +1,4 @@
+
 const musicContainer = document.getElementById("music-container");
 const buttonContainer = document.getElementById("buttonContainer");
 const playBtn = document.getElementById("play");
@@ -12,6 +13,11 @@ const cover = document.getElementById("cover");
 const musictype = document.getElementById("musictype");
 
 const listBtn = document.getElementById("listBtn");
+
+const returnBtn = document.getElementById("returnBtn");
+const customBtn = document.getElementById("customBtn");
+
+const popUp = document.getElementById("popUp");
 
 const songList = [
   // american  tango 0
@@ -345,7 +351,8 @@ Dance.prototype.setSongName = function () {
   let announce = `The next song is a ${hdrType}.`;
   setTextMessage(announce);
   speakText();
-  loadSong(file, song);
+  
+  loadSong(file, song); 
 };
 
 //------------------------------------------------
@@ -468,9 +475,9 @@ vwaltz = new Dance(
   "vWaltzBtn"
 );
 vwaltz.setBtn();
-waltz = new Dance("Waltz", songList[20], 1, "Ballroom", "waltz", "waltzBtn");
+waltz = new Dance("Waltz", songList[20], 4, "Ballroom", "waltz", "waltzBtn");
 waltz.setBtn();
-wcs = new Dance("West Coast Swing", songList[21], 1, "Swing", "wcs", "wcsBtn");
+wcs = new Dance("West Coast Swing", songList[21], 2, "Swing", "wcs", "wcsBtn");
 wcs.setBtn();
 
 wwaltz = new Dance(
@@ -532,6 +539,7 @@ function setOldRandomplayList() {
 }
 
 function createRandomplayList() {
+ 
   let totalSongs = 0;
   for (i = 0; i < danceArray.length; i++) {
     let maxCount = danceArray[i].numPerRandomList;
@@ -551,12 +559,13 @@ function createRandomplayList() {
   //
   shuffle(playList);
   shuffle(playList);
+  shuffle(playList);
 
   if (!window.localStorage) alert("Sorry, you're using an ancient browser");
   else {
     localStorage.myPlaylist = JSON.stringify(playList);
   }
-  console.log(playList);
+ 
 }
 
 function shuffle(array) {
@@ -586,7 +595,8 @@ function setSongName() {
   let announce = `The next song is a ${hdrType}.`;
   setTextMessage(announce);
   speakText();
-  loadSong(playList[playListIndex][1], playList[playListIndex][2]);
+  
+  loadSong(playList[playListIndex][1], playList[playListIndex][2]); 
 }
 
 function playSong() {
@@ -693,8 +703,68 @@ playBtn.addEventListener("click", () => {
     playSong();
   }
 });
+function customizePlaylist() {
+  setCounts();
+  popUp.classList.remove("vis-hidden");
+}
+function updateCounts() {
+  danceArray[0].numPerRandomList = numAmTango.value  ;
+  danceArray[1].numPerRandomList = numArgTango.value;
+  danceArray[2].numPerRandomList = numBachata.value;
+  danceArray[3].numPerRandomList =  numBolero.value;
+  danceArray[4].numPerRandomList = numChaCha.value;
+  danceArray[5].numPerRandomList = numCbyCha.value ;
+  danceArray[6].numPerRandomList = numECoast.value ;
+  danceArray[7].numPerRandomList = numFoxtrot.value ;
+  danceArray[8].numPerRandomList = numHustle.value;
+  danceArray[9].numPerRandomList = numLineDance.value ;
+  danceArray[10].numPerRandomList = numMambo.value ;
+  danceArray[11].numPerRandomList =  numMerengue.value ;
+  danceArray[12].numPerRandomList = numNightClub.value;
+  danceArray[13].numPerRandomList =  numPolka.value;
+  danceArray[14].numPerRandomList = numQuickStep.value;
+  danceArray[15].numPerRandomList = numRumba.value;
+  danceArray[16].numPerRandomList = numSalsa.value;
+  danceArray[17].numPerRandomList = numSamba.value;
+  danceArray[18].numPerRandomList = numTwoStep.value ;
+  danceArray[19].numPerRandomList = numVWaltz.value ;
+  danceArray[20].numPerRandomList= numWaltz.value;
+  danceArray[21].numPerRandomList = numWCSwing.value ;  
+  danceArray[22].numPerRandomList = numWWaltz.value; 
 
-//-------------------------------------------------
+
+}
+function returnPlay() {
+  updateCounts();
+  popUp.classList.add("vis-hidden");
+  setRandomplayList();
+}
+function setCounts() {
+  numAmTango.value =  danceArray[0].numPerRandomList;
+  numArgTango.value = danceArray[1].numPerRandomList;
+  numBachata.value = danceArray[2].numPerRandomList;
+  numBolero.value =  danceArray[3].numPerRandomList;
+  numChaCha.value =  danceArray[4].numPerRandomList;
+  numCbyCha.value =  danceArray[5].numPerRandomList;
+  numECoast.value = danceArray[6].numPerRandomList;
+  numFoxtrot.value = danceArray[7].numPerRandomList;
+  numHustle.value = danceArray[8].numPerRandomList;
+  numLineDance.value = danceArray[9].numPerRandomList;
+  numMambo.value = danceArray[10].numPerRandomList;
+  numMerengue.value = danceArray[11].numPerRandomList;
+  numNightClub.value = danceArray[12].numPerRandomList;
+  numPolka.value = danceArray[13].numPerRandomList;
+  numQuickStep.value = danceArray[14].numPerRandomList;
+  numRumba.value = danceArray[15].numPerRandomList;
+  numSalsa.value = danceArray[16].numPerRandomList;
+  numSamba.value = danceArray[17].numPerRandomList;
+  numTwoStep.value = danceArray[18].numPerRandomList;
+  numVWaltz.value = danceArray[19].numPerRandomList;
+  numWaltz.value = danceArray[20].numPerRandomList;
+  numWCSwing.value = danceArray[21].numPerRandomList;  
+  numWWaltz.value = danceArray[22].numPerRandomList;
+}
+//------------------------------------------------
 function addGeneraListeners() {
   audio.addEventListener("ended", nextSongInGenera);
   nextBtn.addEventListener("click", nextSongInGenera);
@@ -791,6 +861,9 @@ wWaltzBtn.addEventListener("click", function () {
 //
 randomBtn.addEventListener("click", setRandomplayList);
 oldrandomBtn.addEventListener("click", setOldRandomplayList);
+customBtn.addEventListener("click", customizePlaylist);
+
+returnBtn.addEventListener("click", returnPlay);
 
 //
 

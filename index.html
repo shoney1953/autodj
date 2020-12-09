@@ -27,14 +27,20 @@
       Click to Show Song Lists</a>
 
     <div class="random-container" id="random-container">
+   
     
       <button id="oldrandomBtn" class="musicType-Btn">
        <h4><strong>Use Existing Random Playlist </strong></h4>
       </button>
+    
+      <button id="customBtn" class="musicType-Btn">
+        <h4><strong>Customize # of songs in new Playlist </strong></h4>
        </button>
+     
       <button id="randomBtn" class="musicType-Btn">
        <h4><strong>New Random Playlist </strong></h4></button>
       </button>
+  
     </div>
     <div class="button-container" id="button-container">
       <button id="amTangoBtn" class="musicType-Btn">
@@ -133,6 +139,77 @@
         </button>
       </div>
     </div>
+    <div id="popUp" class="popUp vis-hidden">
+    <h4>Modify the number of songs for each music type to be included in the playlist (Min 0, Max 10). </h4>
+     <h4>When satisfied, click the return to home to create a new random playlist and begin playing it.</h4>
+    
+      <div class="form-box">
+          
+          <form class="inpClass">
+              <label for="numAmTango">  American Tangos</label>
+              <input type="number" min=0 max=10 name="numAmTango" id="numAmTango" class="inpBox">
+              <label for="numArgTango">  Argentine Tangos</label>
+              <input type="number" min=0 max=10  name="numArgTango" id="numArgTango"class="inpBox" >
+              <label for="numBachata">  Bachatas</label>
+              <input type="number" min=0 max=10  name="numBachata" id="numBachata"class="inpBox">
+              <label for="numBolero">  Boleros</label>
+              <input type="number" min=0 max=10  name="numBolero" id="numBolero"class="inpBox">
+              <label for="numChaCha">  Cha Chas</label>
+              <input type="number" min=0 max=10 name="numChaCha" id="numChaCha"class="inpBox">
+              <label for="numCbyCha">  Cowboy Cha Chas</label>
+              <input type="number" min=0 max=10  name="numCbyCha" id="numCbyCha"class="inpBox">
+          </form>
+
+          <form class="inpClass">
+            <label for="numECoast">  East Coast Swings</label>
+            <input type="number" min=0 max=10  name="numECoast" id="numECoast" class="inpBox">
+            <label for="numFoxtrot">  Foxtrots</label>
+            <input type="number" min=0 max=10  name="numFoxtrot" id="numFoxtrot" class="inpBox">
+              <label for="numHustle">  Hustles</label>
+              <input type="number" min=0 max=10 name="numHustle" id="numHustle" class="inpBox">
+              <label for="numLineDance">  Line Dances</label>
+              <input type="number" min=0 max=10  name="numLineDance" id="numLineDance" class="inpBox">
+              <label for="numMambo">  Mambos</label>
+              <input type="number" min=0 max=10  name="numMambo" id="numMambo" class="inpBox">
+              <label for="numMerengue">  Merengues</label>
+              <input type="number" min=0 max=10 name="numMerengue" id="numMerengue" class="inpBox">
+  
+          </form>
+          <form class="inpClass">
+            <label for="numNightClub">  Night Club Two Steps</label>
+            <input type="number" min=0 max=10 name="numNightClub" id="numNightClub" class="inpBox" >
+            <label for="numPolka">  Polkas</label>
+            <input type="number" min=0 max=10 name="numPolka" id="numPolka" class="inpBox">
+            <label for="numQuickStep">  Quick Steps</label>
+            <input type="number" min=0 max=10 name="numQuickStep" id="numQuickStep" class="inpBox">
+            <label for="numRumba">  Rumbas</label>
+            <input type="number" min=0 max=10 name="numRumba" id="numRumba" class="inpBox">
+              <label for="numSalsa">  Salsas</label>
+              <input type="number" min=0 max=10 name="numSalsa" id="numSalsa" class="inpBox">
+              <label for="numSamba">  Sambas</label>
+              <input type="number" min=0 max=10 name="numSamba" id="numSamba" class="inpBox">
+          </form>
+
+          <form class="inpClass">
+            <label for="numTwoStep">  Texas Two Steps</label>
+            <input type="number" min=0 max=10 name="numTwoStep" id="numTwoStep" class="inpBox">
+            <label for="numVWaltz">  Viennese Waltzes</label>
+            <input type="number" min=0 max=10 name="numVWaltz" id="numVWaltz" class="inpBox">
+            <label for="numWaltz">  Waltzes</label>
+            <input type="number" min=0 max=10 name="numWaltz" id="numWaltz" class="inpBox">
+            <label for="numWCSwing">  West Coast Swings</label>
+            <input type="number" min=0 max=10 name="numWCSwing" id="numWCSwing" class="inpBox">
+            <label for="numWWaltz">  Western Waltzes</label>
+            <input type="number" min=0 max=10 name="numWWaltz" id="numWWaltz" class="inpBox">
+            </form>
+      </div>
+    
+      <button class="submit-Btn" id="returnBtn">Return to Home Page</button>
+  
+      
+       
+  </div>
+   
     <footer>  
  <small> Copyright &copy; 2020 All Rights Reserved - Sheila Honey </small> 
     </footer>

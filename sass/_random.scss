@@ -3,6 +3,7 @@
   background-color: transparent;
   display: grid;
   border-radius: 15px;
+
   grid-template-columns: repeat(2, minmax(250px, max-content));
   grid-gap: 20px;
   overflow: hidden;
