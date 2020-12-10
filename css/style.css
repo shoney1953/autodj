@@ -457,6 +457,65 @@ footer {
     padding: 3px 3px;
     margin: 3px 3px;
   }
+  .popUp {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    border-radius: 5%;
+    background-color: rgb(115, 140, 209);
+    border: 2px black;
+    top: 20px;
+    left: 10px;
+    z-index: 9998;
+    text-align: left;
+    color: white;
+    justify-content: left;
+    align-content: left;
+  }
+  .popUp h4 {
+    margin-top: 5px;
+    color: rgb(243, 211, 211);
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+  .inpBox {
+    width: 100px;
+    height: 20px;
+    font-size: 15px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    border-radius: 20%;
+  }
+  .form-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px 10px;
+    margin: 5px 5px;
+    justify-content: left;
+    align-content: left;
+  }
+  .inpClass {
+    font-size: 15px;
+    padding: 5px 5px;
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  .submit-Btn {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(245, 69, 177, 0.6);
+    border: 2px solid black;
+    border-radius: 10%;
+    font-size: 15px;
+    padding: 4px 4px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    justify-items: left;
+  }
 }
 
 @media (max-width: 760px) {
@@ -482,6 +541,65 @@ footer {
     font-size: 10px;
     padding: 1px 1px;
     margin: 1px 1px;
+  }
+  .popUp {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    border-radius: 5%;
+    background-color: rgb(115, 140, 209);
+    border: 2px black;
+    top: 10px;
+    left: 10px;
+    z-index: 9998;
+    text-align: left;
+    color: white;
+    justify-content: left;
+    align-content: left;
+  }
+  .popUp h4 {
+    margin-top: 5px;
+    color: rgb(243, 211, 211);
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  .inpBox {
+    width: 75px;
+    height: 20px;
+    font-size: 10px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    border-radius: 10%;
+  }
+  .form-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px 10px;
+    margin: 5px 5px;
+    justify-content: left;
+    align-content: left;
+  }
+  .inpClass {
+    font-size: 10px;
+    padding: 5px 5px;
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+  }
+  .submit-Btn {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(245, 69, 177, 0.6);
+    border: 2px solid black;
+    border-radius: 10%;
+    font-size: 12px;
+    padding: 4px 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    justify-items: left;
   }
 }
 
