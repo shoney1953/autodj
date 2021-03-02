@@ -151,7 +151,6 @@ const songList = [
     "Electric Boogie",
     "Ooh La La",
     "Macarena",
-    "Cha Tango",
     "See You Later Alligator",
     "Havana",
     "Boot Scootin Boogie",
@@ -300,7 +299,8 @@ const songList = [
    "Blue Rose",
    "I Feel Lucky",
    "neon moon",
-   "playa silencia"
+   "playa silencia",
+   "Cha tango"
   ]
 ];
 
