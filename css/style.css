@@ -425,6 +425,15 @@ footer {
     background-size: cover;
     justify-content: space-evenly;
   }
+  .list-Btn {
+    font-size: 15px;
+  }
+  .random-container {
+    grid-gap: 3px;
+  }
+  .random-container h4 {
+    font-size: 0.7rem;
+  }
   h1 {
     font-size: 1rem;
   }
@@ -519,8 +528,17 @@ footer {
 }
 
 @media (max-width: 760px) {
+  .random-container {
+    grid-gap: 3px;
+  }
   .random-container h4 {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
+  }
+  .list-Btn {
+    font-size: 12px;
+  }
+  .random-container {
+    grid-template-columns: repeat(1, minmax(250px, max-content));
   }
   main {
     grid-template-columns: repeat(2, 1fr);
@@ -534,7 +552,8 @@ footer {
   h2 {
     font-size: 0.75rem;
   }
-  h3 {
+  h3,
+  h4 {
     font-size: 0.5rem;
   }
   .musicType-Btn {
@@ -604,12 +623,15 @@ footer {
 }
 
 @media (max-width: 500px) {
+  .list-Btn {
+    font-size: 10px;
+  }
   .random-container {
-    grid-gap: 5px;
+    grid-gap: 2px;
     grid-template-columns: repeat(1, minmax(250px, max-content));
   }
   .random-container h4 {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   .random-container h4 header h1 {
     font-size: 0.5rem;

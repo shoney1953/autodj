@@ -169,7 +169,7 @@ const songList = [
     "The Long Goodbye",
     "Valentine",
     "I Hope You Dance",
-    "Let Me Hold You",
+    "Trying to Get over You",
     "Old Flame",
     "Remember When",
     "Sleepwalk",
@@ -178,6 +178,8 @@ const songList = [
     "While My Guitar Gently Weeps",
     "Persuasion",
     "I Still Believe In You",
+    "Desperado",
+    "Have I Told You Lately"
   ],
   // polka 13
   ["Clarinet Polka", "John Ryans Polka", "Polka Medley"],
@@ -231,8 +233,9 @@ const songList = [
     "Why Not Me",
     "Hot Rod Mercury",
     "I Feel Lucky",
-    "Seven Year Ache",
     "A Good Run Of Bad Luck",
+    "Liza Jane",
+    "One More Last Chance"
   ],
   // viennese waltz 19
   [
@@ -292,6 +295,13 @@ const songList = [
     "You Look So Good In Love",
     "You Make The Moonlight",
   ],
+  // western Partner 23
+  [
+   "Blue Rose",
+   "I Feel Lucky",
+   "neon moon",
+   "playa silencia"
+  ]
 ];
 
 // ****************************************************************************
@@ -489,6 +499,16 @@ wwaltz = new Dance(
   "wWaltzBtn"
 );
 wwaltz.setBtn();
+wpartner = new Dance(
+  "Western Partner",
+  songList[23],
+  2,
+  "Western",
+  "wpartner",
+  "wPartnerBtn"
+);
+wpartner.setBtn();
+
 
 if (!window.localStorage) alert("Sorry, you're using an ancient browser");
 else {
@@ -731,7 +751,7 @@ function updateCounts() {
   danceArray[20].numPerRandomList= numWaltz.value;
   danceArray[21].numPerRandomList = numWCSwing.value ;  
   danceArray[22].numPerRandomList = numWWaltz.value; 
-
+  danceArray[23].numPerRandomList = numWPartner.value;
 
 }
 function returnPlay() {
@@ -763,6 +783,7 @@ function setCounts() {
   numWaltz.value = danceArray[20].numPerRandomList;
   numWCSwing.value = danceArray[21].numPerRandomList;  
   numWWaltz.value = danceArray[22].numPerRandomList;
+  numWPartner.value = danceArray[23].numPerRandomList;
 }
 //------------------------------------------------
 function addGeneraListeners() {
@@ -856,6 +877,9 @@ amTangoBtn.addEventListener("click", function () {
 });
 wWaltzBtn.addEventListener("click", function () {
   setDance(wwaltz);
+});
+wPartnerBtn.addEventListener("click", function () {
+  setDance(wpartner);
 });
 
 //

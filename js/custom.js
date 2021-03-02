@@ -23,6 +23,7 @@ const numVWaltz = document.getElementById("numVWaltz");
 const numWaltz = document.getElementById("numWaltz");
 const numWCSwing = document.getElementById("numWCSwing");
 const numWWaltz = document.getElementById("numWWaltz");
+const numWPartner = document.getElementById("numWPartner");
 
 
 danceArray = JSON.parse(localStorage.myDanceArray);
@@ -52,6 +53,7 @@ function setCounts() {
     numWaltz.value = danceArray[20].numPerRandomList;
     numWCSwing.value = danceArray[21].numPerRandomList;  
     numWWaltz.value = danceArray[22].numPerRandomList;
+    numWPartner.value = danceArray[23].numPerRandomList;
 }
 
 
@@ -84,6 +86,7 @@ submitBtn.addEventListener("click", function () {
     danceArray[20].numPerRandomList= numWaltz.value;
     danceArray[21].numPerRandomList = numWCSwing.value ;  
     danceArray[22].numPerRandomList = numWWaltz.value; 
+    danceArray[23].numPerRandomList = numWPartner.value; 
     if (!window.localStorage) alert("Sorry, you're using an ancient browser");
 else {
   localStorage.myDanceArray = JSON.stringify(danceArray);
