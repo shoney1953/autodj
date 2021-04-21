@@ -1,5 +1,5 @@
 const main = document.getElementById("main");
-
+const downloadPlyBtn = document.getElementById("downloadPlyBtn");
 danceArray = JSON.parse(localStorage.myDanceArray);
 
 let playlistExist = 0;
@@ -12,6 +12,7 @@ try {
 }
 if (playlistExist === 1) {
   createRBox(playList);
+  
 }
 
 danceArray.forEach(createBox);
@@ -53,3 +54,69 @@ function createRBox(playList) {
   });
   main.appendChild(box2);
 }
+//*************************** */
+downloadPlyBtn.addEventListener("click", () => {
+
+
+// pipe the document to a blob
+
+let newDate = new Date(Date.now());
+const doc = new PDFDocument;
+  
+doc.fontSize(14);
+
+doc.text(`Written: ${newDate.toDateString()} ${newDate.toTimeString()}`, 50);
+
+doc.text(`${playList.length} Songs `);
+doc.text(' ');
+
+doc.text(' #', 50);
+doc.moveUp(1);
+doc.text("Song Type", 100);
+doc.moveUp(1);
+doc.text("Song Name", 250);
+
+doc.text('__________________________________________________________', 50);
+
+playList.forEach((playEntry, playIndex) => {
+ 
+    let songName = playEntry[2];
+    let songType = playEntry[0];
+    let songLine ;
+   
+    songLine = `${playIndex + 1}  ${songType}          ${songName}`;
+ 
+    doc.text(`${playIndex + 1}`, 50);
+    doc.moveUp(1);
+    doc.text(`| ${songType}`, 100);
+    doc.moveUp(1);
+    doc.text(`| ${songName}`, 250);
+    doc.moveUp(1);
+    doc.text('__________________________________________________________', 50);
+   
+  
+    
+});
+
+  doc.end(); 
+  var stream = doc.pipe(blobStream());
+
+
+stream.on("finish", function() {
+  let blob;
+  // get a blob you can do whatever you like with
+
+
+  blob = stream.toBlob("application/pdf");
+  const a = document.createElement("a");
+  document.body.appendChild(a);
+  a.style = "display: none";
+  var url = window.URL.createObjectURL(blob);
+  a.href = url;
+  a.download = 'randomsonglist.pdf';
+  a.click();
+  window.URL.revokeObjectURL(url);
+
+});
+
+});

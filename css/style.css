@@ -29,6 +29,11 @@ h2 {
   font-size: 2rem;
   font-weight: 300;
 }
+h3 {
+  color: #1c073f;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
 
 .button-container {
   background-color: transparent;
@@ -648,4 +653,22 @@ footer {
   .random-container h4 .button-container {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+.action-btn {
+  /* background-color: #fff; */
+  background-color: rgba(85, 81, 82, 0.9);
+  border: 0;
+  border-radius: 15px;
+  color: #bfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+.link-container {
+  background-color: transparent;
+  border-bottom: 10px;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
 }
