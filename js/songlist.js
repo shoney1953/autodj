@@ -63,11 +63,13 @@ downloadPlyBtn.addEventListener("click", () => {
 let newDate = new Date(Date.now());
 const doc = new PDFDocument;
   
+
+
 doc.fontSize(14);
 
 doc.text(`Written: ${newDate.toDateString()} ${newDate.toTimeString()}`, 50);
 
-doc.text(`${playList.length} Songs `);
+doc.text(`${playList.length} Songs generated from https://sbdcautodj.netlify.app `);
 doc.text(' ');
 
 doc.text(' #', 50);
