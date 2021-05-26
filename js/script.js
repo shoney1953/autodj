@@ -218,7 +218,11 @@ const songList = [
     "Unbreak My Heart",
   ],
   // salsa 16
-  ["I Got A Girl", "Limbo Rock", "Tequila"],
+  ["I Got A Girl",
+   "Limbo Rock", 
+   "Tequila", 
+   "Chin Chin Chow",
+   "El Montuno de la Verdad"],
   // samba 17"
   [
     "A Night In New York",
