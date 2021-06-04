@@ -225,13 +225,21 @@ const songList = [
    "El Montuno de la Verdad"],
   // samba 17"
   [
+    "Copacabana",
+    "Toms Samba instrumental",
+    "Toms Samba Track 2",
+    "Toms Samba Track 3",
+    "Toms Samba Track 4",
+    "Toms Samba Track 5",
+    "Rhythm is Gonna Get You",
     "A Night In New York",
     "Amor",
     "La Isla Bonita",
     "La Vida Es Un Carnaval",
     "Mil Pasos",
     "Samba del Rio",
-    "Youll Never Find Another Love",
+    "Youll Never Find Another Love"
+   
   ],
   // texas 2 step 18
   [
