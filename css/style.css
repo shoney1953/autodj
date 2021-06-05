@@ -41,7 +41,7 @@ h3 {
   border-radius: 15px;
   grid-template-columns: repeat(8, max-content);
   grid-gap: 1px;
-  overflow: hidden;
+  overflow: auto;
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -60,7 +60,7 @@ h3 {
   border-radius: 15px;
   grid-template-columns: repeat(3, minmax(250px, max-content));
   grid-gap: 20px;
-  overflow: hidden;
+  overflow: auto;
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -220,7 +220,7 @@ h4 {
   border: 1px solid #ddd;
   color: #2a167a;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 20px;
   padding: 5px 5px;
   margin: 5px 5px;
   justify-items: left;
@@ -457,7 +457,9 @@ footer {
   }
 
   .button-container {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    overflow: scroll;
+    font-size: 0.6rem;
   }
 
   .music-container {
@@ -467,7 +469,7 @@ footer {
     margin: 50px 0;
   }
   .musicType-Btn {
-    font-size: 10px;
+    font-size: 20px;
     padding: 3px 3px;
     margin: 3px 3px;
   }
@@ -535,6 +537,7 @@ footer {
 @media (max-width: 760px) {
   .random-container {
     grid-gap: 3px;
+    font-size: 20px;
   }
   .random-container h4 {
     font-size: 0.5rem;
@@ -549,7 +552,9 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
   .button-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    overflow: scroll;
+    font-size: 0.4rem;
   }
   h1 {
     font-size: 0.75rem;
@@ -562,7 +567,7 @@ footer {
     font-size: 0.5rem;
   }
   .musicType-Btn {
-    font-size: 10px;
+    font-size: 20px;
     padding: 1px 1px;
     margin: 1px 1px;
   }
@@ -625,13 +630,22 @@ footer {
     margin-left: 5px;
     justify-items: left;
   }
+  .box h4 {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 500px) {
   .list-Btn {
     font-size: 10px;
   }
-  .random-container {
+  .musicType-Btn {
+    font-size: 20px;
+    padding: 1px 1px;
+    margin: 1px 1px;
+  }
+  .random-container,
+  .button-container {
     grid-gap: 2px;
     grid-template-columns: repeat(1, minmax(250px, max-content));
   }
@@ -650,10 +664,15 @@ footer {
   .random-container h4 main {
     grid-template-columns: 1fr;
   }
-  .random-container h4 .button-container {
-    grid-template-columns: repeat(4, 1fr);
+  main {
+    grid-template-columns: repeat(1, 1fr);
+    font-size: 15px;
+  }
+  .box h4 {
+    font-size: 15px;
   }
 }
+
 .action-btn {
   /* background-color: #fff; */
   background-color: rgba(85, 81, 82, 0.9);
