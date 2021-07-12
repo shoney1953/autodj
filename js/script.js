@@ -155,6 +155,12 @@ const songList = [
     "Havana",
     "Boot Scootin Boogie",
     "Shake A Tail Feather",
+    "Aint in it for the",
+    "Flip On The Lights",
+    "Loco Enamorado",
+    "Senorita",
+    "Slow Hand",
+    "You Say"
   ],
   // mambo 10
   ["Mambo No. 5", "Mambo Italiano", "Mexico", "Papa Loves Mambo"],
@@ -219,10 +225,10 @@ const songList = [
   ],
   // salsa 16
   ["I Got A Girl",
-   "Limbo Rock", 
-   "Tequila", 
-   "Chin Chin Chow",
-   "El Montuno de la Verdad"],
+    "Limbo Rock",
+    "Tequila",
+    "Chin Chin Chow",
+    "El Montuno de la Verdad"],
   // samba 17"
   [
     "Copacabana",
@@ -239,7 +245,7 @@ const songList = [
     "Mil Pasos",
     "Samba del Rio",
     "Youll Never Find Another Love"
-   
+
   ],
   // texas 2 step 18
   [
@@ -313,11 +319,11 @@ const songList = [
   ],
   // western Partner 23
   [
-   "Blue Rose",
-   "I Feel Lucky",
-   "neon moon",
-   "playa silencia",
-   "Cha tango"
+    "Blue Rose",
+    "I Feel Lucky",
+    "neon moon",
+    "playa silencia",
+    "Cha tango"
   ]
 ];
 
@@ -378,8 +384,8 @@ Dance.prototype.setSongName = function () {
   let announce = `The next song is a ${hdrType}.`;
   setTextMessage(announce);
   speakText();
-  
-  loadSong(file, song); 
+
+  loadSong(file, song);
 };
 
 //------------------------------------------------
@@ -576,7 +582,7 @@ function setOldRandomplayList() {
 }
 
 function createRandomplayList() {
- 
+
   let totalSongs = 0;
   for (i = 0; i < danceArray.length; i++) {
     let maxCount = danceArray[i].numPerRandomList;
@@ -602,7 +608,7 @@ function createRandomplayList() {
   else {
     localStorage.myPlaylist = JSON.stringify(playList);
   }
- 
+
 }
 
 function shuffle(array) {
@@ -632,8 +638,8 @@ function setSongName() {
   let announce = `The next song is a ${hdrType}.`;
   setTextMessage(announce);
   speakText();
-  
-  loadSong(playList[playListIndex][1], playList[playListIndex][2]); 
+
+  loadSong(playList[playListIndex][1], playList[playListIndex][2]);
 }
 
 function playSong() {
@@ -745,29 +751,29 @@ function customizePlaylist() {
   popUp.classList.remove("vis-hidden");
 }
 function updateCounts() {
-  danceArray[0].numPerRandomList = numAmTango.value  ;
+  danceArray[0].numPerRandomList = numAmTango.value;
   danceArray[1].numPerRandomList = numArgTango.value;
   danceArray[2].numPerRandomList = numBachata.value;
-  danceArray[3].numPerRandomList =  numBolero.value;
+  danceArray[3].numPerRandomList = numBolero.value;
   danceArray[4].numPerRandomList = numChaCha.value;
-  danceArray[5].numPerRandomList = numCbyCha.value ;
-  danceArray[6].numPerRandomList = numECoast.value ;
-  danceArray[7].numPerRandomList = numFoxtrot.value ;
+  danceArray[5].numPerRandomList = numCbyCha.value;
+  danceArray[6].numPerRandomList = numECoast.value;
+  danceArray[7].numPerRandomList = numFoxtrot.value;
   danceArray[8].numPerRandomList = numHustle.value;
-  danceArray[9].numPerRandomList = numLineDance.value ;
-  danceArray[10].numPerRandomList = numMambo.value ;
-  danceArray[11].numPerRandomList =  numMerengue.value ;
+  danceArray[9].numPerRandomList = numLineDance.value;
+  danceArray[10].numPerRandomList = numMambo.value;
+  danceArray[11].numPerRandomList = numMerengue.value;
   danceArray[12].numPerRandomList = numNightClub.value;
-  danceArray[13].numPerRandomList =  numPolka.value;
+  danceArray[13].numPerRandomList = numPolka.value;
   danceArray[14].numPerRandomList = numQuickStep.value;
   danceArray[15].numPerRandomList = numRumba.value;
   danceArray[16].numPerRandomList = numSalsa.value;
   danceArray[17].numPerRandomList = numSamba.value;
-  danceArray[18].numPerRandomList = numTwoStep.value ;
-  danceArray[19].numPerRandomList = numVWaltz.value ;
-  danceArray[20].numPerRandomList= numWaltz.value;
-  danceArray[21].numPerRandomList = numWCSwing.value ;  
-  danceArray[22].numPerRandomList = numWWaltz.value; 
+  danceArray[18].numPerRandomList = numTwoStep.value;
+  danceArray[19].numPerRandomList = numVWaltz.value;
+  danceArray[20].numPerRandomList = numWaltz.value;
+  danceArray[21].numPerRandomList = numWCSwing.value;
+  danceArray[22].numPerRandomList = numWWaltz.value;
   danceArray[23].numPerRandomList = numWPartner.value;
 
 }
@@ -777,12 +783,12 @@ function returnPlay() {
   setRandomplayList();
 }
 function setCounts() {
-  numAmTango.value =  danceArray[0].numPerRandomList;
+  numAmTango.value = danceArray[0].numPerRandomList;
   numArgTango.value = danceArray[1].numPerRandomList;
   numBachata.value = danceArray[2].numPerRandomList;
-  numBolero.value =  danceArray[3].numPerRandomList;
-  numChaCha.value =  danceArray[4].numPerRandomList;
-  numCbyCha.value =  danceArray[5].numPerRandomList;
+  numBolero.value = danceArray[3].numPerRandomList;
+  numChaCha.value = danceArray[4].numPerRandomList;
+  numCbyCha.value = danceArray[5].numPerRandomList;
   numECoast.value = danceArray[6].numPerRandomList;
   numFoxtrot.value = danceArray[7].numPerRandomList;
   numHustle.value = danceArray[8].numPerRandomList;
@@ -798,7 +804,7 @@ function setCounts() {
   numTwoStep.value = danceArray[18].numPerRandomList;
   numVWaltz.value = danceArray[19].numPerRandomList;
   numWaltz.value = danceArray[20].numPerRandomList;
-  numWCSwing.value = danceArray[21].numPerRandomList;  
+  numWCSwing.value = danceArray[21].numPerRandomList;
   numWWaltz.value = danceArray[22].numPerRandomList;
   numWPartner.value = danceArray[23].numPerRandomList;
 }
