@@ -323,7 +323,8 @@ const songList = [
     "I Feel Lucky",
     "neon moon",
     "playa silencia",
-    "Cha tango"
+    "Cha tango",
+    "I Just Want To Dance With You"
   ]
 ];
 
