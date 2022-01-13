@@ -1,0 +1,15 @@
+
+---
+deployment:
+ tasks:
+ - export DEPLOYPATH=/home/user/public_html/sbdcrobodj.com
+ - /bin/cp custom.html $DEPLOYPATH
+ - /bin/cp index.html $DEPLOYPATH
+ - /bin/cp songlist.html $DEPLOYPATH
+ - /bin/cp index.js $DEPLOYPATH
+ - /bin/cp logo.png $DEPLOYPATH
+ - /bin/cp -R css $DEPLOYPATH
+ - /bin/cp -R img $DEPLOYPATH
+ - /bin/cp -R js $DEPLOYPATH
+ - /bin/cp -R music $DEPLOYPATH
+ 
