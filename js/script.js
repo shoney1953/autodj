@@ -130,7 +130,6 @@ const songList = [
   ],
   // hustle 8
   [
-    "Ring My Bell",
     "Disco Inferno",
     "Celebration",
     "Ladies Night",
@@ -142,6 +141,7 @@ const songList = [
     "What Does It Take",
     "Youll Never Find Another Love Like Mine",
     "More Than A Woman",
+    "Ring My Bell"
   ],
   // Line Dance 9
 
