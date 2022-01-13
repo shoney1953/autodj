@@ -130,7 +130,7 @@ const songList = [
   ],
   // hustle 8
   [
-    "Ring my Bell",
+    "Ring My Bell",
     "Disco Inferno",
     "Celebration",
     "Ladies Night",
