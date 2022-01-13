@@ -10,5 +10,28 @@ deployment:
     -  /bin/cp -R css $DEPLOYPATH
     -  /bin/cp -R img $DEPLOYPATH
     -  /bin/cp -R js $DEPLOYPATH
-    -  /bin/cp -R music $DEPLOYPATH 
+    -  /bin/cp -R music/2step $DEPLOYPATH
+    -  /bin/cp -R music/amtango $DEPLOYPATH
+    -  /bin/cp -R music/atango $DEPLOYPATH
+    -  /bin/cp -R music/bachata $DEPLOYPATH
+    -  /bin/cp -R music/bolero $DEPLOYPATH
+    -  /bin/cp -R music/cbychacha $DEPLOYPATH
+    -  /bin/cp -R music/chacha $DEPLOYPATH 
+    -  /bin/cp -R music/ecs $DEPLOYPATH
+    -  /bin/cp -R music/foxtrot $DEPLOYPATH
+    -  /bin/cp -R music/hustle $DEPLOYPATH
+    -  /bin/cp -R music/mambo $DEPLOYPATH
+    -  /bin/cp -R music/merenque $DEPLOYPATH
+    -  /bin/cp -R music/nc2 $DEPLOYPATH
+    -  /bin/cp -R music/polka $DEPLOYPATH
+    -  /bin/cp -R music/quickstep $DEPLOYPATH
+    -  /bin/cp -R music/rumba $DEPLOYPATH
+    -  /bin/cp -R music/salsa $DEPLOYPATH
+    -  /bin/cp -R music/samba $DEPLOYPATH
+    -  /bin/cp -R music/special $DEPLOYPATH
+    -  /bin/cp -R music/vwaltz $DEPLOYPATH
+    -  /bin/cp -R music/waltz $DEPLOYPATH
+    -  /bin/cp -R music/wcs $DEPLOYPATH
+    -  /bin/cp -R music/wpartner $DEPLOYPATH
+    -  /bin/cp -R music/wwaltz $DEPLOYPATH
  
