@@ -5,7 +5,7 @@ deployment:
     -  /bin/cp custom.html $DEPLOYPATH
     -  /bin/cp index.html $DEPLOYPATH
     -  /bin/cp index.js $DEPLOYPATH
-    -  /bin/cp logo.php $DEPLOYPATH
+    -  /bin/cp logo.png $DEPLOYPATH
     -  /bin/cp songlist.html $DEPLOYPATH
     -  /bin/cp -R css $DEPLOYPATH
     -  /bin/cp -R img $DEPLOYPATH
