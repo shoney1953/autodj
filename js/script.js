@@ -141,7 +141,7 @@ const songList = [
     "What Does It Take",
     "Youll Never Find Another Love Like Mine",
     "More Than A Woman",
-    "Ring My Bell"
+    "Ring My Bell",
   ],
   // Line Dance 9
 
@@ -160,7 +160,7 @@ const songList = [
     "Loco Enamorado",
     "Senorita",
     "Slow Hand",
-    "You Say"
+    "You Say",
   ],
   // mambo 10
   ["Mambo No. 5", "Mambo Italiano", "Mexico", "Papa Loves Mambo"],
@@ -304,6 +304,7 @@ const songList = [
     "What Kind Of Woman Is This",
     "You Can Leave Your Hat On",
     "Shes No Lady",
+    "Black Velvet",
   ],
 
   // western waltz 22
