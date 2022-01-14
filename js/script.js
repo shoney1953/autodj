@@ -187,9 +187,7 @@ const songList = [
     "Have I Told You Lately",
     "Always Remember Us This Way",
     "The Dance",
-    "Let it Hurt"
-
-
+    "Let it Hurt",
   ],
   // polka 13
   ["Clarinet Polka", "John Ryans Polka", "Polka Medley"],
