@@ -69,7 +69,7 @@ doc.fontSize(14);
 
 doc.text(`Written: ${newDate.toDateString()} ${newDate.toTimeString()}`, 50);
 
-doc.text(`${playList.length} Songs generated from https://sbdcautodj.netlify.app `);
+doc.text(`${playList.length} Songs generated from https://sbdcautodj.com `);
 doc.text(' ');
 
 doc.text(' #', 50);
