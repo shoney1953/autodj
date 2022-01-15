@@ -2,7 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sbballro/public_html/sbdcrobodj.com
-    - export DEPLOYPATH2=/home/sbballro/public_html/sbdcrobodj.com/music
     -  /bin/cp _.sbdcrobodj.com.pem.txt $DEPLOYPATH
     -  /bin/cp custom.html $DEPLOYPATH
     -  /bin/cp index.html $DEPLOYPATH
@@ -12,28 +11,28 @@ deployment:
     -  /bin/cp -R css $DEPLOYPATH
     -  /bin/cp -R img $DEPLOYPATH
     -  /bin/cp -R js $DEPLOYPATH  
-    -  /bin/cp -R 2step $DEPLOYPATH2
-    -  /bin/cp -R amtango $DEPLOYPATH2
-    -  /bin/cp -R atango $DEPLOYPATH2
-    -  /bin/cp -R bachata $DEPLOYPATH2
-    -  /bin/cp -R bolero $DEPLOYPATH2
-    -  /bin/cp -R cbychacha $DEPLOYPATH2
-    -  /bin/cp -R chacha $DEPLOYPATH2 
-    -  /bin/cp -R ecs $DEPLOYPATH2
-    -  /bin/cp -R foxtrot $DEPLOYPATH2
-    -  /bin/cp -R hustle $DEPLOYPATH2
-    -  /bin/cp -R mambo $DEPLOYPATH2
-    -  /bin/cp -R merenque $DEPLOYPATH2
-    -  /bin/cp -R nc2 $DEPLOYPATH2
-    -  /bin/cp -R polka $DEPLOYPATH2
-    -  /bin/cp -R quickstep $DEPLOYPATH2
-    -  /bin/cp -R rumba $DEPLOYPATH2
-    -  /bin/cp -R salsa $DEPLOYPATH2
-    -  /bin/cp -R samba $DEPLOYPATH2
-    -  /bin/cp -R special $DEPLOYPATH2
-    -  /bin/cp -R vwaltz $DEPLOYPATH2
-    -  /bin/cp -R waltz $DEPLOYPATH2
-    -  /bin/cp -R wcs $DEPLOYPATH2
-    -  /bin/cp -R wpartner $DEPLOYPATH2
-    -  /bin/cp -R wwaltz $DEPLOYPATH2
+    -  /bin/cp -R music/2step $DEPLOYPATH
+    -  /bin/cp -R music/amtango $DEPLOYPATH
+    -  /bin/cp -R music/atango $DEPLOYPATH
+    -  /bin/cp -R music/bachata $DEPLOYPATH
+    -  /bin/cp -R music/bolero $DEPLOYPATH
+    -  /bin/cp -R music/cbychacha $DEPLOYPATH
+    -  /bin/cp -R music/chacha $DEPLOYPATH 
+    -  /bin/cp -R music/ecs $DEPLOYPATH
+    -  /bin/cp -R music/foxtrot $DEPLOYPATH
+    -  /bin/cp -R music/hustle $DEPLOYPATH
+    -  /bin/cp -R music/mambo $DEPLOYPATH
+    -  /bin/cp -R music/merenque $DEPLOYPATH
+    -  /bin/cp -R music/nc2 $DEPLOYPATH
+    -  /bin/cp -R music/polka $DEPLOYPATH
+    -  /bin/cp -R music/quickstep $DEPLOYPATH
+    -  /bin/cp -R music/rumba $DEPLOYPATH
+    -  /bin/cp -R music/salsa $DEPLOYPATH
+    -  /bin/cp -R music/samba $DEPLOYPATH
+    -  /bin/cp -R music/special $DEPLOYPATH
+    -  /bin/cp -R music/vwaltz $DEPLOYPATH
+    -  /bin/cp -R music/waltz $DEPLOYPATH
+    -  /bin/cp -R music/wcs $DEPLOYPATH
+    -  /bin/cp -R music/wpartner $DEPLOYPATH
+    -  /bin/cp -R music/wwaltz $DEPLOYPATH
  
