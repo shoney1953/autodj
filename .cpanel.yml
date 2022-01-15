@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sbballro/public_html/sbdcrobodj.com
+    - export DEPLOYPATH2=/home/sbballro/public_html/sbdcrobodj.com/music
     -  /bin/cp _.sbdcrobodj.com.pem.txt $DEPLOYPATH
     -  /bin/cp custom.html $DEPLOYPATH
     -  /bin/cp index.html $DEPLOYPATH
@@ -10,8 +11,7 @@ deployment:
     -  /bin/cp songlist.html $DEPLOYPATH
     -  /bin/cp -R css $DEPLOYPATH
     -  /bin/cp -R img $DEPLOYPATH
-    -  /bin/cp -R js $DEPLOYPATH
-    - export DEPLOYPATH2=/home/sbballro/public_html/sbdcrobodj.com/music
+    -  /bin/cp -R js $DEPLOYPATH  
     -  /bin/cp -R 2step $DEPLOYPATH2
     -  /bin/cp -R amtango $DEPLOYPATH2
     -  /bin/cp -R atango $DEPLOYPATH2
