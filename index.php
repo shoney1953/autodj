@@ -1,3 +1,21 @@
+<?php 
+session_start();
+require_once 'config/Database.php';
+require_once 'models/User.php';
+
+if (isset($_GET['error'])) {
+    echo '<br><h4 style="text-align: center"> ERROR:  '.$_GET['error'].'. 
+    Please Validate Input</h4><br>';
+    unset($_GET['error']);
+} elseif (isset($_GET['success'])) {
+    echo '<br><h4 style="text-align: center"> '.$_GET['success'].'</h4><br>';
+    unset($_GET['success']);
+} else {
+    $_SESSION['homeurl'] = $_SERVER['REQUEST_URI']; 
+}
+
+$_SESSION['user'] = null;
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,114 +30,132 @@
     <title>SBDC Robo DJ</title>
   </head>
   <header>
-  
-    <h2>
-      <i class="fas fa-compact-disc"></i>
-      Select a Random Playlist or a Category of Music to Play.
-    </h2>
+  <ul>
+   <?php
+
+   if (isset($_SESSION['username'])) {
+    
+       echo '<li style="list-style: none"><a style="color: red;font-weight: bold;font-size: large"
+        href="logout.php">Logout</a></li>'; 
+
+   } else {
+     
+       echo '<li style="list-style: none"><a style="color: red;font-weight: bold;font-size: large"
+        href="login.php">Login With Userid from SBBALLROOM Website to use ROBO DJ</a></li>';
+   }
+    ?>
+   </ul>
+   <?php
+   if (isset($_SESSION['username'])) {
+    echo '<h2>';
+      echo '<i class="fas fa-compact-disc"></i>';
+      echo 'Select a Random Playlist or a Category of Music to Play.
+    </h2>';
+   }
+    ?>
   </header>
 
   <body>
-   
-    <a href="songlist.html" target="_blank" class="list-Btn">
-      <i class="fas fa-glasses"></i>
+  <?php
+   if (isset($_SESSION['username'])) {
+    echo '<a href="songlist.html" target="_blank" class="list-Btn">';
+      echo '<i class="fas fa-glasses"></i>';
 
-      Click to Show Song Lists</a>
+      echo 'Click to Show Song Lists</a>';
 
-    <div class="random-container" id="random-container">
-   
+    echo '<div class="random-container" id="random-container">';
+
+      echo '<button id="oldrandomBtn" class="musicType-Btn">';
+      echo '<h4><strong>Use Existing Random Playlist </strong></h4>
+      </button>';
     
-      <button id="oldrandomBtn" class="musicType-Btn">
-       <h4><strong>Use Existing Random Playlist </strong></h4>
-      </button>
-    
-      <button id="customBtn" class="musicType-Btn">
+      echo '<button id="customBtn" class="musicType-Btn">
         <h4><strong>Customize # of songs in new Playlist </strong></h4>
-       </button>
+       </button>';
      
-      <button id="randomBtn" class="musicType-Btn">
+      echo '<button id="randomBtn" class="musicType-Btn">
        <h4><strong>New Random Playlist </strong></h4></button>
-      </button>
+      </button>';
   
-    </div>
-    <div class="button-container" id="button-container">
-      <button id="amTangoBtn" class="musicType-Btn">
+    echo '</div>';
+    echo '<div class="button-container" id="button-container">';
+      echo '<button id="amTangoBtn" class="musicType-Btn">
         American Tango
-      </button>
-      <button id="aTangoBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="aTangoBtn" class="musicType-Btn">
         Argentine Tango
-      </button>
-      <button id="bachataBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="bachataBtn" class="musicType-Btn">
         Bachata
-      </button>
-      <button id="boleroBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="boleroBtn" class="musicType-Btn">
         Bolero
-      </button>
-      <button id="chachaBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="chachaBtn" class="musicType-Btn">
         Cha Cha
-      </button>
-      <button id="cChachaBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="cChachaBtn" class="musicType-Btn">
         Cowboy Cha Cha
-      </button>
-      <button id="ecsBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="ecsBtn" class="musicType-Btn">
         East Coast Swing
-      </button>
-      <button id="foxtrotBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="foxtrotBtn" class="musicType-Btn">
         Foxtrot
-      </button>
-      <button id="hustleBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="hustleBtn" class="musicType-Btn">
         Hustle
-      </button>
-      <button id="specialBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="specialBtn" class="musicType-Btn">
         Line Dances
-      </button>
-      <button id="mamboBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="mamboBtn" class="musicType-Btn">
         Mambo
-      </button>
-      <button id="merenqueBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="merenqueBtn" class="musicType-Btn">
         Merengue
-      </button>
-      <button id="nc2Btn" class="musicType-Btn">
+      </button>';
+      echo '<button id="nc2Btn" class="musicType-Btn">
         Night Club Two Step
-      </button>
-      <button id="polkaBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="polkaBtn" class="musicType-Btn">
         Polka
-      </button>
-      <button id="quickstepBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="quickstepBtn" class="musicType-Btn">
         Quick Step
-      </button>
-      <button id="rumbaBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="rumbaBtn" class="musicType-Btn">
         Rumba
-      </button>
-      <button id="salsaBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="salsaBtn" class="musicType-Btn">
         Salsa
-      </button>
-      <button id="sambaBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="sambaBtn" class="musicType-Btn">
         Samba
-      </button>
-      <button id="TwoStepBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="TwoStepBtn" class="musicType-Btn">
         Texas Two Step
-      </button>
-      <button id="vWaltzBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="vWaltzBtn" class="musicType-Btn">
         Viennese Waltz
-      </button>
-      <button id="waltzBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="waltzBtn" class="musicType-Btn">
         Waltz
-      </button>
-      <button id="wcsBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="wcsBtn" class="musicType-Btn">
         West Coast Swing
-      </button>
-      <button id="wWaltzBtn" class="musicType-Btn">
+      </button>';
+      echo '<button id="wWaltzBtn" class="musicType-Btn">
         Western Waltz
-      </button>
-       <button id="wPartnerBtn" class="musicType-Btn">
+      </button>';
+       echo '<button id="wPartnerBtn" class="musicType-Btn">
         Western Partner
-      </button>
+      </button>';
 
-    </div>
+    echo '</div>';
   
 
-    <div class="music-container" id="music-container">
+    echo '<div class="music-container" id="music-container">
       <div class="music-info">
         <h3 id="musictype">Music Type</h3>
         <div class="progress-container" id="progress-container">
@@ -141,7 +177,9 @@
           <i class="fas fa-forward"></i>
         </button>
       </div>
-    </div>
+    </div>';
+   }
+   ?>
     <div id="popUp" class="popUp vis-hidden">
     <h4>Modify the number of songs for each music type to be included in the playlist (Min 0, Max 10). </h4>
      <h4>When satisfied, click the return to home to create a new random playlist and begin playing it.</h4>

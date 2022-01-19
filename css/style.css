@@ -34,7 +34,9 @@ h3 {
   font-size: 1.5rem;
   font-weight: 300;
 }
-
+.li-none {
+  list-style: none;
+}
 .button-container {
   background-color: transparent;
   display: grid;
