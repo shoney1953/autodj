@@ -40,13 +40,13 @@ date_default_timezone_set("America/Phoenix");
             <form method="POST" action="actions/logIn.php">
                 <div class="form-grid-div">
 
-                <label for="username">User Name for the SBDC Website</label><br>
+                <label for="username">User Name or Email for the SBDC Website</label><br>
                 <input type="text" name="username" required><br>
                 <label for="password">Enter Password</label><br>
                 <input type="password" name="password" required minlength="8"><br>
 
                 <br>
-                <button type="submit" name="SubmitLogIN">Submit</button><br>
+                <button class="musicType-Btn" type="submit" name="SubmitLogIN">Login</button><br>
                 </div>
         </form>
         </div>

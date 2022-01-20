@@ -35,12 +35,12 @@ $_SESSION['user'] = null;
 
    if (isset($_SESSION['username'])) {
     
-       echo '<li style="list-style: none"><a style="color: red;font-weight: bold;font-size: large"
+       echo '<li class="musicType-Btn"><a style="color: darkblue;font-weight: bold;font-size: large"
         href="logout.php">Logout</a></li>'; 
 
    } else {
      
-       echo '<li style="list-style: none"><a style="color: red;font-weight: bold;font-size: large"
+       echo '<li class="musicType-Btn"><a style="color: darkblue;font-weight: bold;font-size: large"
         href="login.php">Login With Userid from SBBALLROOM Website to use ROBO DJ</a></li>';
    }
     ?>
