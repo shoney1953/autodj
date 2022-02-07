@@ -4,13 +4,13 @@ deployment:
     - export DEPLOYPATH=/home/sbballro/public_html/sbdcrobodj.com
     -  /bin/cp _.sbdcrobodj.com.pem.txt $DEPLOYPATH
     -  /bin/cp custom.html $DEPLOYPATH
-    -  /bin/cp favicon.ico $DEPLOYPATH
     -  /bin/cp index.php $DEPLOYPATH
     -  /bin/cp index.js $DEPLOYPATH
     -  /bin/cp login.php $DEPLOYPATH
     -  /bin/cp logo.png $DEPLOYPATH
     -  /bin/cp logout.php $DEPLOYPATH
     -  /bin/cp songlist.html $DEPLOYPATH
+    -  /bin/cp favicon.ico $DEPLOYPATH
     -  /bin/cp -R actions $DEPLOYPATH
     -  /bin/cp -R config $DEPLOYPATH
     -  /bin/cp -R css $DEPLOYPATH
