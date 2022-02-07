@@ -10,7 +10,6 @@ deployment:
     -  /bin/cp logo.png $DEPLOYPATH
     -  /bin/cp logout.php $DEPLOYPATH
     -  /bin/cp songlist.html $DEPLOYPATH
-    -  /bin/cp favicon.ico $DEPLOYPATH
     -  /bin/cp -R actions $DEPLOYPATH
     -  /bin/cp -R config $DEPLOYPATH
     -  /bin/cp -R css $DEPLOYPATH
