@@ -28,6 +28,7 @@ $_SESSION['user'] = null;
     <link rel="stylesheet" href="css/style.css" />
 
     <title>SBDC Robo DJ</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <header>
   <ul>
