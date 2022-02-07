@@ -597,12 +597,13 @@ function createRandomplayList() {
       ];
 
       totalSongs++;
+      shuffle(playList);
     }
+    
   }
   //
-  shuffle(playList);
-  shuffle(playList);
-  shuffle(playList);
+
+
 
   if (!window.localStorage) alert("Sorry, you're using an ancient browser");
   else {
@@ -631,6 +632,7 @@ function shuffle(array) {
 
   return array;
 }
+
 
 function setSongName() {
   hdrType = playList[playListIndex][0];
