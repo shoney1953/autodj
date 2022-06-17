@@ -54,7 +54,10 @@ const songList = [
     "Tengo Una Espina",
   ],
   // bolero 3
-  ["Beautiful Maria Of My Soul", "Corrine", "Todo O Nana"],
+  ["Beautiful Maria Of My Soul", 
+  "Corrine", 
+  "Song From A Secret Garden",
+  "Todo O Nana"],
   // cha cha 4
   [
     "All About That Bass",
@@ -274,6 +277,7 @@ const songList = [
     "Magical Music Box",
     "On The Sidewalks Of New York",
     "Once Upon A Dream",
+    "A Thousand Years"
   ],
   // waltz 20
   [
