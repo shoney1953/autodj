@@ -21,7 +21,15 @@ const popUp = document.getElementById("popUp");
 
 const songList = [
   // american  tango 0
-  ["Amapola", "Blue Tango", "La Paloma", "Tango Da Saudade"],
+  ["Amapola", 
+  "Blue Tango", 
+  "La Paloma", 
+  "Tango Russe",
+  "Jealousy",
+  "Dark Eyes",
+  "Midnight Tango",
+  "Carmen Tango",
+  "Tango Da Saudade"],
   // argentine tango 1
   [
     "Poema",
