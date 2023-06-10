@@ -141,17 +141,18 @@ const songList = [
   ],
   // hustle 8
   [
-    "Disco Inferno",
+    "Dancing Queen",
+    "More Than A Woman",
     "Celebration",
     "Ladies Night",
     "Fresh",
     "If I Cant Have You",
+    "Disco Inferno",
     "Keep It Comin Love",
     "Never Gonna Give You Up",
     "Strangers In The Night",
     "What Does It Take",
     "Youll Never Find Another Love Like Mine",
-    "More Than A Woman",
     "Ring My Bell",
   ],
   // Line Dance 9
@@ -181,9 +182,11 @@ const songList = [
   // nc2 12
   [
     "Home",
+    "How Do I Live",
     "Lady in Red",
     "The Long Goodbye",
     "Valentine",
+    "You Raise Me Up",
     "I Hope You Dance",
     "Trying to Get over You",
     "Old Flame",
@@ -200,9 +203,14 @@ const songList = [
     "The Dance",
     "Let it Hurt",
   ],
-  // polka 13
+  // Paso Doble 13
+  [
+   "Spanish Gypsy Dance",
+   "Trumpet Fiesta"
+  ],
+  // polka 14
   ["Clarinet Polka", "John Ryans Polka", "Polka Medley"],
-  // quickstep 14
+  // quickstep 15
   [
     "Ballroom Jive",
     "Dancin Fool",
@@ -215,7 +223,7 @@ const songList = [
     "Trying To Cut Back",
     "Youre The Cream In My Coffee",
   ],
-  //rumba 15
+  //rumba 16
   [
     "Acerate Mas",
     "Beautiful Love",
@@ -232,20 +240,18 @@ const songList = [
     "Venus",
     "Unbreak My Heart",
   ],
-  // salsa 16
+  // salsa 17
   ["I Got A Girl",
     "Limbo Rock",
     "Tequila",
     "Chin Chin Chow",
     "El Montuno de la Verdad"],
-  // samba 17"
+  // samba 18"
   [
     "Copacabana",
-    "Toms Samba instrumental",
-    "Toms Samba Track 2",
-    "Toms Samba Track 3",
-    "Toms Samba Track 4",
-    "Toms Samba Track 5",
+    "Maria",
+    "Zoombia",
+    "Meneaito",
     "Rhythm is Gonna Get You",
     "A Night In New York",
     "Amor",
@@ -256,7 +262,7 @@ const songList = [
     "Youll Never Find Another Love"
 
   ],
-  // texas 2 step 18
+  // texas 2 step 19
   [
     "A Better Man",
     "Wagon Wheel",
@@ -268,7 +274,7 @@ const songList = [
     "Liza Jane",
     "One More Last Chance"
   ],
-  // viennese waltz 19
+  // viennese waltz 20
   [
     "Kiss From A Rose",
     "Time In a Bottle",
@@ -277,11 +283,16 @@ const songList = [
     "Magical Music Box",
     "On The Sidewalks Of New York",
     "Once Upon A Dream",
-    "A Thousand Years"
+    "A Thousand Years",
+    "Floras Secret",
+    "Second Waltz",
+    "Sometime American",
+    "There was a Time"
   ],
-  // waltz 20
+  // waltz 21
   [
     "Appalachian Lullabye",
+    "Dreaming My Dreams with You",
     "Les Bicyclettes De Belsize",
     "Midnight Waltz",
     "Nocturne",
@@ -297,7 +308,7 @@ const songList = [
     "Take It To The Limit",
   ],
 
-  // west coast swing 21
+  // west coast swing 22
   [
     "The Thrill Is Gone",
     "Billie Jean",
@@ -317,7 +328,7 @@ const songList = [
     "Black Velvet",
   ],
 
-  // western waltz 22
+  // western waltz 23
   [
     "Take It To The Limit",
     "Tennessee Waltz",
@@ -328,7 +339,7 @@ const songList = [
     "You Look So Good In Love",
     "You Make The Moonlight",
   ],
-  // western Partner 23
+  // western Partner 24
   [
     "Blue Rose",
     "I Feel Lucky",
@@ -404,7 +415,7 @@ Dance.prototype.setSongName = function () {
 americanTango = new Dance(
   "American Tango",
   songList[0],
-  1,
+  3,
   "ballroom",
   "amtango",
   "amTangoBtn"
@@ -485,26 +496,28 @@ nc2 = new Dance(
   "nc2Btn"
 );
 nc2.setBtn();
-polka = new Dance("Polka", songList[13], 1, "Ballroom", "polka", "polkaBtn");
+pasodoble = new Dance("Paso Doble", songList[13], 1, "Latin", "pasodoble", "pasodobleBtn");
+pasodoble.setBtn();
+polka = new Dance("Polka", songList[14], 1, "Ballroom", "polka", "polkaBtn");
 polka.setBtn();
 quickstep = new Dance(
   "Quickstep",
-  songList[14],
+  songList[15],
   1,
   "Ballroom",
   "quickstep",
   "quickstepBtn"
 );
 quickstep.setBtn();
-rumba = new Dance("Rumba", songList[15], 4, "Latin", "rumba", "rumbaBtn");
+rumba = new Dance("Rumba", songList[16], 4, "Latin", "rumba", "rumbaBtn");
 rumba.setBtn();
-salsa = new Dance("Salsa", songList[16], 1, "Latin", "salsa", "salsaBtn");
+salsa = new Dance("Salsa", songList[17], 1, "Latin", "salsa", "salsaBtn");
 salsa.setBtn();
-samba = new Dance("Samba", songList[17], 1, "Latin", "samba", "sambaBtn");
+samba = new Dance("Samba", songList[18], 1, "Latin", "samba", "sambaBtn");
 samba.setBtn();
 twostep = new Dance(
   "Two Step",
-  songList[18],
+  songList[19],
   1,
   "Western",
   "2step",
@@ -513,21 +526,21 @@ twostep = new Dance(
 twostep.setBtn();
 vwaltz = new Dance(
   "Viennese Waltz",
-  songList[19],
+  songList[20],
   1,
   "Ballroom",
   "vwaltz",
   "vWaltzBtn"
 );
 vwaltz.setBtn();
-waltz = new Dance("Waltz", songList[20], 4, "Ballroom", "waltz", "waltzBtn");
+waltz = new Dance("Waltz", songList[21], 4, "Ballroom", "waltz", "waltzBtn");
 waltz.setBtn();
-wcs = new Dance("West Coast Swing", songList[21], 2, "Swing", "wcs", "wcsBtn");
+wcs = new Dance("West Coast Swing", songList[22], 2, "Swing", "wcs", "wcsBtn");
 wcs.setBtn();
 
 wwaltz = new Dance(
   "Western Waltz",
-  songList[22],
+  songList[23],
   1,
   "Western",
   "wwaltz",
@@ -536,7 +549,7 @@ wwaltz = new Dance(
 wwaltz.setBtn();
 wpartner = new Dance(
   "Western Partner",
-  songList[23],
+  songList[24],
   2,
   "Western",
   "wpartner",
@@ -778,17 +791,18 @@ function updateCounts() {
   danceArray[10].numPerRandomList = numMambo.value;
   danceArray[11].numPerRandomList = numMerengue.value;
   danceArray[12].numPerRandomList = numNightClub.value;
-  danceArray[13].numPerRandomList = numPolka.value;
-  danceArray[14].numPerRandomList = numQuickStep.value;
-  danceArray[15].numPerRandomList = numRumba.value;
-  danceArray[16].numPerRandomList = numSalsa.value;
-  danceArray[17].numPerRandomList = numSamba.value;
-  danceArray[18].numPerRandomList = numTwoStep.value;
-  danceArray[19].numPerRandomList = numVWaltz.value;
-  danceArray[20].numPerRandomList = numWaltz.value;
-  danceArray[21].numPerRandomList = numWCSwing.value;
-  danceArray[22].numPerRandomList = numWWaltz.value;
-  danceArray[23].numPerRandomList = numWPartner.value;
+  danceArray[13].numPerRandomList = numPasoDoble.value;
+  danceArray[14].numPerRandomList = numPolka.value;
+  danceArray[15].numPerRandomList = numQuickStep.value;
+  danceArray[16].numPerRandomList = numRumba.value;
+  danceArray[17].numPerRandomList = numSalsa.value;
+  danceArray[18].numPerRandomList = numSamba.value;
+  danceArray[19].numPerRandomList = numTwoStep.value;
+  danceArray[20].numPerRandomList = numVWaltz.value;
+  danceArray[21].numPerRandomList = numWaltz.value;
+  danceArray[22].numPerRandomList = numWCSwing.value;
+  danceArray[23].numPerRandomList = numWWaltz.value;
+  danceArray[24].numPerRandomList = numWPartner.value;
 
 }
 function returnPlay() {
@@ -810,17 +824,18 @@ function setCounts() {
   numMambo.value = danceArray[10].numPerRandomList;
   numMerengue.value = danceArray[11].numPerRandomList;
   numNightClub.value = danceArray[12].numPerRandomList;
-  numPolka.value = danceArray[13].numPerRandomList;
-  numQuickStep.value = danceArray[14].numPerRandomList;
-  numRumba.value = danceArray[15].numPerRandomList;
-  numSalsa.value = danceArray[16].numPerRandomList;
-  numSamba.value = danceArray[17].numPerRandomList;
-  numTwoStep.value = danceArray[18].numPerRandomList;
-  numVWaltz.value = danceArray[19].numPerRandomList;
-  numWaltz.value = danceArray[20].numPerRandomList;
-  numWCSwing.value = danceArray[21].numPerRandomList;
-  numWWaltz.value = danceArray[22].numPerRandomList;
-  numWPartner.value = danceArray[23].numPerRandomList;
+  numPasoDoble.value = danceArray[13].numPerRandomList;
+  numPolka.value = danceArray[14].numPerRandomList;
+  numQuickStep.value = danceArray[15].numPerRandomList;
+  numRumba.value = danceArray[16].numPerRandomList;
+  numSalsa.value = danceArray[17].numPerRandomList;
+  numSamba.value = danceArray[18].numPerRandomList;
+  numTwoStep.value = danceArray[19].numPerRandomList;
+  numVWaltz.value = danceArray[20].numPerRandomList;
+  numWaltz.value = danceArray[21].numPerRandomList;
+  numWCSwing.value = danceArray[22].numPerRandomList;
+  numWWaltz.value = danceArray[23].numPerRandomList;
+  numWPartner.value = danceArray[24].numPerRandomList;
 }
 //------------------------------------------------
 function addGeneraListeners() {
@@ -893,6 +908,9 @@ cChachaBtn.addEventListener("click", function () {
 });
 specialBtn.addEventListener("click", function () {
   setDance(lineDance);
+});
+pasodobleBtn.addEventListener("click", function () {
+  setDance(pasodoble);
 });
 polkaBtn.addEventListener("click", function () {
   setDance(polka);

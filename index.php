@@ -119,6 +119,9 @@ $_SESSION['user'] = null;
       echo '<button id="nc2Btn" class="musicType-Btn">
         Night Club Two Step
       </button>';
+      echo '<button id="pasodobleBtn" class="musicType-Btn">
+      Paso Doble
+    </button>';
       echo '<button id="polkaBtn" class="musicType-Btn">
         Polka
       </button>';
@@ -220,6 +223,8 @@ $_SESSION['user'] = null;
           <form class="inpClass">
             <label for="numNightClub">  Night Club Two Steps</label>
             <input type="number" min=0 max=10 name="numNightClub" id="numNightClub" class="inpBox" >
+            <label for="numPasoDoble">  Paso Dobles</label>
+            <input type="number" min=0 max=10 name="numPasoDoble" id="numPasoDoble" class="inpBox">
             <label for="numPolka">  Polkas</label>
             <input type="number" min=0 max=10 name="numPolka" id="numPolka" class="inpBox">
             <label for="numQuickStep">  Quick Steps</label>
