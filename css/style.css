@@ -35,13 +35,22 @@ h2 {
   font-weight: 300;
 }
 h3 {
-  color: #1c073f;
+  /* color: #1c073f; */
+  color: #ebebef;
   font-size: 1.5rem;
   font-weight: 300;
 }
 .li-none {
   list-style: none;
 }
+header {
+  width: 100vw;
+
+}
+header h3 {
+  text-align: center;
+}
+
 .button-container {
   background-color: transparent;
   display: grid;
@@ -323,14 +332,16 @@ main {
 }
 
 h3 {
-  color: #4d184d;
-  margin-bottom: 50px;
+  /* color: #4d184d; */
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 footer {
   color: #fff;
   font-weight: 500;
   text-align: center;
+  font-size: small;
 }
 
 .box {

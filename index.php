@@ -31,15 +31,15 @@ $_SESSION['user'] = null;
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <header>
-  <h2>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h2>
+  <h3>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>
   
   <ul>
    <?php
 
    if (isset($_SESSION['username'])) {
     
-       echo '<li class="musicType-Btn"><a style="color: white;font-weight: bold;font-size: large"
-        href="logout.php">Logout</a></li> </h1>'; 
+       echo '<p class="musicType-Btn"><a style="color: white;font-weight: bold;font-size: large"
+        href="logout.php"> Logout </a></p>'; 
 
    } else {
 
@@ -52,10 +52,10 @@ $_SESSION['user'] = null;
    </ul>
    <?php
    if (isset($_SESSION['username'])) {
-    echo '<h2>';
+    echo '<h3>';
       echo '<i class="fas fa-compact-disc"></i>';
       echo ' Select a Random Playlist or a Category of Music to Play.
-    </h2>';
+    </h3>';
    }
     ?>
   </header>
