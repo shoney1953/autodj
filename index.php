@@ -8,8 +8,8 @@ if (isset($_GET['error'])) {
     Please Validate Input</h4><br>';
     unset($_GET['error']);
 } elseif (isset($_GET['success'])) {
-    echo '<br><h4 style="text-align: center"> '.$_GET['success'].'</h4><br>';
-    unset($_GET['success']);
+    // echo '<br><h4 style="text-align: center"> '.$_GET['success'].'</h4><br>';
+    // unset($_GET['success']);
 } else {
     $_SESSION['homeurl'] = $_SERVER['REQUEST_URI']; 
 }
@@ -31,18 +31,22 @@ $_SESSION['user'] = null;
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <header>
+  <h2>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h2>
+  
   <ul>
    <?php
 
    if (isset($_SESSION['username'])) {
     
-       echo '<li class="musicType-Btn"><a style="color: darkblue;font-weight: bold;font-size: large"
-        href="logout.php">Logout</a></li>'; 
+       echo '<li class="musicType-Btn"><a style="color: white;font-weight: bold;font-size: large"
+        href="logout.php">Logout</a></li> </h1>'; 
 
    } else {
-     
-       echo '<li class="musicType-Btn"><a style="color: darkblue;font-weight: bold;font-size: large"
+
+       echo '<li class="musicType-Btn"><a style="color: white;font-weight: bold;font-size: large"
         href="login.php">Login With Userid from SBBALLROOM Website to use ROBO DJ</a></li>';
+        echo '<br><br><br>';
+        echo '<br><br><br>';
    }
     ?>
    </ul>
@@ -50,7 +54,7 @@ $_SESSION['user'] = null;
    if (isset($_SESSION['username'])) {
     echo '<h2>';
       echo '<i class="fas fa-compact-disc"></i>';
-      echo 'Select a Random Playlist or a Category of Music to Play.
+      echo ' Select a Random Playlist or a Category of Music to Play.
     </h2>';
    }
     ?>
@@ -62,7 +66,7 @@ $_SESSION['user'] = null;
     echo '<a href="songlist.html" target="_blank" class="list-Btn">';
       echo '<i class="fas fa-glasses"></i>';
 
-      echo 'Click to Show Song Lists</a>';
+      echo ' Click to Show Song Lists</a>';
 
     echo '<div class="random-container" id="random-container">';
 
@@ -259,10 +263,10 @@ $_SESSION['user'] = null;
        
   </div>
    
-    <footer>  
- <small> Copyright &copy; 2022 All Rights Reserved - Sheila Honey </small> 
-    </footer>
-   
+  
+  <?php
+  require 'footer.php';
+  ?> 
     <script src="js/script.js"></script>
   </body>
 </html>

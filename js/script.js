@@ -1,3 +1,4 @@
+// const { Console } = require("console");
 
 const musicContainer = document.getElementById("music-container");
 const buttonContainer = document.getElementById("buttonContainer");
@@ -19,6 +20,7 @@ const customBtn = document.getElementById("customBtn");
 
 const popUp = document.getElementById("popUp");
 //*   added songs 6 17 2022
+
 const songList = [
   // american  tango 0
   ["Amapola", 
@@ -294,6 +296,7 @@ const songList = [
     "Appalachian Lullabye",
     "Dreaming My Dreams with You",
     "Les Bicyclettes De Belsize",
+    "Edelweiss",
     "Midnight Waltz",
     "Nocturne",
     "If There Was A Man",
@@ -358,6 +361,7 @@ let file = "atango";
 cover.src = "img/vinyl.png";
 
 let playList = [];
+let playList2 = [];
 const message = new SpeechSynthesisUtterance();
 var myVolume = message.volume;
 
@@ -570,6 +574,8 @@ function setDance(dance) {
 
 //
 function setRandomplayList() {
+ 
+
   removeGeneraListeners();
   addplayListListeners();
 
@@ -608,6 +614,7 @@ function setOldRandomplayList() {
 
 function createRandomplayList() {
 
+
   let totalSongs = 0;
   for (i = 0; i < danceArray.length; i++) {
     let maxCount = danceArray[i].numPerRandomList;
@@ -627,7 +634,15 @@ function createRandomplayList() {
     
   }
   //
+  j = 0;
+  for (i = 0;i < playList.length -1; i++){
+    if (playList[i][1] != playList[i+1][1]){
+      playList2[j] = playList[i];
+      j++;
+    }
+  }
 
+  playList = playList2;
 
 
   if (!window.localStorage) alert("Sorry, you're using an ancient browser");
@@ -925,6 +940,7 @@ sambaBtn.addEventListener("click", function () {
   setDance(samba);
 });
 salsaBtn.addEventListener("click", function () {
+  console.log("salsa");
   setDance(salsa);
 });
 amTangoBtn.addEventListener("click", function () {

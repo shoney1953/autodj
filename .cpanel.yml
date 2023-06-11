@@ -5,6 +5,7 @@ deployment:
     -  /bin/cp _.sbdcrobodj.com.pem.txt $DEPLOYPATH
     -  /bin/cp custom.html $DEPLOYPATH
     -  /bin/cp favicon.ico $DEPLOYPATH
+    -  /bin/cp footer.php $DEPLOYPATH
     -  /bin/cp index.php $DEPLOYPATH
     -  /bin/cp index.js $DEPLOYPATH
     -  /bin/cp login.php $DEPLOYPATH

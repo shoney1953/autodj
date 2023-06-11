@@ -10,7 +10,7 @@ $pass2 = '';
 $isValid = false;
 
    if(isset($_POST['SubmitLogIN'])) {
-
+    
     $user->username = htmlentities($_POST['username']);
     $passEntered = htmlentities($_POST['password']);
  
@@ -27,7 +27,7 @@ $isValid = false;
             $_SESSION['userlastname'] = $user->lastname;
             $_SESSION['useremail'] = $user->email;
             $user->updateLogin();
-            $redirect = "Location: ".$_SESSION['homeurl'];
+            $redirect = "Location: ".$_SESSION['homeurl']."?success=Success";
             header($redirect);
             exit;   
         }
