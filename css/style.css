@@ -6,7 +6,8 @@
 body {
   /* background-color: rgb(214, 214, 221); */
   /* background: url(../img/skyback.jpg); */
-  background-image: url("../img/background\ collage.jpg"); 
+  /* background-image: url("../img/background\ collage.jpg");  */
+    background-image: url("../img/turntable.jpg"); 
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -193,7 +194,8 @@ h3 {
 .music-info h3,
 h4 {
   margin: 0;
-  color: #555152;
+  /* color: #555152; */
+  color: #fff;
   font-size: 20px;
   font-weight: bolder;
 }
@@ -432,12 +434,12 @@ footer {
   header h3 {
     font-size: 0.75rem;
   }
-  body {
-    background: url(../img/skyback-small.jpg);
+  /* body {
+    background: url(../img/background\ collage\ small.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: space-evenly;
-  }
+  } */
   .list-Btn {
     font-size: 15px;
   }
