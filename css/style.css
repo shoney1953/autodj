@@ -44,7 +44,8 @@ h3 {
   list-style: none;
 }
 header {
-  width: 100vw;
+  width: 60
+  vw;
 
 }
 header h3 {
@@ -175,7 +176,7 @@ header h3 {
   background-image: linear-gradient(
     to right,
     rgba(160, 165, 207, 0.5),
-    rgba(47, 60, 173, 0.5)
+    rgba(47, 60, 173, 0.75)
   );
   border-radius: 15px 15px 0 0;
   color: #720722;
