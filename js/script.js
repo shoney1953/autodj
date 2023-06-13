@@ -86,8 +86,8 @@ const songList = [
     "Todo Todo Todo",
     "Tu Boca",
   ],
-  // cowboy cha cha 5
-  ["Neon Moon", "Playa Silencio", "Third Rate Romance"],
+  // // cowboy cha cha 5
+  // ["Neon Moon", "Playa Silencio", "Third Rate Romance"],
   //ecs 6
   [
     "Drive My Car",
@@ -162,18 +162,18 @@ const songList = [
   [
     "Cupid Shuffle",
     "Chaka Chaka",
+    "Havana",
     "Electric Boogie",
+    "Slow Hand",
     "Ooh La La",
     "Macarena",
     "See You Later Alligator",
-    "Havana",
     "Boot Scootin Boogie",
     "Shake A Tail Feather",
     "Aint in it for the",
     "Flip On The Lights",
     "Loco Enamorado",
     "Senorita",
-    "Slow Hand",
     "You Say",
   ],
   // mambo 10
@@ -185,9 +185,9 @@ const songList = [
   [
     "Home",
     "How Do I Live",
-    "Lady in Red",
+    // "Lady in Red",
     "The Long Goodbye",
-    "Valentine",
+    "Always Remember Us This Way",
     "You Raise Me Up",
     "I Hope You Dance",
     "Trying to Get over You",
@@ -201,8 +201,8 @@ const songList = [
     "I Still Believe In You",
     "Desperado",
     "Have I Told You Lately",
-    "Always Remember Us This Way",
     "The Dance",
+    "Valentine",
     "Let it Hurt",
   ],
   // Paso Doble 13
@@ -227,11 +227,12 @@ const songList = [
   ],
   //rumba 16
   [
-    "Acerate Mas",
+    "Unbreak My Heart",
     "Beautiful Love",
     "My Heart Will Go On",
+    "Harlem Nocturne (Rumba)",
     "Besame Mucho",
-    "Blue Bayou",
+    // "Blue Bayou",
     "Cuando Me Guerias",
     "Dont Know Why",
     "En Mi Soledad",
@@ -240,14 +241,16 @@ const songList = [
     "Quiereme Mucho",
     "Spanish Eyes",
     "Venus",
-    "Unbreak My Heart",
+    "Acerate Mas",
+
   ],
   // salsa 17
   ["I Got A Girl",
     "Limbo Rock",
     "Tequila",
     "Chin Chin Chow",
-    "El Montuno de la Verdad"],
+    "El Montuno de la Verdad"
+  ],
   // samba 18"
   [
     "Copacabana",
@@ -297,11 +300,12 @@ const songList = [
     "Dreaming My Dreams with You",
     "Les Bicyclettes De Belsize",
     "Edelweiss",
+    "You Look So Good In Love",
     "Midnight Waltz",
     "Nocturne",
-    "If There Was A Man",
+    // "If There Was A Man",
     "Mozart Concerto",
-    "Smokey Mountain Lullaby",
+    // "Smokey Mountain Lullaby",
     "Spring",
     "Take It To Heart",
     "The Last Waltz",
@@ -311,7 +315,7 @@ const songList = [
     "Take It To The Limit",
   ],
 
-  // west coast swing 22
+  // west coast swing 21
   [
     "The Thrill Is Gone",
     "Billie Jean",
@@ -331,24 +335,28 @@ const songList = [
     "Black Velvet",
   ],
 
-  // western waltz 23
-  [
-    "Take It To The Limit",
-    "Tennessee Waltz",
-    "The Tips Of My Fingers",
-    "Their Hearts Are Dancing",
-    "Tucson Too Soon",
-    "Waltz Across Texas",
-    "You Look So Good In Love",
-    "You Make The Moonlight",
-  ],
-  // western Partner 24
+  // // western waltz 23
+  // [
+  //   "Take It To The Limit",
+  //   "Tennessee Waltz",
+  //   "The Tips Of My Fingers",
+  //   "Their Hearts Are Dancing",
+  //   "Tucson Too Soon",
+  //   "Waltz Across Texas",
+  //   "You Look So Good In Love",
+  //   "You Make The Moonlight",
+  // ],
+  // western Partner 22
   [
     "Blue Rose",
-    "I Feel Lucky",
+    "Their Hearts Are Dancing",
+    "I feel lucky",
     "neon moon",
     "playa silencia",
-    "Cha tango",
+    "Waltz Across Texas",
+    "Cha Tango",
+    "Third Rate Romance",
+    "You Make The Moonlight",
     "I Just Want To Dance With You"
   ]
 ];
@@ -408,9 +416,9 @@ Dance.prototype.setSongName = function () {
   hdrType = this.danceType;
   song = this.songTitles[this.currentSong];
 
-  let announce = `The next song is a ${hdrType}.`;
-  setTextMessage(announce);
-  speakText();
+  // let announce = `The next song is a ${hdrType}.`;
+  // setTextMessage(announce);
+  // speakText();
 
   loadSong(file, song);
 };
@@ -449,42 +457,42 @@ bolero = new Dance("Bolero", songList[3], 1, "Latin", "bolero", "boleroBtn");
 bolero.setBtn();
 chacha = new Dance("Cha Cha", songList[4], 3, "Latin", "chacha", "chachaBtn");
 chacha.setBtn();
-cbychacha = new Dance(
-  "Cowboy Cha Cha",
-  songList[5],
-  1,
-  "Western",
-  "cbychacha",
-  "cChachaBtn"
-);
-cbychacha.setBtn();
-ecs = new Dance("East Coast Swing", songList[6], 4, "Swing", "ecs", "ecsBtn");
+// cbychacha = new Dance(
+//   "Cowboy Cha Cha",
+//   songList[5],
+//   1,
+//   "Western",
+//   "cbychacha",
+//   "cChachaBtn"
+// );
+// cbychacha.setBtn();
+ecs = new Dance("East Coast Swing", songList[5], 4, "Swing", "ecs", "ecsBtn");
 ecs.setBtn();
 foxtrot = new Dance(
   "Fox Trot",
-  songList[7],
+  songList[6],
   4,
   "Ballroom",
   "foxtrot",
   "foxtrotBtn"
 );
 foxtrot.setBtn();
-hustle = new Dance("Hustle", songList[8], 2, "Swing", "hustle", "hustleBtn");
+hustle = new Dance("Hustle", songList[7], 2, "Swing", "hustle", "hustleBtn");
 hustle.setBtn();
 lineDance = new Dance(
   "Line Dance",
-  songList[9],
+  songList[8],
   2,
   "Line Dance",
   "special",
   "specialBtn"
 );
 lineDance.setBtn();
-mambo = new Dance("Mambo", songList[10], 1, "Latin", "mambo", "mamboBtn");
+mambo = new Dance("Mambo", songList[9], 1, "Latin", "mambo", "mamboBtn");
 mambo.setBtn();
 merengue = new Dance(
   "Merengue",
-  songList[11],
+  songList[10],
   1,
   "Latin",
   "merenque",
@@ -493,35 +501,35 @@ merengue = new Dance(
 merengue.setBtn();
 nc2 = new Dance(
   "Night Club Two Step",
-  songList[12],
+  songList[11],
   4,
   "Western",
   "nc2",
   "nc2Btn"
 );
 nc2.setBtn();
-pasodoble = new Dance("Paso Doble", songList[13], 1, "Latin", "pasodoble", "pasodobleBtn");
+pasodoble = new Dance("Paso Doble", songList[12], 1, "Latin", "pasodoble", "pasodobleBtn");
 pasodoble.setBtn();
-polka = new Dance("Polka", songList[14], 1, "Ballroom", "polka", "polkaBtn");
+polka = new Dance("Polka", songList[13], 1, "Ballroom", "polka", "polkaBtn");
 polka.setBtn();
 quickstep = new Dance(
   "Quickstep",
-  songList[15],
+  songList[14],
   1,
   "Ballroom",
   "quickstep",
   "quickstepBtn"
 );
 quickstep.setBtn();
-rumba = new Dance("Rumba", songList[16], 4, "Latin", "rumba", "rumbaBtn");
+rumba = new Dance("Rumba", songList[15], 4, "Latin", "rumba", "rumbaBtn");
 rumba.setBtn();
-salsa = new Dance("Salsa", songList[17], 1, "Latin", "salsa", "salsaBtn");
+salsa = new Dance("Salsa", songList[16], 1, "Latin", "salsa", "salsaBtn");
 salsa.setBtn();
-samba = new Dance("Samba", songList[18], 1, "Latin", "samba", "sambaBtn");
+samba = new Dance("Samba", songList[17], 1, "Latin", "samba", "sambaBtn");
 samba.setBtn();
 twostep = new Dance(
   "Two Step",
-  songList[19],
+  songList[18],
   1,
   "Western",
   "2step",
@@ -530,31 +538,31 @@ twostep = new Dance(
 twostep.setBtn();
 vwaltz = new Dance(
   "Viennese Waltz",
-  songList[20],
+  songList[19],
   1,
   "Ballroom",
   "vwaltz",
   "vWaltzBtn"
 );
 vwaltz.setBtn();
-waltz = new Dance("Waltz", songList[21], 4, "Ballroom", "waltz", "waltzBtn");
+waltz = new Dance("Waltz", songList[20], 4, "Ballroom", "waltz", "waltzBtn");
 waltz.setBtn();
-wcs = new Dance("West Coast Swing", songList[22], 2, "Swing", "wcs", "wcsBtn");
+wcs = new Dance("West Coast Swing", songList[21], 2, "Swing", "wcs", "wcsBtn");
 wcs.setBtn();
 
-wwaltz = new Dance(
-  "Western Waltz",
-  songList[23],
-  1,
-  "Western",
-  "wwaltz",
-  "wWaltzBtn"
-);
-wwaltz.setBtn();
+// wwaltz = new Dance(
+//   "Western Waltz",
+//   songList[23],
+//   1,
+//   "Western",
+//   "wwaltz",
+//   "wWaltzBtn"
+// );
+// wwaltz.setBtn();
 wpartner = new Dance(
   "Western Partner",
-  songList[24],
-  2,
+  songList[22],
+  3,
   "Western",
   "wpartner",
   "wPartnerBtn"
@@ -677,9 +685,9 @@ function shuffle(array) {
 function setSongName() {
   hdrType = playList[playListIndex][0];
 
-  let announce = `The next song is a ${hdrType}.`;
-  setTextMessage(announce);
-  speakText();
+  // let announce = `The next song is a ${hdrType}.`;
+  // setTextMessage(announce);
+  // speakText();
 
   loadSong(playList[playListIndex][1], playList[playListIndex][2]);
 }
@@ -798,26 +806,26 @@ function updateCounts() {
   danceArray[2].numPerRandomList = numBachata.value;
   danceArray[3].numPerRandomList = numBolero.value;
   danceArray[4].numPerRandomList = numChaCha.value;
-  danceArray[5].numPerRandomList = numCbyCha.value;
-  danceArray[6].numPerRandomList = numECoast.value;
-  danceArray[7].numPerRandomList = numFoxtrot.value;
-  danceArray[8].numPerRandomList = numHustle.value;
-  danceArray[9].numPerRandomList = numLineDance.value;
-  danceArray[10].numPerRandomList = numMambo.value;
-  danceArray[11].numPerRandomList = numMerengue.value;
-  danceArray[12].numPerRandomList = numNightClub.value;
-  danceArray[13].numPerRandomList = numPasoDoble.value;
-  danceArray[14].numPerRandomList = numPolka.value;
-  danceArray[15].numPerRandomList = numQuickStep.value;
-  danceArray[16].numPerRandomList = numRumba.value;
-  danceArray[17].numPerRandomList = numSalsa.value;
-  danceArray[18].numPerRandomList = numSamba.value;
-  danceArray[19].numPerRandomList = numTwoStep.value;
-  danceArray[20].numPerRandomList = numVWaltz.value;
-  danceArray[21].numPerRandomList = numWaltz.value;
-  danceArray[22].numPerRandomList = numWCSwing.value;
-  danceArray[23].numPerRandomList = numWWaltz.value;
-  danceArray[24].numPerRandomList = numWPartner.value;
+  // danceArray[5].numPerRandomList = numCbyCha.value;
+  danceArray[5].numPerRandomList = numECoast.value;
+  danceArray[6].numPerRandomList = numFoxtrot.value;
+  danceArray[7].numPerRandomList = numHustle.value;
+  danceArray[8].numPerRandomList = numLineDance.value;
+  danceArray[9].numPerRandomList = numMambo.value;
+  danceArray[10].numPerRandomList = numMerengue.value;
+  danceArray[11].numPerRandomList = numNightClub.value;
+  danceArray[12].numPerRandomList = numPasoDoble.value;
+  danceArray[13].numPerRandomList = numPolka.value;
+  danceArray[14].numPerRandomList = numQuickStep.value;
+  danceArray[15].numPerRandomList = numRumba.value;
+  danceArray[16].numPerRandomList = numSalsa.value;
+  danceArray[17].numPerRandomList = numSamba.value;
+  danceArray[18].numPerRandomList = numTwoStep.value;
+  danceArray[19].numPerRandomList = numVWaltz.value;
+  danceArray[20].numPerRandomList = numWaltz.value;
+  danceArray[21].numPerRandomList = numWCSwing.value;
+  // danceArray[23].numPerRandomList = numWWaltz.value;
+  danceArray[22].numPerRandomList = numWPartner.value;
 
 }
 function returnPlay() {
@@ -849,8 +857,8 @@ function setCounts() {
   numVWaltz.value = danceArray[20].numPerRandomList;
   numWaltz.value = danceArray[21].numPerRandomList;
   numWCSwing.value = danceArray[22].numPerRandomList;
-  numWWaltz.value = danceArray[23].numPerRandomList;
-  numWPartner.value = danceArray[24].numPerRandomList;
+  // numWWaltz.value = danceArray[23].numPerRandomList;
+  numWPartner.value = danceArray[23].numPerRandomList;
 }
 //------------------------------------------------
 function addGeneraListeners() {
@@ -918,9 +926,9 @@ vWaltzBtn.addEventListener("click", function () {
 TwoStepBtn.addEventListener("click", function () {
   setDance(twostep);
 });
-cChachaBtn.addEventListener("click", function () {
-  setDance(cbychacha);
-});
+// cChachaBtn.addEventListener("click", function () {
+//   setDance(cbychacha);
+// });
 specialBtn.addEventListener("click", function () {
   setDance(lineDance);
 });
@@ -946,9 +954,9 @@ salsaBtn.addEventListener("click", function () {
 amTangoBtn.addEventListener("click", function () {
   setDance(americanTango);
 });
-wWaltzBtn.addEventListener("click", function () {
-  setDance(wwaltz);
-});
+// wWaltzBtn.addEventListener("click", function () {
+//   setDance(wwaltz);
+// });
 wPartnerBtn.addEventListener("click", function () {
   setDance(wpartner);
 });

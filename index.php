@@ -31,8 +31,13 @@ $_SESSION['user'] = null;
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <header>
-  <h3>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>
-  
+    <?php
+     if (!isset($_SESSION['username'])) {
+      echo "<h3>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>";
+     } else {
+      echo "<h3>Welcome ".$_SESSION['userfirstname'].", to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>";
+     }
+  ?>
   <ul>
    <?php
 
@@ -99,9 +104,9 @@ $_SESSION['user'] = null;
       echo '<button id="chachaBtn" class="musicType-Btn">
         Cha Cha
       </button>';
-      echo '<button id="cChachaBtn" class="musicType-Btn">
-        Cowboy Cha Cha
-      </button>';
+      // echo '<button id="cChachaBtn" class="musicType-Btn">
+      //   Cowboy Cha Cha
+      // </button>';
       echo '<button id="ecsBtn" class="musicType-Btn">
         East Coast Swing
       </button>';
@@ -153,9 +158,9 @@ $_SESSION['user'] = null;
       echo '<button id="wcsBtn" class="musicType-Btn">
         West Coast Swing
       </button>';
-      echo '<button id="wWaltzBtn" class="musicType-Btn">
-        Western Waltz
-      </button>';
+      // echo '<button id="wWaltzBtn" class="musicType-Btn">
+      //   Western Waltz
+      // </button>';
        echo '<button id="wPartnerBtn" class="musicType-Btn">
         Western Partner
       </button>';
