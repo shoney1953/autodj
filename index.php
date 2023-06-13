@@ -210,13 +210,14 @@ $_SESSION['user'] = null;
               <input type="number" min=0 max=10  name="numBolero" id="numBolero"class="inpBox">
               <label for="numChaCha">  Cha Chas</label>
               <input type="number" min=0 max=10 name="numChaCha" id="numChaCha"class="inpBox">
-              <label for="numCbyCha">  Cowboy Cha Chas</label>
-              <input type="number" min=0 max=10  name="numCbyCha" id="numCbyCha"class="inpBox">
+              <!-- <label for="numCbyCha">  Cowboy Cha Chas</label>
+              <input type="number" min=0 max=10  name="numCbyCha" id="numCbyCha"class="inpBox"> -->
+              <label for="numECoast">  East Coast Swings</label>
+            <input type="number" min=0 max=10  name="numECoast" id="numECoast" class="inpBox">
           </form>
 
           <form class="inpClass">
-            <label for="numECoast">  East Coast Swings</label>
-            <input type="number" min=0 max=10  name="numECoast" id="numECoast" class="inpBox">
+            
             <label for="numFoxtrot">  Foxtrots</label>
             <input type="number" min=0 max=10  name="numFoxtrot" id="numFoxtrot" class="inpBox">
               <label for="numHustle">  Hustles</label>
@@ -227,11 +228,12 @@ $_SESSION['user'] = null;
               <input type="number" min=0 max=10  name="numMambo" id="numMambo" class="inpBox">
               <label for="numMerengue">  Merengues</label>
               <input type="number" min=0 max=10 name="numMerengue" id="numMerengue" class="inpBox">
+              <label for="numNightClub">  Night Club Two Steps</label>
+            <input type="number" min=0 max=10 name="numNightClub" id="numNightClub" class="inpBox" >
   
           </form>
           <form class="inpClass">
-            <label for="numNightClub">  Night Club Two Steps</label>
-            <input type="number" min=0 max=10 name="numNightClub" id="numNightClub" class="inpBox" >
+           
             <label for="numPasoDoble">  Paso Dobles</label>
             <input type="number" min=0 max=10 name="numPasoDoble" id="numPasoDoble" class="inpBox">
             <label for="numPolka">  Polkas</label>
@@ -243,10 +245,11 @@ $_SESSION['user'] = null;
               <label for="numSalsa">  Salsas</label>
               <input type="number" min=0 max=10 name="numSalsa" id="numSalsa" class="inpBox">
               <label for="numSamba">  Sambas</label>
-              <input type="number" min=0 max=10 name="numSamba" id="numSamba" class="inpBox">
+              <input type="number" min=0 max=10 name="numSamba" id="numSamba" class="inpBox">  
           </form>
 
           <form class="inpClass">
+        
             <label for="numTwoStep">  Texas Two Steps</label>
             <input type="number" min=0 max=10 name="numTwoStep" id="numTwoStep" class="inpBox">
             <label for="numVWaltz">  Viennese Waltzes</label>
@@ -255,8 +258,8 @@ $_SESSION['user'] = null;
             <input type="number" min=0 max=10 name="numWaltz" id="numWaltz" class="inpBox">
             <label for="numWCSwing">  West Coast Swings</label>
             <input type="number" min=0 max=10 name="numWCSwing" id="numWCSwing" class="inpBox">
-            <label for="numWWaltz">  Western Waltzes</label>
-            <input type="number" min=0 max=10 name="numWWaltz" id="numWWaltz" class="inpBox">
+            <!-- <label for="numWWaltz">  Western Waltzes</label>
+            <input type="number" min=0 max=10 name="numWWaltz" id="numWWaltz" class="inpBox"> -->
             <label for="numWPartner">  Western Partners</label>
             <input type="number" min=0 max=10 name="numWPartner" id="numWPartner" class="inpBox">
             </form>

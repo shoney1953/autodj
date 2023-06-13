@@ -839,26 +839,26 @@ function setCounts() {
   numBachata.value = danceArray[2].numPerRandomList;
   numBolero.value = danceArray[3].numPerRandomList;
   numChaCha.value = danceArray[4].numPerRandomList;
-  numCbyCha.value = danceArray[5].numPerRandomList;
-  numECoast.value = danceArray[6].numPerRandomList;
-  numFoxtrot.value = danceArray[7].numPerRandomList;
-  numHustle.value = danceArray[8].numPerRandomList;
-  numLineDance.value = danceArray[9].numPerRandomList;
-  numMambo.value = danceArray[10].numPerRandomList;
-  numMerengue.value = danceArray[11].numPerRandomList;
-  numNightClub.value = danceArray[12].numPerRandomList;
-  numPasoDoble.value = danceArray[13].numPerRandomList;
-  numPolka.value = danceArray[14].numPerRandomList;
-  numQuickStep.value = danceArray[15].numPerRandomList;
-  numRumba.value = danceArray[16].numPerRandomList;
-  numSalsa.value = danceArray[17].numPerRandomList;
-  numSamba.value = danceArray[18].numPerRandomList;
-  numTwoStep.value = danceArray[19].numPerRandomList;
-  numVWaltz.value = danceArray[20].numPerRandomList;
-  numWaltz.value = danceArray[21].numPerRandomList;
-  numWCSwing.value = danceArray[22].numPerRandomList;
+  // numCbyCha.value = danceArray[5].numPerRandomList;
+  numECoast.value = danceArray[5].numPerRandomList;
+  numFoxtrot.value = danceArray[6].numPerRandomList;
+  numHustle.value = danceArray[7].numPerRandomList;
+  numLineDance.value = danceArray[8].numPerRandomList;
+  numMambo.value = danceArray[9].numPerRandomList;
+  numMerengue.value = danceArray[10].numPerRandomList;
+  numNightClub.value = danceArray[11].numPerRandomList;
+  numPasoDoble.value = danceArray[12].numPerRandomList;
+  numPolka.value = danceArray[13].numPerRandomList;
+  numQuickStep.value = danceArray[14].numPerRandomList;
+  numRumba.value = danceArray[15].numPerRandomList;
+  numSalsa.value = danceArray[16].numPerRandomList;
+  numSamba.value = danceArray[17].numPerRandomList;
+  numTwoStep.value = danceArray[18].numPerRandomList;
+  numVWaltz.value = danceArray[19].numPerRandomList;
+  numWaltz.value = danceArray[20].numPerRandomList;
+  numWCSwing.value = danceArray[21].numPerRandomList;
   // numWWaltz.value = danceArray[23].numPerRandomList;
-  numWPartner.value = danceArray[23].numPerRandomList;
+  numWPartner.value = danceArray[22].numPerRandomList;
 }
 //------------------------------------------------
 function addGeneraListeners() {
