@@ -55,14 +55,11 @@ date_default_timezone_set("America/Phoenix");
     </div>
 
     </div>
-    <footer >
 
-<div class="footer-section">
+    <?php
+  require 'footer.php';
+  ?> 
 
-    <p>Copyright &copy; 2022    Sheila Honey  - All Rights Reserved</p>
-    
-</div> 
 
-</footer>
 </body>
 </html>

@@ -26,6 +26,7 @@ $isValid = false;
             $_SESSION['userfirstname'] = $user->firstname;
             $_SESSION['userlastname'] = $user->lastname;
             $_SESSION['useremail'] = $user->email;
+            $user->robodjnumlogins++;
             $user->updateLogin();
             $redirect = "Location: ".$_SESSION['homeurl']."?success=Success";
             header($redirect);
@@ -80,7 +81,3 @@ $isValid = false;
         exit;  
     } 
 }
-    
- 
-
-

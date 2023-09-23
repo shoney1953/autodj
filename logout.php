@@ -7,3 +7,4 @@
   $redirect = "Location: ".$_SESSION['homeurl'];
   header($redirect);
   exit;   
+  ?>

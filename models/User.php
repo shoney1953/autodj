@@ -24,6 +24,8 @@ class User {
     public $phone2;
     public $notes;
     public $lastLogin;
+    public $robodjnumlogins;
+    public $robodjlastlogin;
 
     // Constructor with DB
     public function __construct($db) {
@@ -93,6 +95,8 @@ class User {
           $this->phone2 = $row['phone2'];
           $this->notes = $row['notes'];
           $this->lastLogin = $row['lastLogin'];
+          $this->robodjnumlogins = $row['robodjnumlogins'];
+          $this->robodjlastlogin = $row['robodjlastlogin'];
         
 
     }
@@ -133,6 +137,8 @@ class User {
       $this->phone2 = $row['phone2'];
       $this->notes = $row['notes'];
       $this->lastLogin = $row['lastLogin'];
+      $this->robodjnumlogins = $row['robodjnumlogins'];
+      $this->robodjlastlogin = $row['robodjlastlogin'];
   
         return true;
       }
@@ -334,7 +340,9 @@ public function updateLogin() {
      
   // Create query
   $query = 'UPDATE ' . $this->table .
-   ' SET lastLogin =  NOW() WHERE id = :id';
+   ' SET robodjlastlogin =  NOW(),
+      robodjnumlogins = :robodjnumlogins 
+      WHERE id = :id';
 
   // Prepare statement
   $stmt = $this->conn->prepare($query);
@@ -343,7 +351,7 @@ public function updateLogin() {
 
  
   $stmt->bindParam(':id', $this->id);
-
+  $stmt->bindParam(':robodjnumlogins', $this->robodjnumlogins);
 
   // Execute query
   if($stmt->execute()) {

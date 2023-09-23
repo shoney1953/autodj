@@ -424,6 +424,26 @@ footer {
   color: rgb(243, 211, 211);
   margin-bottom: 10px;
 }
+.popUp2 {
+  height: 75vh;
+  width: 95%;
+  position: fixed;
+  border-radius: 10%;
+  background-color: rgb(115, 140, 209);
+  border: 2px black;
+  top: 80px;
+  left: 40px;
+  z-index: 9998;
+  text-align: center;
+  color: white;
+  justify-content: center;
+  align-content: center;
+}
+.popUp2 h4 {
+  margin-top: 10px;
+  color: rgb(243, 211, 211);
+  margin-bottom: 10px;
+}
 .vis-hidden {
   visibility: hidden;
 }

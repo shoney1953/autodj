@@ -86,6 +86,7 @@ $_SESSION['user'] = null;
       echo '<button id="randomBtn" class="musicType-Btn">
        <h4><strong>New Random Playlist </strong></h4></button>
       </button>';
+
   
     echo '</div>';
     echo '<div class="button-container" id="button-container">';
@@ -270,7 +271,8 @@ $_SESSION['user'] = null;
       
        
   </div>
-   
+ 
+      
   
   <?php
   require 'footer.php';

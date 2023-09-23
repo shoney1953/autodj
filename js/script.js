@@ -313,6 +313,7 @@ const songList = [
     "Where Is Your Heart",
     "When I Said I Do",
     "Take It To The Limit",
+    "Tennessee Waltz"
   ],
 
   // west coast swing 21
@@ -357,7 +358,9 @@ const songList = [
     "Cha Tango",
     "Third Rate Romance",
     "You Make The Moonlight",
-    "I Just Want To Dance With You"
+    "I Just Want To Dance With You",
+    "The Tips Of My Fingers",
+    "Tucson Too Soon"
   ]
 ];
 
@@ -800,6 +803,10 @@ function customizePlaylist() {
   setCounts();
   popUp.classList.remove("vis-hidden");
 }
+function managePlaylist() {
+
+  popUp2.classList.remove("vis-hidden");
+}
 function updateCounts() {
   danceArray[0].numPerRandomList = numAmTango.value;
   danceArray[1].numPerRandomList = numArgTango.value;
@@ -965,6 +972,7 @@ wPartnerBtn.addEventListener("click", function () {
 randomBtn.addEventListener("click", setRandomplayList);
 oldrandomBtn.addEventListener("click", setOldRandomplayList);
 customBtn.addEventListener("click", customizePlaylist);
+managePlaylistBtn.addEventListener("click", managePlaylist);
 
 returnBtn.addEventListener("click", returnPlay);
 
