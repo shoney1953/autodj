@@ -39,15 +39,18 @@ const songList = [
     "Tango to Evora",
     "Contigo Aprendi",
     "Santa Maria",
+    "Gamulan",
     "Gran Hotel Victoria",
     "La Cumparsita",
     "Vi Luz y Subi",
     "Scent of a Woman",
+    "El Adios",
     "El Aire en Mis Manos",
   ],
   // bachata 2
   [
     "Ayer",
+    "And I Love Her",
     "The Lonely Bull",
     "Ve Y Dile",
     "Bachata en Fukuoka",
@@ -93,6 +96,7 @@ const songList = [
     "Drive My Car",
     "No Particular Place to Go",
     "Old Time Rock & Roll",
+    "Margaritaville",
     "Pride And Joy",
     "40 Ford Time",
     "A Hard Days Night",
@@ -199,6 +203,7 @@ const songList = [
     "While My Guitar Gently Weeps",
     "Persuasion",
     "I Still Believe In You",
+    "Perfect",
     "Desperado",
     "Have I Told You Lately",
     "The Dance",
@@ -972,7 +977,7 @@ wPartnerBtn.addEventListener("click", function () {
 randomBtn.addEventListener("click", setRandomplayList);
 oldrandomBtn.addEventListener("click", setOldRandomplayList);
 customBtn.addEventListener("click", customizePlaylist);
-managePlaylistBtn.addEventListener("click", managePlaylist);
+// managePlaylistBtn.addEventListener("click", managePlaylist);
 
 returnBtn.addEventListener("click", returnPlay);
 
