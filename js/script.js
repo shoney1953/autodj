@@ -144,6 +144,11 @@ const songList = [
     "What If I Loved You",
     "What Is This Thing Called Love",
     "Lazy River",
+    "L_italiano",
+    "Pink Panther",
+    "Say I Wanna Know",
+    "Speaking of Happiness",
+    "Two Tickets West",
   ],
   // hustle 8
   [
