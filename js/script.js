@@ -429,9 +429,9 @@ Dance.prototype.setSongName = function () {
   hdrType = this.danceType;
   song = this.songTitles[this.currentSong];
 
-  // let announce = `The next song is a ${hdrType}.`;
-  // setTextMessage(announce);
-  // speakText();
+  let announce = `The next song is a ${hdrType}.`;
+  setTextMessage(announce);
+  speakText();
 
   loadSong(file, song);
 };
@@ -698,9 +698,9 @@ function shuffle(array) {
 function setSongName() {
   hdrType = playList[playListIndex][0];
 
-  // let announce = `The next song is a ${hdrType}.`;
-  // setTextMessage(announce);
-  // speakText();
+  let announce = `The next song is a ${hdrType}.`;
+  setTextMessage(announce);
+  speakText();
 
   loadSong(playList[playListIndex][1], playList[playListIndex][2]);
 }
