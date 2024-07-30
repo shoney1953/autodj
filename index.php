@@ -105,9 +105,6 @@ $_SESSION['user'] = null;
       echo '<button id="chachaBtn" class="musicType-Btn">
         Cha Cha
       </button>';
-      // echo '<button id="cChachaBtn" class="musicType-Btn">
-      //   Cowboy Cha Cha
-      // </button>';
       echo '<button id="ecsBtn" class="musicType-Btn">
         East Coast Swing
       </button>';
@@ -159,9 +156,7 @@ $_SESSION['user'] = null;
       echo '<button id="wcsBtn" class="musicType-Btn">
         West Coast Swing
       </button>';
-      // echo '<button id="wWaltzBtn" class="musicType-Btn">
-      //   Western Waltz
-      // </button>';
+
        echo '<button id="wPartnerBtn" class="musicType-Btn">
         Western Partner
       </button>';

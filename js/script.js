@@ -194,16 +194,15 @@ const songList = [
   [
     "Home",
     "How Do I Live",
-    // "Lady in Red",
-    "The Long Goodbye",
+    "The Dance",
+    "It Matters to Me",
+    "Pieces",
     "Always Remember Us This Way",
-    "You Raise Me Up",
     "I Hope You Dance",
     "Trying to Get over You",
     "Old Flame",
     "Remember When",
     "Sleepwalk",
-    "The Dance",
     "Lithium",
     "While My Guitar Gently Weeps",
     "Persuasion",
@@ -211,9 +210,10 @@ const songList = [
     "Perfect",
     "Desperado",
     "Have I Told You Lately",
-    "The Dance",
     "Valentine",
     "Let it Hurt",
+    "You Raise Me Up",
+    "The Long Goodbye"
   ],
   // Paso Doble 13
   [
@@ -856,7 +856,6 @@ function setCounts() {
   numBachata.value = danceArray[2].numPerRandomList;
   numBolero.value = danceArray[3].numPerRandomList;
   numChaCha.value = danceArray[4].numPerRandomList;
-  // numCbyCha.value = danceArray[5].numPerRandomList;
   numECoast.value = danceArray[5].numPerRandomList;
   numFoxtrot.value = danceArray[6].numPerRandomList;
   numHustle.value = danceArray[7].numPerRandomList;
