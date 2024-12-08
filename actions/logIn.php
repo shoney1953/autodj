@@ -10,14 +10,14 @@ $pass2 = '';
 $isValid = false;
 
    if(isset($_POST['SubmitLogIN'])) {
-    
+    var_dump($_POST);
     $user->username = htmlentities($_POST['username']);
     $passEntered = htmlentities($_POST['password']);
  
     $user->email = filter_var($user->email, FILTER_SANITIZE_EMAIL);   
 
     if($user->getUserName($user->username)) {
-
+        var_dump($passEntered, $user->password);
         if(password_verify($passEntered, $user->password )) {
            
             $_SESSION['username'] = $user->username;
@@ -52,9 +52,9 @@ $isValid = false;
             if(isset($_SESSION['useremail'])) {
                 unset($_SESSION['useremail']);
             }
-            $redirect = "Location: ".$_SESSION['loginurl'].'?error=InvalidPassword';
-            header($redirect);
-            exit;  
+            // $redirect = "Location: ".$_SESSION['loginurl'].'?error=InvalidPassword';
+            // header($redirect);
+            // exit;  
         } 
     } else {
         if(isset($_SESSION['username'])) {
@@ -76,8 +76,8 @@ $isValid = false;
             unset($_SESSION['useremail']);
         }
       
-      $redirect = "Location: ".$_SESSION['signurl'].'?error=NoUser';
-        header($redirect);
-        exit;  
+    //   $redirect = "Location: ".$_SESSION['signurl'].'?error=NoUser';
+    //     header($redirect);
+    //     exit;  
     } 
 }

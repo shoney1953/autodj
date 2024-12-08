@@ -46,6 +46,11 @@ const songList = [
     "Scent of a Woman",
     "El Adios",
     "El Aire en Mis Manos",
+    "El Encopao",
+    "Hotel Victoria",
+    "Para Ti Madre",
+    "La Yumba",
+    "Romance De Barrio",
   ],
   // bachata 2
   [
@@ -279,6 +284,7 @@ const songList = [
   ],
   // texas 2 step 19
   [
+    "No Place to Go",
     "A Better Man",
     "Wagon Wheel",
     "All My Exs Live in Texas",
