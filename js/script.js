@@ -287,6 +287,7 @@ const songList = [
     "No Place to Go",
     "A Better Man",
     "Wagon Wheel",
+    "The Lucky One",
     "All My Exs Live in Texas",
     "Why Not Me",
     "Hot Rod Mercury",
