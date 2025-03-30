@@ -8,7 +8,7 @@ if (isset($_GET['error'])) {
     Please Validate Input</h4><br>';
     unset($_GET['error']);
 } elseif (isset($_GET['success'])) {
-    echo '<br><h4 style="text-align: center"> '.$_GET['success'].'</h4><br>';
+    // echo '<br><h4 style="text-align: center"> '.$_GET['success'].'</h4><br>';
     unset($_GET['success']);
 } else {
     $_SESSION['homeurl'] = $_SERVER['REQUEST_URI']; 

@@ -53,7 +53,7 @@ $passEntered = "";
         //     exit;  
         // } 
     } else {
-        var_dump('not get username');
+    
         if(isset($_SESSION['username'])) {
             unset($_SESSION['username']);
         }
