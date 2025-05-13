@@ -28,8 +28,7 @@
           $this->db_name = "sbballro_tAdnRpvOXZgHQi";
 
         } else {
-          /*Get Heroku ClearDB connection information */
-          // $db = parse_url(getenv("DATABASE_URL"));
+ 
           $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
       
           $this->host = $url["host"];
