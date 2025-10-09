@@ -17,6 +17,8 @@ $passEntered = "";
     if ($user->getUserName($user->username)) { 
         // if(password_verify($passEntered, $user->password )) {
             $_SESSION['username'] = $user->username;
+            $fileDestination = "../uploads/".$_SESSION['username'];
+            makeDir($fileDestination);
             $_SESSION['role'] = $user->role;
             $_SESSION['userid'] = $user->id;
             $_SESSION['userfirstname'] = $user->firstname;
@@ -77,5 +79,8 @@ $passEntered = "";
         header($redirect);
         exit;  
     } 
- 
+ function makeDir($path)
+{
+     return is_dir($path) || mkdir($path, 0777);
+}
 // }

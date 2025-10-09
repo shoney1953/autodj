@@ -8,13 +8,37 @@ if (isset($_GET['error'])) {
     Please Validate Input</h4><br>';
     unset($_GET['error']);
 } elseif (isset($_GET['success'])) {
-    // echo '<br><h4 style="text-align: center"> '.$_GET['success'].'</h4><br>';
+  
     unset($_GET['success']);
 } else {
     $_SESSION['homeurl'] = $_SERVER['REQUEST_URI']; 
 }
 
 $_SESSION['user'] = null;
+$json_array = json_encode(["NO REQUESTS"]);
+
+$reqArray = [];
+if (isset($_SESSION['username'])) {
+$dir = "uploads/".$_SESSION['username'];
+
+// Open a directory, and read its contents
+if (is_dir($dir)){
+  if ($dh = opendir($dir)){
+    while (($file = readdir($dh)) !== false){
+     if (($file !== '.') && ($file !== '..')) {
+        $fileNM = explode('.', $file);
+        array_push($reqArray, $fileNM[0]);
+     }
+      
+    }
+    closedir($dh);
+  }
+  $json_array = json_encode($reqArray);
+ 
+} 
+ 
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,69 +51,56 @@ $_SESSION['user'] = null;
     />
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>SBDC Robo DJ</title>
+    <title>SBDC Robo DJ - Manage Requests</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
-  <header>
-    <?php
-     if (!isset($_SESSION['username'])) {
-      echo "<h3>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>";
-     } else {
-      echo "<h3>Welcome ".$_SESSION['userfirstname'].", to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>";
-     }
-  ?>
-  <ul>
-   <?php
+  <nav class="nav">
+    <div class="container">
+      <ul>
+       <?php
 
    if (isset($_SESSION['username'])) {
     
-       echo '<p class="musicType-Btn"><a style="color: white;font-weight: bold;font-size: large"
-        href="logout.php"> Logout </a></p>'; 
+      echo '<li><a href="logout.php">Logout</a></li>';
+      echo '<li><a href="songlist.php" > Show Song Lists</a></li>';
+
+      echo '<li><a href="playlists.php"> Manage Playlists</a></li>';
+
+      echo '<li><a href="findSong.php"> Find a Song</a></li>';
+
+      echo '<li><a href="manageRequests.php"> Manage Request Songs</a></li>';
 
    } else {
 
-       echo '<li class="musicType-Btn"><a style="color: white;font-weight: bold;font-size: large"
-        href="login.php">Login With Userid from SBBALLROOM Website to use ROBO DJ</a></li>';
-        echo '<br><br><br>';
-        echo '<br><br><br>';
+       echo '<li><a href="login.php">Login With Userid from SBBALLROOM Website to use ROBO DJ</a></li>';
+
    }
     ?>
-   </ul>
-   <?php
-   if (isset($_SESSION['username'])) {
-    echo '<h3>';
-      echo '<i class="fas fa-compact-disc"></i>';
-      echo ' Select a Random Playlist or a Category of Music to Play.
-    </h3>';
-   }
-    ?>
-  </header>
+      </ul>
+    </div>
+</nav>
 
   <body>
+    <div class="link-container">
   <?php
+  if (!isset($_SESSION['username'])) {
+      echo "<h3>Welcome to the SaddleBrooke Ballroom Dance Club Automated Music Player</h3>";     
+     } 
    if (isset($_SESSION['username'])) {
-    echo '<a href="songlist.html" target="_blank" class="list-Btn">';
-      echo '<i class="fas fa-glasses"></i>';
+     echo '<input type="hidden" id="username" name="username" value='.$_SESSION['username'].'>';
 
-      echo ' Click to Show Song Lists</a>';
-
-    echo '<div class="random-container" id="random-container">';
-
-      echo '<button id="oldrandomBtn" class="musicType-Btn">';
-      echo '<h4><strong>Use Existing Random Playlist </strong></h4>
-      </button>';
+       echo '<div class="button-container" id="random-container">';
+      echo '<h4> Playlist Functions: </h4>';
+      echo '<button id="oldrandomBtn" class="musicType-Btn">Play Existing Random Playlist</button>';
     
-      echo '<button id="customBtn" class="musicType-Btn">
-        <h4><strong>Customize # of songs in new Playlist </strong></h4>
-       </button>';
+      echo '<button id="customBtn" class="musicType-Btn">Customize # of songs in new Playlist</button>';
      
-      echo '<button id="randomBtn" class="musicType-Btn">
-       <h4><strong>New Random Playlist </strong></h4></button>
-      </button>';
-
+      echo '<button id="randomBtn" class="musicType-Btn">Create a New Random Playlist</button>';
   
     echo '</div>';
+    echo '<br>';
     echo '<div class="button-container" id="button-container">';
+       echo '<h4> Music Genres: </h4>';
       echo '<button id="amTangoBtn" class="musicType-Btn">
         American Tango
       </button>';
@@ -161,19 +172,31 @@ $_SESSION['user'] = null;
         Western Partner
       </button>';
 
+       echo '<button id="oldiesSlowBtn" class="musicType-Btn">
+        Oldies Slow
+      </button>';
+
+       echo '<button id="oldiesFastBtn" class="musicType-Btn">
+        Oldies Fast
+      </button>';
+
+        echo '<button id="reqBtn" class="musicType-Btn">
+        Requests
+      </button>';
+
     echo '</div>';
   
 
-    echo '<div class="music-container" id="music-container">
+    echo '<br><br><br><div class="music-container" id="music-container">
       <div class="music-info">
-        <h3 id="musictype">Music Type</h3>
+        <h4 id="musictype">Music Type</h4>
         <div class="progress-container" id="progress-container">
           <div class="progress" id="progress"></div>
         </div>
       </div>
       <audio id="audio"></audio>
       <div class="img-container" id="image-container">
-        <img alt="music cover" id="cover" />
+        <img alt="music cover" id="cover" </img>
       </div>
       <div class="navigation">
         <button id="prev" class="action-btn">
@@ -188,90 +211,91 @@ $_SESSION['user'] = null;
       </div>
     </div>';
    }
+
    ?>
+      <div>
     <div id="popUp" class="popUp vis-hidden">
     <h4>Modify the number of songs for each music type to be included in the playlist (Min 0, Max 10). </h4>
      <h4>When satisfied, click the return to home to create a new random playlist and begin playing it.</h4>
-    
-      <div class="form-box">
-          
-          <form class="inpClass">
-              <label for="numAmTango">  American Tangos</label>
-              <input type="number" min=0 max=10 name="numAmTango" id="numAmTango" class="inpBox">
-              <label for="numArgTango">  Argentine Tangos</label>
-              <input type="number" min=0 max=10  name="numArgTango" id="numArgTango"class="inpBox" >
-              <label for="numBachata">  Bachatas</label>
-              <input type="number" min=0 max=10  name="numBachata" id="numBachata"class="inpBox">
-              <label for="numBolero">  Boleros</label>
-              <input type="number" min=0 max=10  name="numBolero" id="numBolero"class="inpBox">
-              <label for="numChaCha">  Cha Chas</label>
-              <input type="number" min=0 max=10 name="numChaCha" id="numChaCha"class="inpBox">
-              <!-- <label for="numCbyCha">  Cowboy Cha Chas</label>
-              <input type="number" min=0 max=10  name="numCbyCha" id="numCbyCha"class="inpBox"> -->
-              <label for="numECoast">  East Coast Swings</label>
-            <input type="number" min=0 max=10  name="numECoast" id="numECoast" class="inpBox">
-          </form>
+              <form >
+      <div class="form-box6">
 
-          <form class="inpClass">
-            
-            <label for="numFoxtrot">  Foxtrots</label>
-            <input type="number" min=0 max=10  name="numFoxtrot" id="numFoxtrot" class="inpBox">
-              <label for="numHustle">  Hustles</label>
-              <input type="number" min=0 max=10 name="numHustle" id="numHustle" class="inpBox">
-              <label for="numLineDance">  Line Dances</label>
-              <input type="number" min=0 max=10  name="numLineDance" id="numLineDance" class="inpBox">
-              <label for="numMambo">  Mambos</label>
-              <input type="number" min=0 max=10  name="numMambo" id="numMambo" class="inpBox">
-              <label for="numMerengue">  Merengues</label>
-              <input type="number" min=0 max=10 name="numMerengue" id="numMerengue" class="inpBox">
-              <label for="numNightClub">  Night Club Two Steps</label>
-            <input type="number" min=0 max=10 name="numNightClub" id="numNightClub" class="inpBox" >
-  
-          </form>
-          <form class="inpClass">
-           
-            <label for="numPasoDoble">  Paso Dobles</label>
-            <input type="number" min=0 max=10 name="numPasoDoble" id="numPasoDoble" class="inpBox">
-            <label for="numPolka">  Polkas</label>
-            <input type="number" min=0 max=10 name="numPolka" id="numPolka" class="inpBox">
-            <label for="numQuickStep">  Quick Steps</label>
-            <input type="number" min=0 max=10 name="numQuickStep" id="numQuickStep" class="inpBox">
-            <label for="numRumba">  Rumbas</label>
-            <input type="number" min=0 max=10 name="numRumba" id="numRumba" class="inpBox">
-              <label for="numSalsa">  Salsas</label>
-              <input type="number" min=0 max=10 name="numSalsa" id="numSalsa" class="inpBox">
-              <label for="numSamba">  Sambas</label>
-              <input type="number" min=0 max=10 name="numSamba" id="numSamba" class="inpBox">  
-          </form>
+              <label for="numAmTango">  American Tangos <br><input type="number" min=0 max=10 name="numAmTango" id="numAmTango" class="inpBox"></label>
 
-          <form class="inpClass">
-        
-            <label for="numTwoStep">  Texas Two Steps</label>
-            <input type="number" min=0 max=10 name="numTwoStep" id="numTwoStep" class="inpBox">
-            <label for="numVWaltz">  Viennese Waltzes</label>
-            <input type="number" min=0 max=10 name="numVWaltz" id="numVWaltz" class="inpBox">
-            <label for="numWaltz">  Waltzes</label>
-            <input type="number" min=0 max=10 name="numWaltz" id="numWaltz" class="inpBox">
-            <label for="numWCSwing">  West Coast Swings</label>
-            <input type="number" min=0 max=10 name="numWCSwing" id="numWCSwing" class="inpBox">
-            <!-- <label for="numWWaltz">  Western Waltzes</label>
-            <input type="number" min=0 max=10 name="numWWaltz" id="numWWaltz" class="inpBox"> -->
-            <label for="numWPartner">  Western Partners</label>
-            <input type="number" min=0 max=10 name="numWPartner" id="numWPartner" class="inpBox">
-            </form>
-      </div>
-    
-      <button class="submit-Btn" id="returnBtn">Return to Home Page</button>
-  
+              <label for="numArgTango">  Argentine Tangos  <br><input type="number" min=0 max=10  name="numArgTango" id="numArgTango" class="inpBox" ></label>
+
+              <label for="numBachata">  Bachatas <br><input type="number" min=0 max=10  name="numBachata" id="numBachata"class="inpBox"></label>
+
+              <label for="numBolero">  Boleros <br><input type="number" min=0 max=10  name="numBolero" id="numBolero"class="inpBox"></label>
       
+              <label for="numChaCha">  Cha Chas  <br><input type="number" min=0 max=10 name="numChaCha" id="numChaCha"class="inpBox"></label>
+
+              <label for="numECoast">  East Coast Swings <br><input type="number" min=0 max=10  name="numECoast" id="numECoast" class="inpBox"></label>
+
+              <label for="numFoxtrot">  Foxtrots <br><input type="number" min=0 max=10  name="numFoxtrot" id="numFoxtrot" class="inpBox"></label>
+        
+              <label for="numHustle">  Hustles <br><input type="number" min=0 max=10 name="numHustle" id="numHustle" class="inpBox"></label>
+           
+              <label for="numLineDance">  Line Dances  <br><input type="number" min=0 max=10  name="numLineDance" id="numLineDance" class="inpBox"></label>
+
+              <label for="numMambo">  Mambos  <br><input type="number" min=0 max=10  name="numMambo" id="numMambo" class="inpBox"></label>
+            
+              <label for="numMerengue">  Merengues  <br><input type="number" min=0 max=10 name="numMerengue" id="numMerengue" class="inpBox"></label>
+    
+              <label for="numNightClub">  Night Club Two Steps <br><input type="number" min=0 max=10 name="numNightClub" id="numNightClub" class="inpBox" ></label>
+           
+              <label for="numPasoDoble">  Paso Dobles <br><input type="number" min=0 max=10 name="numPasoDoble" id="numPasoDoble" class="inpBox"></label>
+           
+              <label for="numPolka">  Polkas<br><input type="number" min=0 max=10 name="numPolka" id="numPolka" class="inpBox"></label>
+     
+              <label for="numQuickStep">  Quick Steps <br><input type="number" min=0 max=10 name="numQuickStep" id="numQuickStep" class="inpBox"></label>
+            
+            <label for="numRumba">  Rumbas <br><input type="number" min=0 max=10 name="numRumba" id="numRumba" class="inpBox"></label>
+           
+              <label for="numSalsa">  Salsas  <br><input type="number" min=0 max=10 name="numSalsa" id="numSalsa" class="inpBox"></label>
+             
+              <label for="numSamba">  Sambas <br><input type="number" min=0 max=10 name="numSamba" id="numSamba" class="inpBox"></label>
+              
+       
+            <label for="numTwoStep">  Texas Two Steps  <br><input type="number" min=0 max=10 name="numTwoStep" id="numTwoStep" class="inpBox"></label>
+        
+            <label for="numVWaltz">  Viennese Waltzes   <br><input type="number" min=0 max=10 name="numVWaltz" id="numVWaltz" class="inpBox"></label>
+       
+            <label for="numWaltz">  Waltzes  <br><input type="number" min=0 max=10 name="numWaltz" id="numWaltz" class="inpBox"></label>
+           
+            <label for="numWCSwing">  West Coast Swings  <br><input type="number" min=0 max=10 name="numWCSwing" id="numWCSwing" class="inpBox"></label>
+          
+
+            <label for="numWPartner">  Western Partners <br><input type="number" min=0 max=10 name="numWPartner" id="numWPartner" class="inpBox"></label>
+           
+
+            <label for="numOldiesSlow"> Oldies Slow <br><input type="number" min=0 max=10 name="numOldiesSlow" id="numOldiesSlow" class="inpBox"></label>
+           
+             <label for="numOldiesFast"> Oldies Fast <br><input type="number" min=0 max=10 name="numOldiesFast" id="numOldiesFast" class="inpBox"></label>
+           
+            <label for="numRequests">  Requests <br><input type="number" min=0 max=10 name="numRequests" id="numRequests" class="inpBox"></label>
+            
+
+      
+       </div>
+      <button class="submit-Btn" id="returnBtn">Return to Home Page</button>
+ 
+            </form>
        
   </div>
  
-      
+
   
   <?php
   require 'footer.php';
   ?> 
+  <script>
+
+    var jsReqArray = <?php 
+    echo $json_array; 
+    ?>;
+   
+    </script>
     <script src="js/script.js"></script>
   </body>
 </html>

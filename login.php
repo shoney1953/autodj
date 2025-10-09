@@ -27,13 +27,12 @@ date_default_timezone_set("America/Phoenix");
         
         <ul>
             <li style="list-style:none;font-weight: bold">
-               <a style="color: #fff; font-size:large" href="index.php">Back to Home</a></li>
+               <a style="font-size: large" href="index.php">Back to Home</a></li>
         </ul>
         </div>
     </nav>
     <div class="container-section ">
     <section id="login" class="content">
-   
         
         <div class="form-grid1">
    
@@ -41,9 +40,9 @@ date_default_timezone_set("America/Phoenix");
             <form method="POST" action="actions/logIn.php">
                 <div class="form-grid-div">
 
-                <label style="color:#fff" for="username">User Name or Email used for the SBDC Website</label><br>
+                <label  for="username">User Name or Email used for the SBDC Website</label><br>
                 <input type="text" name="username" required><br>
-                <label style="color:#fff" for="password">Enter Password used for the SBDC Website</label><br>
+                <label  for="password">Enter Password used for the SBDC Website</label><br>
                 <input type="password" name="password" required minlength="8"><br>
 
                 <br>
