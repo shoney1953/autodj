@@ -31,6 +31,7 @@ body {
   justify-content: center;
   font-family: "Lato", sans-serif;
   margin: 0;
+  -ms-overflow-style: scrollbar;
 }
 
 h1 {
@@ -78,6 +79,7 @@ header h3 {
   align-items: center;
   justify-content: center;
   background-color: rgba(252, 237, 237, 0.2);
+  -ms-overflow-style: scrollbar
 }
 .button-container6 {
   background-color: transparent;
@@ -89,6 +91,7 @@ header h3 {
   align-items: left;
   justify-content: left;
   z-index: 10;
+  -ms-overflow-style: scrollbar
 }
 .button-container {
   background-color: transparent;
@@ -100,6 +103,7 @@ header h3 {
   align-items: end;
   /* justify-content: left; */
   z-index: 10;
+  -ms-overflow-style: scrollbar
 }
 
 .button-container h4 {
@@ -121,6 +125,7 @@ header h3 {
   z-index: 10;
   margin-top: 20px;
   margin-bottom: 20px;
+  -ms-overflow-style: scrollbar
 }
 
 .random-container h4 {
@@ -459,6 +464,7 @@ main {
   grid-gap: 3px;
   overflow: scroll;
   margin-top: 5%;
+  -ms-overflow-style: scrollbar
 }
 
 h3 {
@@ -717,6 +723,7 @@ td {
     grid-template-columns: repeat(6, 1fr);
     overflow: scroll;
     font-size: 0.6rem;
+    -ms-overflow-style: scrollbar
   }
 
   .music-container {
@@ -838,6 +845,7 @@ td {
     grid-template-columns: repeat(2, 1fr);
     overflow: scroll;
     font-size: 0.4rem;
+    -ms-overflow-style: scrollbar
   }
   h1 {
     font-size: 0.75rem;

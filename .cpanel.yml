@@ -22,4 +22,4 @@ deployment:
     -  /bin/cp -R js $DEPLOYPATH 
     -  /bin/cp -R models $DEPLOYPATH
     -  /bin/cp -R music $DEPLOYPATH  
-    -  /bin/cp -R uploads $DEPLOYPATH  
+   
