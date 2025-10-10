@@ -8,7 +8,7 @@ if (!isset($_POST['submitUpload'])) {
 }
 if (isset($_POST['submitUpload'])) {
   $file = $_FILES['fileToUpload'];
-//   var_dump($file);
+
   $fileTemp = $_FILES['fileToUpload']['tmp_name'];
   $fileName = $_FILES['fileToUpload']['name'];
   $fileEx = explode('.',$fileName);
