@@ -9,6 +9,7 @@ $num_playlists = 0;
 $result = 0;
 $playlistArray = [];
 $allPlaylistArray = [];
+$otherPlaylistArray = [];
 $database = new Database();
 $db = $database->connect();
 $user = new User($db);
@@ -58,13 +59,16 @@ if ($rowCount > 0) {
             'jsonPlaylist' => $jsonPlaylist
 
         );
-        if ($playlist_item['userid'] !== $_SESSION['userid']) {
            array_push($allPlaylistArray, $playlist_item);
+        if ($playlist_item['userid'] !== $_SESSION['userid']) {
+           array_push($otherPlaylistArray, $playlist_item);
+    
         }
        
   
     }
   $_SESSION['allPlaylists'] = $allPlaylistArray;  
+
 
 }
 }
@@ -194,7 +198,7 @@ if ($rowCount > 0) {
             echo '</thead>';
             echo '<tbody>';
             echo '<form method="POST" action="actions/processPlaylists.php">';
-            foreach ($allPlaylistArray as $aplaylist) {
+            foreach ($otherPlaylistArray as $aplaylist) {
                 $mc = "mcCHK".$aplaylist['id'];
                 $pd = 'viewlist.php?id=';
                  $pd .= $aplaylist["id"];

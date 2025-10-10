@@ -67,7 +67,10 @@ $playlistArray = json_decode($playList->jsonPlaylist);
   echo '<tbody>';
   $songnum = 0;
   foreach ($playlistArray as $plentry) {
- 
+    if ($_SESSION['username'] === 'superuser') {
+        var_dump($plentry);
+    }
+
     $songnum++;
     echo '<tr>';
      echo '<td>'.$songnum.'</td>';

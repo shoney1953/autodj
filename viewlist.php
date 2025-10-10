@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$userPlaylists = $_SESSION['allPlaylists'];
+$allPlaylists = $_SESSION['allPlaylists'];
 $songlistArray = [];
 $songNumber = 0;
 ?>
@@ -25,6 +25,20 @@ $songNumber = 0;
     <div class="container">
       <ul>
         <li><a href="index.php">Return Home</a></li>
+        <?php
+           if (isset($_SESSION['username'])) {
+    
+    
+      echo '<li><a href="songlist.php" > Show Song Lists</a></li>';
+
+      echo '<li><a href="playlists.php"> Manage Playlists</a></li>';
+
+      echo '<li><a href="findSong.php"> Find a Song</a></li>';
+
+      echo '<li><a href="manageRequests.php"> Manage Request Songs</a></li>';
+
+   } 
+   ?>
       </ul>
     </div>
 </nav>
@@ -32,7 +46,9 @@ $songNumber = 0;
     <!-- <div class="form-box"> -->
        <div>
       <?php 
-       foreach ($userPlaylists as $playlist) {
+       
+       foreach ($allPlaylists as $playlist) {
+
         if ($playlist['id'] === $_GET['id']) {
          echo '<form id="viewForm" name="viewForm">';
           $songlistArray = json_decode($playlist['jsonPlaylist']);
@@ -59,7 +75,7 @@ $songNumber = 0;
           //  echo '<td><input type="checkbox" name="'.$delCHK.'">';
            echo '<td>'.$songNumber.'</td>';
            echo '<td>'.$song[0].'</td>';
-           echo '<td>'.$song[2].'</td>';
+           echo '<td>'.$song[3].'</td>';
            echo '</tr>';
           }
            echo '</tbody>';
