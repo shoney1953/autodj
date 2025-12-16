@@ -25,13 +25,13 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Lato", sans-serif;
   margin: 0;
-  -ms-overflow-style: scrollbar;
+
 }
 
 h1 {
@@ -47,7 +47,7 @@ h2 {
   color: #222251;
   /* color: #ebebef; */
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 300; 
 }
 h3 {
   /* color: #1c073f; */
@@ -74,12 +74,12 @@ header h3 {
   margin-bottom: 2%;
   margin-top: 5%;
   text-align: center;
-  overflow-x: scroll;
+  overflow-x: auto
   color: rgb(28, 1, 39);
   align-items: center;
   justify-content: center;
   background-color: rgba(252, 237, 237, 0.2);
-  -ms-overflow-style: scrollbar
+  
 }
 .button-container6 {
   background-color: transparent;
@@ -87,11 +87,11 @@ header h3 {
   border-radius: 15px;
   grid-template-columns: repeat(6, max-content);
   grid-gap: 1px;
-  overflow: scroll;
+  overflow: auto;
   align-items: left;
   justify-content: left;
   z-index: 10;
-  -ms-overflow-style: scrollbar
+
 }
 .button-container {
   background-color: transparent;
@@ -99,11 +99,11 @@ header h3 {
   border-radius: 15px;
   grid-template-columns: repeat(10, max-content);
   grid-gap: 1px;
-  overflow: scroll;
+  overflow: auto;
   align-items: end;
   /* justify-content: left; */
   z-index: 10;
-  -ms-overflow-style: scrollbar
+ 
 }
 
 .button-container h4 {
@@ -119,13 +119,13 @@ header h3 {
   border-radius: 15px;
   grid-template-columns: repeat(3, minmax(250px, max-content));
   grid-gap: 20px;
-  overflow: scroll;
+  overflow: auto
   align-items: center;
   justify-content: center;
   z-index: 10;
   margin-top: 20px;
   margin-bottom: 20px;
-  -ms-overflow-style: scrollbar
+
 }
 
 .random-container h4 {
@@ -462,9 +462,9 @@ main {
   border-radius: 15px;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 3px;
-  overflow: scroll;
+  overflow: auto;
   margin-top: 5%;
-  -ms-overflow-style: scrollbar
+
 }
 
 h3 {
@@ -721,9 +721,9 @@ td {
 
   .button-container {
     grid-template-columns: repeat(6, 1fr);
-    overflow: scroll;
+    overflow: auto;
     font-size: 0.6rem;
-    -ms-overflow-style: scrollbar
+  
   }
 
   .music-container {
@@ -843,9 +843,9 @@ td {
   }
   .button-container {
     grid-template-columns: repeat(2, 1fr);
-    overflow: scroll;
+    overflow: auto;
     font-size: 0.4rem;
-    -ms-overflow-style: scrollbar
+  
   }
   h1 {
     font-size: 0.75rem;
