@@ -115,6 +115,8 @@ const songList = [
     "A Hard Days Night",
     "All Night Long",
     "Dancing Days",
+    "City After Dark",
+    "The Magic Touch",
     "Dizzy Miss Lizzy",
     "Exs and Ohs",
     "Joy to the World",
