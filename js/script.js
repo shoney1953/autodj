@@ -260,6 +260,10 @@ const songList = [
     "Quiereme Mucho",
     "Spanish Eyes",
     "Venus",
+    "Land of Enchantment",
+    "My Girl",
+    "Stand By Me",
+    "The Lion Sleeps Tonight",
     "Acerate Mas",
   ],
   // salsa 17
