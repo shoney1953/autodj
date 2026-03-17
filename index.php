@@ -51,7 +51,7 @@ if (is_dir($dir)){
     />
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>SBDC Robo DJ - Manage Requests</title>
+    <title>SBDC Robo DJ - Home Page</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <nav class="nav">
