@@ -9,11 +9,9 @@ try {
   playlistExist = 1;
 } catch (e) {
   console.log("no playlist created yet");
-  
 }
 if (playlistExist === 1) {
   createRBox(playList);
-  
 }
 
 danceArray.forEach(createBox);
@@ -33,11 +31,10 @@ function createBox(item, index) {
     box.innerHTML += `<li class=songItem>${song} </li>`;
   });
 
-   main.appendChild(box);
+  main.appendChild(box);
 }
 
 function createRBox(playList) {
-
   let numSongs = playList.length;
   const box2 = document.createElement("div");
   box2.classList.add("box");
@@ -50,14 +47,10 @@ function createRBox(playList) {
   });
 
   playList.forEach((playEntry, playIndex) => {
- 
     let songName = playList[playIndex][3];
     let songType = playList[playIndex][0];
     box2.innerHTML += `<li class=songItem><u>${songType}:</u>  ${songName} </li>`;
   });
   main.appendChild(box2);
 }
- 
 //*************************** */
-
-

@@ -56,6 +56,7 @@ const songList = [
     "Scent of a Woman",
     "Tango to Evora",
     "Vi Luz y Subi",
+    "La Valse deamelie",
   ],
   // bachata 2
   [
