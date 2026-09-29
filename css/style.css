@@ -9,12 +9,12 @@
   --darkgreen-color3: rgb(43, 33, 59);
   --formdivision-color3: rgba(84, 85, 84, 1);
   /* --link-color3: rgb(76, 4, 183); */
-  --button-background3: rgba(76, 4, 183, .8); 
+  --button-background3: rgba(76, 4, 183, 0.8);
   --link-color3: rgb(82, 6, 233);
   --white3: rgb(235, 235, 230);
   --black3: rgb(84, 84, 84);
   --hover: #7c0a10;
-  --purple-contrast3: rgb(95,82,134);
+  --purple-contrast3: rgb(95, 82, 134);
   --table-novice: rgb(68, 146, 120);
   --table-intermediate: rgb(69, 38, 225);
 }
@@ -25,17 +25,15 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  overflow: auto;
+  overflow: scroll;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Lato", sans-serif;
   margin: 0;
-
 }
 
 h1 {
-
   color: #222251;
   font-size: 2rem;
   font-weight: 300;
@@ -47,7 +45,7 @@ h2 {
   color: #222251;
   /* color: #ebebef; */
   font-size: 2rem;
-  font-weight: 300; 
+  font-weight: 300;
 }
 h3 {
   /* color: #1c073f; */
@@ -60,9 +58,7 @@ h3 {
   list-style: none;
 }
 header {
-  width: 60
-  vw;
-
+  width: 60 vw;
 }
 header h3 {
   text-align: center;
@@ -74,12 +70,11 @@ header h3 {
   margin-bottom: 2%;
   margin-top: 5%;
   text-align: center;
-  overflow-x: auto
+  overflow-x: auto;
   color: rgb(28, 1, 39);
   align-items: center;
   justify-content: center;
   background-color: rgba(252, 237, 237, 0.2);
-  
 }
 .button-container6 {
   background-color: transparent;
@@ -91,7 +86,6 @@ header h3 {
   align-items: left;
   justify-content: left;
   z-index: 10;
-
 }
 .button-container {
   background-color: transparent;
@@ -103,7 +97,6 @@ header h3 {
   align-items: end;
   /* justify-content: left; */
   z-index: 10;
- 
 }
 
 .button-container h4 {
@@ -119,13 +112,12 @@ header h3 {
   border-radius: 15px;
   grid-template-columns: repeat(3, minmax(250px, max-content));
   grid-gap: 20px;
-  overflow: auto
+  overflow: auto;
   align-items: center;
   justify-content: center;
   z-index: 10;
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 .random-container h4 {
@@ -133,7 +125,9 @@ header h3 {
   padding: 5px 5px;
   font-weight: bolder;
 }
-
+.musiclist-container {
+  margin-top: 1rem;
+}
 .music-container {
   background-image: linear-gradient(
     to right,
@@ -197,11 +191,11 @@ header h3 {
   /* flex-direction: column; */
   justify-content: space-between;
   align-items: left;
-  padding: .5em 0;
-  margin-bottom: .5em;
+  padding: 0.5em 0;
+  margin-bottom: 0.5em;
   transition: all 0.3s ease-in-out;
   /* background-color: rgba(13, 11, 11, 0.5); */
-    background-color: rgba(190, 197, 186, 0.5);
+  background-color: rgba(190, 197, 186, 0.5);
   border-radius: 5px;
   max-width: 100%;
 }
@@ -321,7 +315,9 @@ header h3 {
   left: 0;
   opacity: 0;
   transform: translateY(0%);
-  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  transition:
+    transform 0.3s ease-in,
+    opacity 0.3s ease-in;
   z-index: 0;
 }
 
@@ -464,7 +460,6 @@ main {
   grid-gap: 3px;
   overflow: auto;
   margin-top: 5%;
-
 }
 
 h3 {
@@ -486,7 +481,6 @@ footer {
   width: auto;
   padding-bottom: 6px;
   padding-left: 4px;
-
 }
 
 .box {
@@ -634,11 +628,9 @@ th {
 table,
 /* th, */
 td {
-
   border: 1px solid var(--black3);
   text-align: left;
   border-collapse: collapse;
-
 }
 th,
 td {
@@ -651,19 +643,15 @@ td {
 
 tbody tr:nth-child(even) {
   /* background-color: rgba(190, 169, 177, 0.8); */
-  background-color: var(--table-tr-even3); 
+  background-color: var(--table-tr-even3);
 }
 tbody tr:nth-child(odd) {
- 
   /* background-color: rgba(252, 237, 237, 0.2); */
-  background-color: var(--table-tr-odd3); 
-
+  background-color: var(--table-tr-odd3);
 }
 thead tr {
   /* background-color: rgba(96, 83, 83, 0.5); */
-   background-color: var(--table-thead-color3); 
-
-
+  background-color: var(--table-thead-color3);
 }
 thead th {
   color: var(--button-background3);
@@ -716,14 +704,13 @@ td {
   }
   main {
     grid-template-columns: repeat(3, 1fr);
-   margin-top: 7%;
+    margin-top: 7%;
   }
 
   .button-container {
     grid-template-columns: repeat(6, 1fr);
     overflow: auto;
     font-size: 0.6rem;
-  
   }
 
   .music-container {
@@ -798,33 +785,32 @@ td {
     margin-left: 10px;
     justify-items: left;
   }
-
 }
 
 @media (max-width: 770px) {
   .nav .container {
-  /*display: flex; */
-  width: 95%;
-  display: block;
-  /* flex-direction: column; */
-  justify-content: space-between;
-  align-items: left;
-  padding: 0 0;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-  /* background-color: rgba(13, 11, 11, 0.5); */
+    /*display: flex; */
+    width: 95%;
+    display: block;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: left;
+    padding: 0 0;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    /* background-color: rgba(13, 11, 11, 0.5); */
     background-color: rgba(190, 197, 186, 0.5);
-  border-radius: 5px;
-  max-width: 100%;
-}
-.nav a {
-  text-decoration: none;
-  color: var(--black3);
-  font-weight: bold;
-  font-size: .5rem;
-  padding: 5px 7px;
-  transition: all 0.3s ease-in-out;
-}
+    border-radius: 5px;
+    max-width: 100%;
+  }
+  .nav a {
+    text-decoration: none;
+    color: var(--black3);
+    font-weight: bold;
+    font-size: 0.5rem;
+    padding: 5px 7px;
+    transition: all 0.3s ease-in-out;
+  }
   .random-container {
     grid-gap: 3px;
     font-size: 1rem;
@@ -845,7 +831,6 @@ td {
     grid-template-columns: repeat(2, 1fr);
     overflow: auto;
     font-size: 0.4rem;
-  
   }
   h1 {
     font-size: 0.75rem;
@@ -881,12 +866,12 @@ td {
     margin-top: 5px;
     color: rgb(243, 211, 211);
     margin-bottom: 5px;
-    font-size: .5rem;
+    font-size: 0.5rem;
   }
   .inpBox {
     width: 75px;
     height: 20px;
-    font-size: .5rem;
+    font-size: 0.5rem;
     padding: 5px 5px;
     margin: 5px 5px;
     border-radius: 10%;
@@ -900,7 +885,7 @@ td {
     align-content: left;
   }
   .inpClass {
-    font-size: .5rem;
+    font-size: 0.5rem;
     padding: 5px 5px;
     text-align: left;
     height: 100%;
@@ -914,7 +899,7 @@ td {
     background-color: rgba(245, 69, 177, 0.6);
     border: 2px solid black;
     border-radius: 10%;
-    font-size: .5rem;
+    font-size: 0.5rem;
     padding: 4px 4px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -922,25 +907,24 @@ td {
     justify-items: left;
   }
   .box h4 {
-    font-size: .5rem;
+    font-size: 0.5rem;
   }
   .music-container {
-  background-image: linear-gradient(
-    to right,
-    rgba(160, 165, 207, 0.5),
-    rgba(47, 60, 173, 0.5)
-  );
-  border-radius: 0 0 15px 15px;
-  box-shadow: 0 10px 10px 0 rgba(109, 107, 112, 0.4);
-  display: flex;
-  position: relative;
-  width: 30%;
-  /* text-justify: right; */
-  padding: 5px 5px;
-  margin: 5px 0;
-  z-index: 10;
-}
-
+    background-image: linear-gradient(
+      to right,
+      rgba(160, 165, 207, 0.5),
+      rgba(47, 60, 173, 0.5)
+    );
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 10px 0 rgba(109, 107, 112, 0.4);
+    display: flex;
+    position: relative;
+    width: 30%;
+    /* text-justify: right; */
+    padding: 5px 5px;
+    margin: 5px 0;
+    z-index: 10;
+  }
 }
 
 @media (max-width: 520px) {
@@ -948,7 +932,7 @@ td {
     font-size: 10px;
   }
   .musicType-Btn {
-    font-size: .5rem;
+    font-size: 0.5rem;
     padding: 1px 1px;
     margin: 1px 1px;
   }
@@ -980,100 +964,92 @@ td {
   .box h4 {
     font-size: 1rem;
   }
-  
 
+  .action-btn {
+    /* background-color: #fff; */
+    background-color: rgba(85, 81, 82, 0.9);
+    border: 0;
+    border-radius: 15px;
+    color: #bfdbdf;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+  }
 
-.action-btn {
-  /* background-color: #fff; */
-  background-color: rgba(85, 81, 82, 0.9);
-  border: 0;
-  border-radius: 15px;
-  color: #bfdbdf;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 10px;
-  margin: 0 20px;
-}
+  table {
+    width: 90%;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid var(--black3);
+    border-collapse: collapse;
+    border-radius: 4px;
+  }
 
-table {
-  width: 90%;
-  padding: 2px;
-  margin: 5px;
-  border: 1px solid var(--black3);
-  border-collapse: collapse;
-  border-radius: 4px;
-}
-
-th {
-  text-align: left;
-  border-collapse: collapse;
-}
-table,
+  th {
+    text-align: left;
+    border-collapse: collapse;
+  }
+  table,
 /* th, */
 td {
+    border: 1px solid var(--black3);
+    text-align: left;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 2px;
+  }
+  .table-title {
+    color: black;
+    font-weight: bolder;
+  }
 
-  border: 1px solid var(--black3);
-  text-align: left;
-  border-collapse: collapse;
-
-}
-th,
-td {
-  padding: 2px;
-}
-.table-title {
-  color: black;
-  font-weight: bolder;
-}
-
-tbody tr:nth-child(even) {
-  /* background-color: rgba(190, 169, 177, 0.8); */
-  background-color: var(--table-tr-even3); 
-}
-tbody tr:nth-child(odd) {
- 
-  /* background-color: rgba(252, 237, 237, 0.2); */
-  background-color: var(--table-tr-odd3); 
-
-}
-thead tr {
-  /* background-color: rgba(96, 83, 83, 0.5); */
-   background-color: var(--table-thead-color3); 
-
-
-}
-thead th {
-  color: var(--button-background3);
-}
-table {
-  width: 90%;
-  border-spacing: 5px;
-  margin: 5px;
-  padding: 5px;
-  table-layout: auto;
-  align-items: left;
-  justify-content: left;
-  word-wrap: break-word;
-  border-collapse: collapse;
-}
-.table_small {
-  width: 60%;
-  border-spacing: 5px;
-  table-layout: auto;
-  align-items: left;
-  justify-content: left;
-  word-wrap: break-word;
-  border-collapse: collapse;
-}
-td {
-  text-align: left;
-}
+  tbody tr:nth-child(even) {
+    /* background-color: rgba(190, 169, 177, 0.8); */
+    background-color: var(--table-tr-even3);
+  }
+  tbody tr:nth-child(odd) {
+    /* background-color: rgba(252, 237, 237, 0.2); */
+    background-color: var(--table-tr-odd3);
+  }
+  thead tr {
+    /* background-color: rgba(96, 83, 83, 0.5); */
+    background-color: var(--table-thead-color3);
+  }
+  thead th {
+    color: var(--button-background3);
+  }
+  table {
+    width: 90%;
+    border-spacing: 5px;
+    margin: 5px;
+    padding: 5px;
+    table-layout: auto;
+    align-items: left;
+    justify-content: left;
+    word-wrap: break-word;
+    border-collapse: collapse;
+  }
+  .table_small {
+    width: 60%;
+    border-spacing: 5px;
+    table-layout: auto;
+    align-items: left;
+    justify-content: left;
+    word-wrap: break-word;
+    border-collapse: collapse;
+  }
+  td {
+    text-align: left;
+  }
 }
 @media (max-width: 380px) {
-.link-container {
-  margin-top: 35%;
-}
-main {
-  margin-top: 10%;
-}
+  .link-container {
+    margin-top: 35%;
+  }
+  main {
+    margin-top: 10%;
+  }
 }

@@ -18,12 +18,12 @@ $songNumber = 0;
 
     <title>Selected Playlist</title>
   </head>
+  <body>
 
-<body>
-<div class="content">
+
  <nav class="nav">
-    <div class="container">
-      <ul>
+       <div class="container">
+       <ul>
         <li><a href="index.php">Return Home</a></li>
         <?php
            if (isset($_SESSION['username'])) {
@@ -40,29 +40,32 @@ $songNumber = 0;
    } 
    ?>
       </ul>
-    </div>
+  </div>
 </nav>
-    <br><br><br><br><br>
-    <!-- <div class="form-box"> -->
-       <div>
+
+    <br><br>
+
+
+       <div class="content">
+              <form id="viewForm" name="viewForm">
       <?php 
-       
+
        foreach ($allPlaylists as $playlist) {
 
         if ($playlist['id'] === $_GET['id']) {
-         echo '<form id="viewForm" name="viewForm">';
+   
           $songlistArray = json_decode($playlist['jsonPlaylist']);
-          echo '<table>';
+          echo '<table class="table-small">';
           echo '<thead>';
           echo '<tr>';
   
           echo '<th>Playlist Name: '.$playlist['name'].'</th>';
           echo '<th>Description: '.$playlist['description'].'</th>';  
-          echo '<th>Created: '.substr($playlist['datecreated'],0,10).'</th>';
+          echo '<th colspan="2">Created: '.substr($playlist['datecreated'],0,10).'</th>';
           echo '</tr>';
           echo '<tr>';
-          // echo '<th>Delete?</th>';
           echo '<th>Song Number</th>';
+          echo '<th>Delete?</th>';
           echo '<th>Dance Type</th>';
           echo '<th>Song Name</th>';
           echo '</tr>';
@@ -72,18 +75,20 @@ $songNumber = 0;
            $songNumber++;
            $delCHK = "del".$songNumber;
            echo '<tr>';
-          //  echo '<td><input type="checkbox" name="'.$delCHK.'">';
-           echo '<td>'.$songNumber.'</td>';
+          echo '<td>'.$songNumber.'</td>';
+           echo '<td><input type="checkbox" name="'.$delCHK.'">';
+
            echo '<td>'.$song[0].'</td>';
            echo '<td>'.$song[3].'</td>';
            echo '</tr>';
           }
            echo '</tbody>';
           echo '</table>';
-          echo '</form>';
+     
         }
        }
       ?>
+          </form>
     </div>
 </div>
 </body>
