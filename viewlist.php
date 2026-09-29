@@ -65,7 +65,7 @@ $songNumber = 0;
           echo '</tr>';
           echo '<tr>';
           echo '<th>Song Number</th>';
-          echo '<th>Delete?</th>';
+          // echo '<th>Delete?</th>';
           echo '<th>Dance Type</th>';
           echo '<th>Song Name</th>';
           echo '</tr>';
@@ -76,7 +76,7 @@ $songNumber = 0;
            $delCHK = "del".$songNumber;
            echo '<tr>';
           echo '<td>'.$songNumber.'</td>';
-           echo '<td><input type="checkbox" name="'.$delCHK.'">';
+          //  echo '<td><input type="checkbox" name="'.$delCHK.'">';
 
            echo '<td>'.$song[0].'</td>';
            echo '<td>'.$song[3].'</td>';
