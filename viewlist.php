@@ -47,14 +47,16 @@ $songNumber = 0;
 
 
        <div class="content">
-              <form id="viewForm" name="viewForm">
+              <form id="viewForm" name="viewForm" action="actions/editSongList.php">
       <?php 
+      
 
        foreach ($allPlaylists as $playlist) {
 
         if ($playlist['id'] === $_GET['id']) {
    
           $songlistArray = json_decode($playlist['jsonPlaylist']);
+
           echo '<table class="table-small">';
           echo '<thead>';
           echo '<tr>';
@@ -65,7 +67,7 @@ $songNumber = 0;
           echo '</tr>';
           echo '<tr>';
           echo '<th>Song Number</th>';
-          // echo '<th>Delete?</th>';
+          echo '<th>Delete?</th>';
           echo '<th>Dance Type</th>';
           echo '<th>Song Name</th>';
           echo '</tr>';
@@ -76,20 +78,22 @@ $songNumber = 0;
            $delCHK = "del".$songNumber;
            echo '<tr>';
           echo '<td>'.$songNumber.'</td>';
-          //  echo '<td><input type="checkbox" name="'.$delCHK.'">';
+           echo '<td><input type="checkbox" name="'.$delCHK.'">';
 
            echo '<td>'.$song[0].'</td>';
            echo '<td>'.$song[3].'</td>';
+
            echo '</tr>';
           }
            echo '</tbody>';
           echo '</table>';
-     
+          echo '<button id="submitEdit" name="submitEdit" type="submit">Submit Edits</button>';
         }
        }
       ?>
           </form>
     </div>
 </div>
+
 </body>
 </html>

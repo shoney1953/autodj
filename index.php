@@ -187,7 +187,7 @@ if (is_dir($dir)){
     echo '</div>';
   
 
-    echo '<br><br><br><div class="music-container" id="music-container">
+    echo '<br><br><br><div class="music-container-noImage" id="music-container">
       <div class="music-info">
         <h4 id="musictype">Music Type</h4>
         <div class="progress-container" id="progress-container">

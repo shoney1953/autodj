@@ -54,7 +54,8 @@ $_SESSION['findsongurl'] = $_SERVER['REQUEST_URI'];
       <input type="text" name="songsearch" title="enter all or part of a song name">
       <button class="list-Btn" type="submit" name="SearchSong" onclick="searchSongs()">Perform Search</button>
     </form>
-   <form id="playSongForm" onsubmit="playSong();return false"> 
+   <form id="playSongForm" onsubmit="setSongName();return false"> 
+   
     <table id='songtable'>
       <thead>
         <!-- <tr>
@@ -70,13 +71,14 @@ $_SESSION['findsongurl'] = $_SERVER['REQUEST_URI'];
 
       </tbody>
     </table>
-<button class="list-Btn" type="submit" name="PlaySong" onclick="playSong()">Play a Song</button>
+<!-- <button class="list-Btn" type="submit" name="PlaySong" onclick="setSongName()">Play a Song</button> -->
+ <button class="list-Btn" type="submit" name="PlaySong">Play a Song</button>
    </form>
   </div>
 
 </div>
 
-    <div class="music-container" id="music-container">
+    <div class="music-container-noImage" id="music-container">
       <div class="music-info">
         <h3 id="musictype">Music Type</h3>
         <div class="progress-container" id="progress-container">
@@ -140,8 +142,11 @@ let row_number = 0;
 let dance_type = '';
 localStorage.foundArray = [];
 songArray = [];
+let currentSong = '';
 danceArray.forEach(searchArray);
-
+let songToPlay = "";
+let currentObj = "";
+let currentSongIX = "";
 if (foundArray.length > 0) {
   foundArray.forEach(createTableEntry);
 } else {
@@ -189,7 +194,8 @@ let position = value.search(songName);
 
 }
 } 
-  function playSong() {
+  function setSongName() {
+
     let formData2 = new FormData(songForm);
     var index = 0;
    for (const foundSong of songArray) {
@@ -205,8 +211,9 @@ let position = value.search(songName);
             if (obj.danceType === danceTypeValue) {
           
                musictype.innerText = `${obj.songTitles[songIXValue]} `;
-              
+               currentSong = obj.songTitles[songIXValue];
                audio.src = `${obj.folder}/${obj.file}/${obj.songTitles[songIXValue]}.mp3`;
+               playSong();
           
             }
            }
@@ -216,6 +223,9 @@ let position = value.search(songName);
  
    }
 
+  function playSong() {
+
+
    musicContainer.classList.add("play");
   playBtn.querySelector("i.fas").classList.remove("fa-play");
   playBtn.querySelector("i.fas").classList.add("fa-pause");
@@ -223,6 +233,7 @@ let position = value.search(songName);
   } 
   
 function pauseSong() {
+
   musicContainer.classList.remove("play");
   playBtn.querySelector("i.fas").classList.remove("fa-pause");
   playBtn.querySelector("i.fas").classList.add("fa-play");
@@ -234,19 +245,29 @@ function updateDuration() {
   musictype.innerText += `  --   ${convertTime(duration)}`;
 }
 playBtn.addEventListener("click", () => {
+
   const isPlaying = musicContainer.classList.contains("play");
+
 
   if (isPlaying) {
     pauseSong();
-  } 
+  } else {
+    playSong();
+  }
 });
 audio.addEventListener("timeupdate", updateProgress);
 audio.addEventListener("durationchange", updateDuration);
 progressContainer.addEventListener("click", setProgress);
+
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
+
+  const timeRemaining = convertTime(duration - currentTime);
+  // const tr = Math.round(timeRemaining * 1000) / 1000;
   const progressPercent = (currentTime / duration) * 100;
-  progress.style.width = `${progressPercent}%`;
+  const progressPercentRound = Math.round(progressPercent * 100) / 100;
+  progress.style.width = `${progressPercentRound}%`;
+  musictype.innerText = `${currentSong} -- ${timeRemaining} `;
 }
 function setProgress(e) {
   const width = this.clientWidth;
@@ -266,6 +287,6 @@ var convertTime = function (time) {
 
   return mins + ":" + secs;
 };
-
+  }
 
 </script>

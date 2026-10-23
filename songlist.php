@@ -26,20 +26,38 @@ session_start();
       echo '<li><a href="playlists.php"> Manage Playlists</a></li>';
       echo '<li><a href="findSong.php"> Find a Song</a></li>';
       echo '<li><a href="manageRequests.php"> Manage Request Songs</a></li>';
+
    } 
    ?>
       </ul>
+  
     </div>
 </nav>
 
-    
-  
 
 <main id="main">
+
   
 
-</main>
+  </main>
+  <div class="music-container-noImage vis-hidden"  id="music-container">
+      <div class="music-info">
+        <h3 id="musictype">Music Type</h3>
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+      <audio id="audio"></audio>
 
+      <div class="navigation">
+      
+        <button id="play" class="action-btn action-big">
+          <i class="fas fa-play"></i>
+        </button>
+   
+      </div>
+    </div>
+  
   <?php
   require 'footer.php';
   ?>

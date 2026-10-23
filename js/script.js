@@ -410,7 +410,7 @@ const songList = [
 songList.push(jsReqArray);
 
 // ****************************************************************************
-
+let playListDur = 0;
 let songIndex = 0;
 let playListIndex = 0;
 totalSongs = 0;
@@ -751,7 +751,6 @@ else {
 }
 
 function setDance(dance) {
-  console.log(dance);
   dancePlaying = dance;
   dance.playTheList();
 }
@@ -795,7 +794,8 @@ function setOldRandomplayList() {
 }
 
 function createRandomplayList() {
-  console.log("in create Random Playlist");
+  console.log("in Create Random Playlist");
+
   let totalSongs = 0;
 
   for (i = 0; i < danceArray.length; i++) {
@@ -806,6 +806,10 @@ function createRandomplayList() {
     }
     for (j = 0; j < maxCount; j++) {
       let songIndex = danceArray[i].selectRandomSong();
+
+      fullname = `${danceArray[i].folder}/${danceArray[i].file}/${danceArray[i].songTitles[songIndex]}.mp3`;
+
+      songDuration = 0;
 
       playList[totalSongs] = [
         danceArray[i].danceType,
@@ -829,13 +833,27 @@ function createRandomplayList() {
   }
 
   playList = playList2;
+  for (i = 0; i < playList.length - 1; i++) {
+    fullname = `${playList[i][1]}/${playList[i][2]}/${playList[i][3]}.mp3`;
+
+    getAudioDuration(playList, i, playListDur, fullname, () => {});
+  }
 
   if (!window.localStorage) alert("Sorry, you're using an ancient browser");
   else {
     localStorage.myPlaylist = JSON.stringify(playList);
   }
 }
-
+// console.log(playListDur);
+function getAudioDuration(playlist, index, total, src) {
+  const audio = new Audio();
+  audio.src = src;
+  audio.addEventListener("loadedmetadata", () => {
+    var duration = audio.duration;
+    total = total + duration;
+    playlist[index].push(convertTime(duration));
+  });
+}
 function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
@@ -1162,4 +1180,5 @@ returnBtn.addEventListener("click", returnPlay);
 
 audio.addEventListener("timeupdate", updateProgress);
 audio.addEventListener("durationchange", updateDuration);
+
 progressContainer.addEventListener("click", setProgress);
