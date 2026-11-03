@@ -25,12 +25,7 @@ $google = new Google($db);
 
 $google->id = 1;
  $google->read_single();
-// $fileId = '16CkCoOboTQgXrxN7myoeIcprgZAC9hgz'; //mpeg
-// $mimetype = 'audio/mpeg';
-// $fileId = '16CkCoOboTQgXrxN7myoeIcprgZAC9hgz'; //mpeg
-// $fileId='1NrrMyK2yovVdssYwPFNeIvM60eV1IHB7';
-// $fileId='1mTo7_YeONYn3jjDiAvn2084sjKkeeFjO';
-// 2. Initialize the Google Client & Authenticate
+
 $client = new Client();
 // Provide the path to your OAuth2 or Service Account credentials JSON file
 $client->setApplicationName('ROBODJ');

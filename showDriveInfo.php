@@ -16,8 +16,6 @@ $google = new Google($db);
 $google->id = 1;
  $google->read_single();
 
- 
-
 
 $client = new Google_Client();
 
