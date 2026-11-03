@@ -2,7 +2,6 @@
 session_start();
 require_once 'config/Database.php';
 require_once 'models/User.php';
-
 if (isset($_GET['error'])) {
     echo '<br><h4 style="text-align: center"> ERROR:  '.$_GET['error'].'. 
     Please Validate Input</h4><br>';
@@ -39,6 +38,7 @@ if (is_dir($dir)){
  
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +69,7 @@ if (is_dir($dir)){
       echo '<li><a href="findSong.php"> Find a Song</a></li>';
 
       echo '<li><a href="manageRequests.php"> Manage Request Songs</a></li>';
+        echo '<li><a href="showDriveInfo.php"> Robo DJ Drive contents</a></li>';
 
    } else {
 
