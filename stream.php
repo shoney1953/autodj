@@ -1,7 +1,9 @@
 
 <?php
+session_start();
 require_once 'vendor/autoload.php';
-
+require_once 'config/Database.php';
+require_once 'models/Google.php';
 use Google\Client;
 use Google\Service\Drive;
 
@@ -17,6 +19,12 @@ if (!$mimetype) {
     header("HTTP/1.1 400 Bad Request");
     die("Missing mimetype.");
 }
+$database = new Database();
+$db = $database->connect();
+$google = new Google($db);
+
+$google->id = 1;
+ $google->read_single();
 // $fileId = '16CkCoOboTQgXrxN7myoeIcprgZAC9hgz'; //mpeg
 // $mimetype = 'audio/mpeg';
 // $fileId = '16CkCoOboTQgXrxN7myoeIcprgZAC9hgz'; //mpeg
@@ -25,7 +33,11 @@ if (!$mimetype) {
 // 2. Initialize the Google Client & Authenticate
 $client = new Client();
 // Provide the path to your OAuth2 or Service Account credentials JSON file
-$client->setAuthConfig('config/service_key.json');
+$client->setApplicationName('ROBODJ');
+// $client->addScope(drive::DRIVE);
+
+$client->setAuthConfig($google->servicekey); // <--- Using the database-sourced array here
+// $client->setAuthConfig('config/service_key.json');
 $client->addScope(Drive::DRIVE_READONLY);
 
 // Initialize the Drive Service

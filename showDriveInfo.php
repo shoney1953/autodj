@@ -1,20 +1,36 @@
 <?php 
 session_start();
 require_once 'vendor/autoload.php';
+
+require_once 'config/Database.php';
+require_once 'models/Google.php';
 use Google\Client;
 use Google\Service\Drive;
+
+use function PHPSTORM_META\type;
+
+$database = new Database();
+$db = $database->connect();
+$google = new Google($db);
+
+$google->id = 1;
+ $google->read_single();
+
+ 
 
 
 $client = new Google_Client();
 
-putenv('GOOGLE_APPLICATION_CREDENTIALS=config/service_key.json');
-$credentialsFile = 'config/service_key.json';
-$client->useApplicationDefaultCredentials();
-
-$client->addScope(drive::DRIVE);
-$client->setAuthConfig($credentialsFile);
-$client->setApplicationName('MyDriveApp');
+// putenv('GOOGLE_APPLICATION_CREDENTIALS=config/service_key.json');
+// $credentialsFile = 'config/service_key.json';
+$client->setApplicationName('ROBODJ');
+// $client->addScope(drive::DRIVE);
 $client->setScopes(['https://www.googleapis.com/auth/drive']);
+$client->setAuthConfig($google->servicekey); // <--- Using the database-sourced array here
+// $client->useApplicationDefaultCredentials();
+// $client->setAuthConfig($credentialsFile);
+
+
 $driveService = new Drive($client);
 
 // File ID of the specific Google Drive file you want to access
