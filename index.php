@@ -69,7 +69,7 @@ if (is_dir($dir)){
       echo '<li><a href="findSong.php"> Find a Song</a></li>';
 
       echo '<li><a href="manageRequests.php"> Manage Request Songs</a></li>';
-        echo '<li><a href="showDriveInfo.php"> Robo DJ Drive contents</a></li>';
+        echo '<li><a href="showdrive.php"> Robo DJ Drive contents</a></li>';
 
    } else {
 
