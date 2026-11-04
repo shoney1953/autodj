@@ -13,7 +13,7 @@ $database = new Database();
 $db = $database->connect();
 $google = new Google($db);
 
-$google->id = 1;
+$google->id = 2;
  $google->read_single();
 
 

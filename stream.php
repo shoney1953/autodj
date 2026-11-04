@@ -23,12 +23,12 @@ $database = new Database();
 $db = $database->connect();
 $google = new Google($db);
 
-$google->id = 1;
+$google->id = 2;
  $google->read_single();
 
 $client = new Client();
 // Provide the path to your OAuth2 or Service Account credentials JSON file
-$client->setApplicationName('ROBODJ');
+$client->setApplicationName('SBDCROBODJ');
 // $client->addScope(drive::DRIVE);
 
 $client->setAuthConfig($google->servicekey); // <--- Using the database-sourced array here
