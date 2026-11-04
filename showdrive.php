@@ -14,14 +14,11 @@ $db = $database->connect();
 $google = new Google($db);
 
 $google->id = 2;
- $google->read_single();
-
-
+$google->read_single();
 $client = new Google_Client();
-
 // putenv('GOOGLE_APPLICATION_CREDENTIALS=config/service_key.json');
 // $credentialsFile = 'config/service_key.json';
-$client->setApplicationName('ROBODJ');
+$client->setApplicationName('SBDCROBODJ');
 // $client->addScope(drive::DRIVE);
 $client->setScopes(['https://www.googleapis.com/auth/drive']);
 $client->setAuthConfig($google->servicekey); // <--- Using the database-sourced array here
