@@ -1,6 +1,7 @@
 {
     "require": {
         "google/apiclient": "^2.20",
-        "symfony/polyfill-php80": "^1.43"
+        "symfony/polyfill-php80": "^1.43",
+        "symfony/polyfill-php81": "^1.38"
     }
 }

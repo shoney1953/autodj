@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8261210305707a6b4fa7e32a8d29a58653c60414',
+        'reference' => '29e51f07ad1f58e117b814d57f70796891ff85b2',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8261210305707a6b4fa7e32a8d29a58653c60414',
+            'reference' => '29e51f07ad1f58e117b814d57f70796891ff85b2',
             'dev_requirement' => false,
         ),
         'firebase/php-jwt' => array(
@@ -176,6 +176,15 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-php80',
             'aliases' => array(),
             'reference' => '9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74',
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-php81' => array(
+            'pretty_version' => 'v1.38.1',
+            'version' => '1.38.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-php81',
+            'aliases' => array(),
+            'reference' => '6bfb9c766cacffbc8e118cb87217d08ed84e5cd7',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-php82' => array(
