@@ -18,7 +18,6 @@ $google->read_single();
 
 $client = new Google_Client();
 
-
 $client->setApplicationName('SBDCROBODJ');
 $client->setScopes(['https://www.googleapis.com/auth/drive']);
 // $client->addScope(drive::DRIVE);
@@ -26,13 +25,10 @@ $client->setAuthConfig($google->servicekey); // <--- Using the database-sourced 
 
 $driveService = new Drive($client);
 
-
 // File ID of the specific Google Drive file you want to access
 
 $fileId = '16CkCoOboTQgXrxN7myoeIcprgZAC9hgz'; //mpeg
 $mimetype = 'audio/mpeg';
-
-
 
 $folders = [];
 $folderNum = 0;
