@@ -12,7 +12,6 @@ $db = $database->connect();
 $user = new User($db);
 $playList = new Playlist($db);
 $_SESSION['findsongurl'] = $_SERVER['REQUEST_URI']; 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
