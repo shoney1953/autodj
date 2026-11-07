@@ -160,7 +160,7 @@ foreach ($files as $file) {
     </div>
 </nav>
 
-<main id="main" class="main-small-top">
+<main id="main">
  
 </main>
 <div>
