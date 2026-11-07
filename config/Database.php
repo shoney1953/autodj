@@ -7,7 +7,6 @@
     private $password ;
     private $conn;
     private $url;
-
     public function __construct() {
     
        if ($_SERVER['SERVER_NAME'] === 'localhost') {         
@@ -38,7 +37,7 @@
         }
     } 
   }
-  
+
     // DB Connect
     public function connect() {
       
