@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+
 require_once 'vendor/autoload.php';
 require_once 'config/Database.php';
 require_once 'models/Google.php';
@@ -49,7 +50,7 @@ try {
      }
 
     // 5. Download and stream the file contents directly to output
-    $response = $driveService->files->get($fileId, ['alt' => 'media']);
+    $response = $driveService->files->get($fileId, ['alt' => 'media']); 
  
     $stream = $response->getBody();
 
@@ -57,8 +58,7 @@ try {
         echo $stream->read(1024 * 8); // Stream in 8KB chunks
         flush();
     }
-        
-        
+    
 } catch (Exception $e) {
     header("HTTP/1.1 500 Internal Server Error");
     echo "Error streaming file: " . $e->getMessage();
