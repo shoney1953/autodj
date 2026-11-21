@@ -16,8 +16,8 @@ deployment:
     - /bin/cp playlists.php $DEPLOYPATH
     - /bin/cp randomplaylist.php $DEPLOYPATH
     - /bin/cp showdrive.php $DEPLOYPATH
-    - /bin/cp stream.php $DEPLOYPATH
     - /bin/cp songlist.php $DEPLOYPATH
+    - /bin/cp stream.php $DEPLOYPATH
     - /bin/cp viewlist.php $DEPLOYPATH
     - /bin/cp -R actions $DEPLOYPATH
     - /bin/cp -R config $DEPLOYPATH
