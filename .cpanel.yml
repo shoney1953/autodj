@@ -14,6 +14,7 @@ deployment:
     - /bin/cp logout.php $DEPLOYPATH
     - /bin/cp manageRequests.php $DEPLOYPATH
     - /bin/cp playlists.php $DEPLOYPATH
+    - /bin/cp randomplaylist.php $DEPLOYPATH
     - /bin/cp showdrive.php $DEPLOYPATH
     - /bin/cp stream.php $DEPLOYPATH
     - /bin/cp songlist.php $DEPLOYPATH
