@@ -2,6 +2,7 @@
 
 const userFolder = document.getElementById("username").value;
 const audio = document.getElementById("audio");
+
 const buttonContainer = document.getElementById("buttonContainer");
 const musicContainer = document.getElementById("music-container");
 const playBtn = document.getElementById("play");
@@ -980,6 +981,7 @@ var convertTime = function (time) {
   return mins + ":" + secs;
 };
 //* Event Listeners
+
 playBtn.addEventListener("click", () => {
   const isPlaying = musicContainer.classList.contains("play");
 

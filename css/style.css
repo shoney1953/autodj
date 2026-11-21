@@ -219,6 +219,29 @@ header h3 {
     transform: rotate(360deg);
   }
 }
+.playlist-container {
+  display: block;
+  width: 95%;
+  /* display: grid; */
+  border-radius: 15px;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: left;
+  padding: 0.5em 0;
+  margin-top: 5%;
+  overflow: auto;
+
+  background-color: rgba(190, 197, 186, 0.5);
+
+  max-width: 100%;
+}
+.playlist-container ul {
+  /* display: flex; */
+  list-style-type: none;
+  align-items: left;
+  justify-content: space-between;
+}
 .nav {
   width: 100vw;
   position: fixed;
@@ -513,13 +536,31 @@ main {
   overflow: auto;
   margin-top: 5%;
 }
+.warning {
+  color: #7c0a10;
+  text-align: center;
+  font-weight: bold;
+}
 .main2 {
   background-color: rgba(194, 195, 197, 0.7);
   display: grid;
   border-radius: 15px;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 3px;
+  grid-gap: 4px;
   overflow: auto;
+  padding-top: 5px;
+  margin-top: 8%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.main3 {
+  background-color: rgba(194, 195, 197, 0.7);
+  display: grid;
+  border-radius: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+  overflow: auto;
+  padding-top: 5px;
   margin-top: 5%;
   margin-left: 2%;
   margin-right: 2%;
@@ -757,6 +798,9 @@ td {
   header h5 {
     font-size: 0.5rem;
   }
+  .playlist-container {
+    margin-top: 12%;
+  }
   .list-Btn {
     font-size: 1rem;
   }
@@ -785,9 +829,12 @@ td {
   }
   .main2 {
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+  }
+  .main3 {
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 7%;
   }
-
   .button-container {
     grid-template-columns: repeat(6, 1fr);
     overflow: auto;
@@ -910,6 +957,10 @@ td {
   }
   .main2 {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 10%;
+  }
+  .main3 {
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 7%;
   }
   .button-container {
@@ -1051,6 +1102,11 @@ td {
     font-size: 1rem;
     margin-top: 10%;
   }
+  .main3 {
+    grid-template-columns: repeat(1, 1fr);
+    font-size: 1rem;
+    margin-top: 10%;
+  }
   .box h4 {
     font-size: 1rem;
   }
@@ -1143,6 +1199,9 @@ td {
     margin-top: 10%;
   }
   .main2 {
+    margin-top: 10%;
+  }
+  .main3 {
     margin-top: 10%;
   }
 }
