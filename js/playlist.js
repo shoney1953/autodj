@@ -12,7 +12,6 @@ try {
 }
 
 const downloadPlyBtn = document.getElementById("downloadPlyBtn");
-
 downloadPlyBtn.addEventListener("click", () => {
   // pipe the document to a blob
   let newDate = new Date(Date.now());
