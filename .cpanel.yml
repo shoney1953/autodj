@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sbballro/public_html/sbdcrobodj.com
-    - /bin/cp _.sbdcrobodj.com.pem.txt $DEPLOYPATH
+    # - /bin/cp _.sbdcrobodj.com.pem.txt $DEPLOYPATH
     - /bin/cp addSong.php $DEPLOYPATH
     - /bin/cp custom.html $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH

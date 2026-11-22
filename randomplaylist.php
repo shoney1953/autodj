@@ -40,7 +40,6 @@ session_start();
       <h4 class="warning">WARNING: Many Songs will NOT play in the browser FIREFOX</h4>
     </div>
 </nav>
-
 <div class="playlist-container" id="main">
   <div class="button-container4">
     <button id="playCurrentBtn" class="list-Btn">Play Current Playlist</button>
