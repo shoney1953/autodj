@@ -46,11 +46,7 @@ session_start();
   <button id="downloadPlyBtn" class="list-Btn">Print Current Playlist to PDF</button>
   <button id="randomBtn" class="list-Btn">Create New Playlist</button>
   </div>
-  
- 
 </div>
-
-
 <div id="music-container" class="music-container-noImage">
       <!-- <h4 id="musictype">Music Type</h4> -->
     <div class=" ">
